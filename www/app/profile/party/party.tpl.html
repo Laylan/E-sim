@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Party:
+    <b>{{party.partyData.name}}</b>
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+      <div class="col col-50 text-center">
+        <img class="full-image" ng-src="{{party.partyData.avatar.NORMAL}}">
+      </div>
+      <div class="col col-center text-center">
+        <p>Nationality</p>
+        <!-- <img src="assets/img/flags/big/{{party.partyData.countryName | flags}}.png"> -->
+        <!-- <h2>{{party.partyData.countryName}}</h2> -->
+      </div>
+    </div>
+  </div>
+  <h3 class="item" href="#">
+		Members
+		<span class="badge badge-positive">{{party.partyData.members}}</span>
+	</h3>
+  <!-- <h3 class="item" href="#">
+		Total party strength
+		<span class="badge badge-positive">{{party.partyData.estimatedValue | number : 2}}</span>
+	</h3> -->
+  <h3 class="item" href="#">
+		Party type
+		<span class="item-note"><b>{{party.partyData.partyType}}</b></span>
+	</h3>
+  <h3 class="item" href="#">
+		Prestige
+		<span class="badge badge-positive">{{party.partyData.prestige}}</span>
+	</h3>
+  <div class="item item-divider text-center">
+    Lider
+  </div>
+  <div class="text-center">
+    <h4 ng-click="party.showProfile(party.liderProfile.id)">
+				<i ng-if="party.liderProfile.premium" class="icon icon-star2 yellow"></i>
+				{{party.liderProfile.username}}
+				<img src="assets/img/flags/small/{{party.liderProfile.countryName | flags}}.png">
+			</h4>
+    <div>
+      <img class="avatar" ng-src="{{party.liderProfile.avatar.NORMAL}}">
+    </div>
+  </div>
+</div>
+
+<back-button></back-button>

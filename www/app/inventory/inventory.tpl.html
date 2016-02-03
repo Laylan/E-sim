@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    <i class="icon icon-wallet"></i><b>Your money</b>
+  </div>
+  <div class="storage">
+    <div ng-if="stash.currienciesCount<9">
+      <div class="curriencies" ng-repeat="cash in stash.money">
+        <img src="assets/img/flags/medium/{{cash.countryName | flags}}.png">
+        <div class="badge badge-light">{{cash.ammount | number : 2}} {{cash.currencyName}}</div>
+      </div>
+    </div>
+    <div ng-if="stash.currienciesCount>=9">
+      <p ng-hide="stash.showChangeLog" ng-click="stash.showMore()">Show more</p>
+      <p ng-if="stash.showChangeLog" ng-click="stash.showMore()">Show less</p>
+      <div ng-if="stash.showChangeLog">
+        <div class="curriencies" ng-repeat="cash in stash.money">
+          <img src="assets/img/flags/medium/{{cash.countryName | flags}}.png">
+          <div class="badge badge-light">{{cash.ammount | number : 2}} {{cash.currencyName}}</div>
+        </div>
+      </div>
+      <p class="clear" ng-if="stash.showChangeLog" ng-click="stash.showMore()">Show less</p>
+    </div>
+  </div>
+  <div class="item item-divider text-center clear">
+    <i class="icon icon-bag"></i><b>Your storage</b>
+  </div>
+  <div class="col">
+    <div class='storage_item center' ng-repeat="product in stash.storage">
+      <stash-product-icon resource='{{product.resource}}' quality='{{product.quality}}' quantity='{{product.quantity}}'></stash-product-icon>
+    </div>
+  </div>
+</div>

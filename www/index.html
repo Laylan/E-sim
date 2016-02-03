@@ -1,0 +1,179 @@
+<!doctype html>
+<html ng-app="esim-app" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>E-Sim Mobile App</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <!-- compiled CSS -->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/_esim_font_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/achievement_small_black.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/achievement_small_grey.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/esim_font.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- compiled JavaScript -->
+
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script type="text/javascript" src="lib/ionic-service-core/ionic-core.js"></script>
+<script src="lib/ionic-service-push/ionic-push.js"></script>
+    <script type="text/javascript" src="lib/ionic-service-analytics/ionic-analytics.js"></script>
+    <script type="text/javascript" src="lib/angular-timer/app/js/timer.js"></script>
+
+    <script type="text/javascript" src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <script type="text/javascript" src="app/_app.module.js"></script>
+    <script type="text/javascript" src="app/about/about.controller.js"></script>
+    <script type="text/javascript" src="app/achievements/_achievements.module.js"></script>
+    <script type="text/javascript" src="app/achievements/achievements.controller.js"></script>
+    <script type="text/javascript" src="app/achievements/achievements.service.js"></script>
+    <script type="text/javascript" src="app/app.config.js"></script>
+    <script type="text/javascript" src="app/app.controller.js"></script>
+    <script type="text/javascript" src="app/app.run.js"></script>
+    <script type="text/javascript" src="app/app.values.js"></script>
+    <script type="text/javascript" src="app/articles/_articles.module.js"></script>
+    <script type="text/javascript" src="app/articles/articles.controller.js"></script>
+    <script type="text/javascript" src="app/articles/articles.service.js"></script>
+    <script type="text/javascript" src="app/articles/openArticle/_open-article.module.js"></script>
+    <script type="text/javascript" src="app/articles/openArticle/open-article.controller.js"></script>
+    <script type="text/javascript" src="app/articles/openArticle/open-article.service.js"></script>
+    <script type="text/javascript" src="app/directives/_tags.module.js"></script>
+    <script type="text/javascript" src="app/directives/auction-item.directive.js"></script>
+    <script type="text/javascript" src="app/directives/back-button.directive.js"></script>
+    <script type="text/javascript" src="app/directives/img-changer.directive.js"></script>
+    <script type="text/javascript" src="app/directives/product-icon.directive.js"></script>
+    <script type="text/javascript" src="app/directives/special-item-icon.directive.js"></script>
+    <script type="text/javascript" src="app/directives/stash-product-icon.directive.js"></script>
+    <script type="text/javascript" src="app/directives/compile.directive.js"></script>
+    <script type="text/javascript" src="app/equipment/_equipment.module.js"></script>
+    <script type="text/javascript" src="app/equipment/equipment.controller.js"></script>
+    <script type="text/javascript" src="app/equipment/equipment.service.js"></script>
+    <script type="text/javascript" src="app/fight/_fight.module.js"></script>
+    <script type="text/javascript" src="app/fight/fight.controller.js"></script>
+    <script type="text/javascript" src="app/fight/fight.service.js"></script>
+    <script type="text/javascript" src="app/fightList/_fight-list.module.js"></script>
+    <script type="text/javascript" src="app/fightList/fight-list.controller.js"></script>
+    <script type="text/javascript" src="app/fightList/fight-list.service.js"></script>
+    <script type="text/javascript" src="app/filters/_filters.module.js"></script>
+    <script type="text/javascript" src="app/filters/avatar.filter.js"></script>
+    <script type="text/javascript" src="app/filters/bbCode.filter.js"></script>
+    <script type="text/javascript" src="app/filters/capitalize.filter.js"></script>
+    <script type="text/javascript" src="app/filters/flags.filter.js"></script>
+    <script type="text/javascript" src="app/filters/get-by-id.filter.js"></script>
+    <script type="text/javascript" src="app/filters/html.filter.js"></script>
+    <script type="text/javascript" src="app/filters/underscore-to-space.filter.js"></script>
+    <script type="text/javascript" src="app/filters/unsafe.filter.js"></script>
+    <script type="text/javascript" src="app/friends/_friends.module.js"></script>
+    <script type="text/javascript" src="app/friends/friends.controller.js"></script>
+    <script type="text/javascript" src="app/friends/friends.service.js"></script>
+    <script type="text/javascript" src="app/home/_home.module.js"></script>
+    <script type="text/javascript" src="app/home/home.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/_inbox.module.js"></script>
+    <script type="text/javascript" src="app/inbox/inbox.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/_messages.module.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/messages.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/messages.service.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/sentMessages/_sent-messages.module.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/sentMessages/sent-messages.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/sentMessages/sent-messages.service.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/writeMessage/_write-message.module.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/writeMessage/write-message.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/messages/writeMessage/write-message.service.js"></script>
+    <script type="text/javascript" src="app/inbox/notifications/_notifications.module.js"></script>
+    <script type="text/javascript" src="app/inbox/notifications/notifications.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/notifications/notifications.service.js"></script>
+    <script type="text/javascript" src="app/inbox/subs/_subs.module.js"></script>
+    <script type="text/javascript" src="app/inbox/subs/subs.controller.js"></script>
+    <script type="text/javascript" src="app/inbox/subs/subs.service.js"></script>
+    <script type="text/javascript" src="app/inventory/_inventory.module.js"></script>
+    <script type="text/javascript" src="app/inventory/inventory.controller.js"></script>
+    <script type="text/javascript" src="app/inventory/inventory.service.js"></script>
+    <script type="text/javascript" src="app/localShouts/_local-shouts.module.js"></script>
+    <script type="text/javascript" src="app/localShouts/local-shouts.controller.js"></script>
+    <script type="text/javascript" src="app/localShouts/local-shouts.service.js"></script>
+    <script type="text/javascript" src="app/localShouts/localShoutsList/_local-shouts-list.module.js"></script>
+    <script type="text/javascript" src="app/localShouts/localShoutsList/local-shouts-list.controller.js"></script>
+    <script type="text/javascript" src="app/localShouts/localShoutsList/local-shouts-list.service.js"></script>
+    <script type="text/javascript" src="app/login/_login.module.js"></script>
+    <script type="text/javascript" src="app/login/login.controller.js"></script>
+    <script type="text/javascript" src="app/login/login.service.js"></script>
+    <script type="text/javascript" src="app/main/_main.module.js"></script>
+    <script type="text/javascript" src="app/main/main.controller.js"></script>
+    <script type="text/javascript" src="app/markets/_markets.module.js"></script>
+    <script type="text/javascript" src="app/markets/auctions/_auctions.module.js"></script>
+    <script type="text/javascript" src="app/markets/auctions/auctions.controller.js"></script>
+    <script type="text/javascript" src="app/markets/auctions/auctions.service.js"></script>
+    <script type="text/javascript" src="app/markets/jobMarket/_job-market.module.js"></script>
+    <script type="text/javascript" src="app/markets/jobMarket/job-market.controller.js"></script>
+    <script type="text/javascript" src="app/markets/jobMarket/job-market.service.js"></script>
+    <script type="text/javascript" src="app/markets/markets.controller.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/_monetary-market.module.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/monetary-market.controller.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/monetary-market.service.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/monetaryOffers/_monetary-offers.module.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/monetaryOffers/monetary-offers.controller.js"></script>
+    <script type="text/javascript" src="app/markets/monetaryMarket/monetaryOffers/monetary-offers.service.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/_product-market.module.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/product-market.controller.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/product-market.service.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/productOffers/_product-offers.module.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/productOffers/product-offers.controller.js"></script>
+    <script type="text/javascript" src="app/markets/productMarket/productOffers/product-offers.service.js"></script>
+    <script type="text/javascript" src="app/profile/_profile.module.js"></script>
+    <script type="text/javascript" src="app/profile/militaryUnit/_military-unit.module.js"></script>
+    <script type="text/javascript" src="app/profile/militaryUnit/military-unit.controller.js"></script>
+    <script type="text/javascript" src="app/profile/militaryUnit/military-unit.service.js"></script>
+    <script type="text/javascript" src="app/profile/party/_party.module.js"></script>
+    <script type="text/javascript" src="app/profile/party/party.controller.js"></script>
+    <script type="text/javascript" src="app/profile/party/party.service.js"></script>
+    <script type="text/javascript" src="app/profile/stockCompany/_stock-company.module.js"></script>
+    <script type="text/javascript" src="app/profile/stockCompany/stock-company.controller.js"></script>
+    <script type="text/javascript" src="app/profile/stockCompany/stock-company.service.js"></script>
+    <script type="text/javascript" src="app/profile/user/_user.module.js"></script>
+    <script type="text/javascript" src="app/profile/user/user.controller.js"></script>
+    <script type="text/javascript" src="app/profile/user/user.service.js"></script>
+    <script type="text/javascript" src="app/services/data/_data.module.js"></script>
+    <script type="text/javascript" src="app/services/data/data-citizen.service.js"></script>
+    <script type="text/javascript" src="app/services/data/data-country.service.js"></script>
+    <script type="text/javascript" src="app/services/data/data-resources.service.js"></script>
+    <script type="text/javascript" src="app/services/global/_globals.module.js"></script>
+    <script type="text/javascript" src="app/services/global/countries.service.js"></script>
+    <script type="text/javascript" src="app/services/global/military-ranks.service.js"></script>
+    <script type="text/javascript" src="app/services/global/notification-types.service.js"></script>
+    <script type="text/javascript" src="app/services/global/resources.services.js"></script>
+    <script type="text/javascript" src="app/services/global/servers.service.js"></script>
+    <script type="text/javascript" src="app/services/interceptors/_interceptors.module.js"></script>
+    <script type="text/javascript" src="app/services/interceptors/error-handler.service.js"></script>
+    <script type="text/javascript" src="app/services/interceptors/token-header.service.js"></script>
+    <script type="text/javascript" src="app/specialItem/_specialItem.module.js"></script>
+    <script type="text/javascript" src="app/specialItem/specialItem.controller.js"></script>
+    <script type="text/javascript" src="app/specialItem/specialItem.service.js"></script>
+    <script type="text/javascript" src="app/train/_train.module.js"></script>
+    <script type="text/javascript" src="app/train/train.controller.js"></script>
+    <script type="text/javascript" src="app/train/train.service.js"></script>
+    <script type="text/javascript" src="app/travel/_travel.module.js"></script>
+    <script type="text/javascript" src="app/travel/travel.controller.js"></script>
+    <script type="text/javascript" src="app/travel/travel.service.js"></script>
+    <script type="text/javascript" src="app/travelList/_travel-list.model.js"></script>
+    <script type="text/javascript" src="app/travelList/travel-list.controller.js"></script>
+    <script type="text/javascript" src="app/travelList/travel-list.service.js"></script>
+    <script type="text/javascript" src="app/work/_work.module.js"></script>
+    <script type="text/javascript" src="app/work/work.controller.js"></script>
+    <script type="text/javascript" src="app/work/work.service.js"></script>
+
+    <!-- 404 during development -->
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
+
+</head>
+
+<body ng-controller="AppController">
+  <div ui-view=""></div>
+  <!--  <script src="http://localhost:35729/livereload.js"></script> -->
+</body>
+
+</html>

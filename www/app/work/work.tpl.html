@@ -1,0 +1,39 @@
+<div ng-if="work.workData.company != null" class="card">
+  <div class="item item-divider text-center">
+    {{work.workData.company.name}}
+  </div>
+  <div>
+    <a class="item item-thumbnail-left" ng-click="work(work.workData.company.id)" href="#">
+      <img class="full-image" ng-src="{{work.workData.company.avatarLink | avatar: 'normal' }}">
+      <span class="item item-icon-right border-zero" href="#">
+				Resource
+				<i class="icon icon-{{work.workData.company.resource | lowercase}}"></i>
+			</span>
+      <span class="item item-icon-right border-zero" href="#">
+				Quality
+				<i class="icon icon-number{{work.workData.company.quality | lowercase}}"></i>
+			</span>
+    </a>
+
+    <span class="item" href="#">
+			Salary
+			<span class="badge badge-positive">{{work.workData.salary}} {{work.workData.currencyCountry.currencyName}}</span>
+    </span>
+  </div>
+  <span class="item">
+		<div ng-if="work.workData.workedToday" class="button-bar text-center">
+			<span class="text-center"><b>You have worked today!</b></span>
+</div>
+<div ng-if="!work.workData.workedToday" class="button-bar">
+  <a class="button button-positive" ng-click="work.performWork()">Work</a>
+</div>
+</span>
+<a ng-click="work.leaveJobModal()" class="item item-button-right">
+  <i class="icon ionic-log-out"></i>
+  <span>Leave Job</span>
+  <button class="button button-positive">
+    <i class="icon ion-chevron-right"></i>
+  </button>
+</a>
+</div>
+<back-button></back-button>

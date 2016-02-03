@@ -1,0 +1,95 @@
+<ion-modal-view scroll="true">
+<ion-content scroll="true">
+<div class="card">
+  <div class="item item-divider text-center">
+    About
+  </div>
+  <div class="list">
+    <div class="item item-thumbnail-left" href="#">
+      <img class="full-image" src="assets/img/logo.png">
+      <h2>Full name</h2>
+      <p>e-Sim Mobile</p>
+    </div>
+
+    <div class="item" href="#">
+      <h2>Version</h2>
+      <p>0.2.7/p>
+    </div>
+    <div class="item" href="#">
+      <h2>Seller</h2>
+      <p>Kacper Górski</p>
+    </div>
+    <div class="item" href="#">
+      <h2>Top Donors:</h2>
+      <p>daviportela98 from Primera</p>
+      <p>Ohlauu from Europa</p>
+      <p>JuicyFruit 1989 from Suna</p>
+      <p>diego from Secura</p>
+    </div>
+    <div class="item" ng-click="showChangeLog = !showChangeLog" href="#">
+      <h2>Last Updates</h2>
+
+      <p><b>0.2.7</b>
+        <br>+ Articles
+        <br>* Fixed bugs
+        <br> New server
+        <br> And some other stuff
+
+        <p ng-hide="showChangeLog">...</p>
+        <p ng-if="showChangeLog">
+          <b>0.2.5</b>
+            <br>+ Monetary Market offers
+            <br>+ Product Market offers
+            <br> New server
+            <br>
+          <b>0.2</b>+ New menu view, Achievments,<br> Equipment,
+             Friends, Shouts, Fights
+            <br>*New menu view
+            <br>*New icons
+            <br>View profile:
+          +Achievements
+          <br>+Equipment
+          <br>+Friends
+          <br>*Fix in Your inventory
+          <br>Local Shouts:
+          <br>+Write a new shout
+          <br>+Replay comment
+          <br>*Fix in Bbcode
+          <br>Fight:
+          <br>+new fight view
+          <br>+food/gift limit <br>
+          <b>0.1.1 </b>+Your inventory +View profile
+          <br>+Local shouts
+          <br>*fix addsOn
+          <br>*many other views look much better
+          <br>
+          <b>0.1.0</b>+ Monetary Market +About
+          <br>*easier travel
+          <br>
+          <b>0.0.9</b>*Fix bbCode
+          <br>
+          <b>0.0.8</b>*Fix europa access
+          <br>
+          <b>0.0.7</b>+ Product market -in app payment + new server
+          <br>
+          <b>0.0.6</b> +In app payment
+          <br>
+          <b>0.0.3</b> * fix in serverlist
+          <br>
+          <b>0.0.2</b> + Travel
+          <br>* scrolling
+          <br>* app make less internet traffic
+          <br>
+          <b>0.0.1</b> First version
+        </p>
+      </p>
+    </a>
+  </div>
+</div>
+<button class="button button-block button-positive" ng-click="main.closeModal()">
+  Close
+</button>
+</ion-content>
+</ion-modal-view>
+
+<!-- <back-button></back-button> -->

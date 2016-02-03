@@ -1,0 +1,18 @@
+<div class="card">
+   <div class="item item-divider item-light text-center">
+        <b>Achievements</b>
+   </div>
+   <div ng-repeat="cat in achievements.achieved">
+     <div class="item clear item-divider item-positive text-center">
+      {{cat.name}}
+     </div>
+     <!-- <div class="sprite false TERMINATOR"></div> -->
+      <div class="col">
+        <div class="storage_item" ng-repeat="achiv in cat.achievements">
+        <!-- {{achiv.name}} {{achiv.type}} -->
+          <div class="sprite {{achiv.type}}" ng-click="achievements.openAchievementsModal(achiv)"></div>
+        </div>
+      </div>
+    </div>
+ </div>
+<back-button></back-button>

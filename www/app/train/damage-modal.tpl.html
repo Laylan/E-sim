@@ -1,0 +1,71 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        Damage
+      </div>
+      <div class="item row">
+        <product-icon resource='dagger' quality='0'></product-icon>
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> no weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.noWeapon.minDamage}} / {{train.trainData.noWeapon.maxDamage}}</div>
+      </div>
+      <div class="item row">
+
+        <product-icon resource='pistol-gun' quality='1'></product-icon>
+
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> Q1 weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.q1Weapon.minDamage}} / {{train.trainData.q1Weapon.maxDamage}}</div>
+      </div>
+      <div class="item row">
+
+        <product-icon resource='pistol-gun' quality='2'></product-icon>
+
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> Q2 weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.q2Weapon.minDamage}} / {{train.trainData.q2Weapon.maxDamage}}</div>
+      </div>
+      <div class="item row">
+
+        <product-icon resource='pistol-gun' quality='3'></product-icon>
+
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> Q3 weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.q3Weapon.minDamage}} / {{train.trainData.q3Weapon.maxDamage}}</div>
+      </div>
+      <div class="item row">
+
+        <product-icon resource='pistol-gun' quality='4'></product-icon>
+
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> Q4 weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.q4Weapon.minDamage}} / {{train.trainData.q4Weapon.maxDamage}}</div>
+      </div>
+      <div class="item row">
+
+        <product-icon resource='pistol-gun' quality='5'></product-icon>
+
+        <div class="col col-50 col-center">
+          Damage with
+          <br /> Q5 weapon:
+        </div>
+        <div class="badge badge-dark col-center">{{train.trainData.q5Weapon.minDamage}} / {{train.trainData.q5Weapon.maxDamage}}</div>
+      </div>
+
+      <div class="item item-text-wrap">
+        <button class="button button-full button-positive" ng-click="train.closeDamageModal()">Done</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

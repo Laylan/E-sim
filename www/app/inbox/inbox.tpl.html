@@ -1,0 +1,16 @@
+<div style="padding:0" class="bar bar-header bar-stable">
+  <div class="tabs-striped tabs-background-positive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item" ng-class="{active: isSelected(1)}" ng-click="selectTab(1)" href="#/main/inbox/messages">
+        <i class="icon ion-android-mail"></i> Test
+      </a>
+      <a class="tab-item" ng-class="{active: isSelected(2)}" ng-click="selectTab(2)" href="#/main/inbox/notifications">
+        <i class="icon ion-alert-circled"></i> Favorites
+      </a>
+      <a class="tab-item" ng-class="{active: isSelected(3)}" ng-click="selectTab(3)" href="#/main/inbox/subs">
+        <i class="icon ion-social-rss"></i> Settings
+      </a>
+    </div>
+  </div>
+</div>
+<div ui-view></div>

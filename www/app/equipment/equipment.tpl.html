@@ -1,0 +1,79 @@
+<div class="card">
+   <div class="item item-divider text-center">
+        <b>Equipment</b>
+   </div>
+   <div class="item item-divider item-positive text-center">
+        <b>Equipped</b>
+   </div>
+   <div class="row center">
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.HELMET)" >
+       <i class="icon icon-size-xxlarge icon-helmet{{equipment.equipped.HELMET.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.HELMET}"></i>
+     </div>
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.VISION)">
+       <i class="icon icon-size-xxlarge icon-vision{{equipment.equipped.VISION.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.VISION}"></i>
+     </div>
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.LUCKY_CHARM)">
+       <i class="icon icon-size-xxlarge icon-lucky_charm{{equipment.equipped.LUCKY_CHARM.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.LUCKY_CHARM}"></i>
+     </div>
+   </div>
+   <div class="row center">
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.PERSONAL_ARMOR)">
+       <i class="icon icon-size-xxlarge icon-personal_armor{{equipment.equipped.PERSONAL_ARMOR.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.PERSONAL_ARMOR}"></i>
+     </div>
+     <div class="col">
+       <i class="icon icon-size-xxlarge dark-grey icon-user2"></i>
+     </div>
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.WEAPON_UPGRADE)">
+       <i  class="icon icon-size-xxlarge icon-weapon_upgrade{{equipment.equipped.WEAPON_UPGRADE.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.WEAPON_UPGRADE}"></i>
+     </div>
+   </div>
+   <div class="row center">
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.PANTS)">
+       <i class="icon icon-size-xxlarge icon-pants{{equipment.equipped.PANTS.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.PANTS}"></i>
+     </div>
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.SHOES)">
+       <i class="icon icon-size-xxlarge icon-shoes{{equipment.equipped.SHOES.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.SHOES}"></i>
+     </div>
+     <div class="col" ng-click="equipment.openEquipmentModal(equipment.equipped.OFFHAND)">
+       <i class="icon icon-size-xxlarge icon-offhand{{equipment.equipped.OFFHAND.quality || 'Q1'}}" ng-class="{grey : !equipment.equipped.OFFHAND}"></i>
+     </div>
+   </div>
+   <div class="item item-divider item-positive text-center">
+        <b>Available equipment</b>
+   </div>
+   <div>
+       <p class="text-center" ng-hide="equipment.showChangeLog"  ng-click="equipment.showMore()">Show more</p>
+       <p class="text-center" ng-if="equipment.showChangeLog"  ng-click="equipment.showMore()">Show less</p>
+       <div ng-if="equipment.showChangeLog">
+         <ul class="list margin-zero padding-zero" ng-repeat="eq in equipment.equipmentList">
+           <li class="item-checkbox">
+            <label class="checkbox checkboxx">
+             <input type="checkbox" name="selectedEquip[]" value="{{eq}}"
+             ng-checked="equipment.selectedToMerge.indexOf(eq) > -1"
+             ng-click="equipment.toggleSelection(eq)"
+             ng-disabled="!(eq.quality === equipment.qualitySelected || equipment.countSelected ===  0 )">
+           </label>
+           <div>
+           <a class="item item-icon-left"  ng-click="equipment.openEquipmentModal(eq)" href="#">
+             <i class="icon icon-size-xlarge icon-{{eq.slot | lowercase}}{{eq.quality}}"></i>
+             {{eq.slot | lowercase | underscoreToSpace}}
+           </a>
+         </div>
+          </li>
+        </ul>
+         <button ng-click="equipment.mergeEquipment()" ng-disabled="(equipment.countSelected !== 3)" class="button button-block button-balanced icon-left icon-uni476">Merge</button>
+     </div>
+  </div>
+  <div class="item item-divider item-positive text-center">
+       <b>Statistics</b>
+  </div>
+  <div class="list margin-zero" ng-repeat="stats in equipment.battleStats">
+    <a class="item" href="#">
+      {{stats.name}}
+      <span ng-if="stats.min" class="badge badge-positive">{{stats.min}} / {{stats.max}}</span>
+      <span ng-if="stats.percentValue || stats.percentValue === 0.0" class="badge badge-positive">{{stats.percentValue}} %</span>
+      <span ng-if="stats.name === 'Economic skill increase:'" class="badge badge-positive">{{stats.increaseValue}}</span>
+    </a>
+  </div>
+ </div>
+ <back-button></back-button>

@@ -1,0 +1,40 @@
+<div class="card">
+   <div class="item item-divider item-positive text-center">
+        Write new message
+   </div>
+   <form ng-submit="writeMessage.sendMessage()">
+      <label  class="item item-input">
+        <span class="input-label">Receiver:</span>
+        <input type="text" value="writeMessage.receiverName" ng-model="writeMessage.receiverName">
+     </label>
+      <label class="item item-input">
+         <span class="input-label">Title:</span>
+         <input type="text" ng-model="writeMessage.newMessageTitle">
+      </label>
+      <label class="item item-input item-stacked-label">
+         <span class="input-label">Message:</span>
+         <textarea ng-model="writeMessage.newMessage"></textarea>
+      </label>
+      <button type="submit" class="button margin-zero button-center button-block icon-comment2 button-positive">
+        Send!
+      </button>
+   </form>
+
+   <div ng-if="!writeMessage.writeNewMessage">
+      <div class="item item-divider text-center">
+        Previous messages
+      </div>
+      <div class="list line" ng-repeat="message in writeMessage.prevMessages">
+       <a class="item item-avatar" href="#">
+           <img ng-src="{{message.from.avatar.SMALL}}">
+           <span class="item padding-zero">
+             <h3><i ng-if="message.from.premium" class="icon icon-star2 yellow"></i>{{message.from.username}}</h3>
+             <span><b>{{message.title}}</b></span>
+               <p class="shout-message" ng-bind-html="message.message | bbCode"></p>
+            <h4>{{message.timeStamp | date:'medium'}}</h4>
+           </span>
+       </a>
+     </div>
+   </div>
+ </div>
+<back-button></back-button>

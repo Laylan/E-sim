@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Article from
+    {{openArticle.article.newspaper.citizen.username}}
+  </div>
+  <div class="item">
+    <a class="item item-thumbnail-left" ng-click="openArticle.showProfile(openArticle.article.newspaper.citizen.id)" href="#">
+      <img ng-src="{{openArticle.article.newspaper.citizen.avatar.SMALL}}">
+      <div class="shout-message"><b>{{openArticle.article.title}}</b></div>
+      <small>{{openArticle.article.creationTimeStamp | date:'medium'}}</small>
+    </a>
+    <!-- <ion-infinite-scroll ng-if="OpenArticle.canGetMoreComments()" on-infinite="OpenArticle.getMore()">
+    </ion-infinite-scroll> -->
+  </div>
+  <div class="item item-body">
+    <span compile="openArticle.article.text| bbCode"></span>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+          {{openArticle.article.totalVotes}} <i class="icon ion-thumbsup"></i> Votes
+       </a>
+    <span class="tab-item">
+          {{openArticle.article.totalComments}} <i class="icon ion-chatbox"></i> Comments
+       </span>
+  </div>
+  <div class="list line" ng-repeat="comment in openArticle.comments">
+    <a class="item item-avatar-left" ng-click="openArticle.showProfile(comment.citizen.id)" href="#">
+      <img ng-src="{{comment.citizen.avatar.SMALL}}">
+      <span class="item padding-zero">
+             <h3><i ng-if="comment.isPremium" class="icon icon-star2 yellow"></i>
+                {{comment.citizen.username}}</h3>
+                 <p class="shout-message" ng-bind-html="comment.message | bbCode"></p>
+             <h4>{{comment.time | date:'medium'}}</h4>
+          </span>
+    </a>
+  </div>
+  <div class="card">
+    <p ng-hide="openArticle.showChangeLog"  ng-click="openArticle.showMore()" class="item item-positive without-padding">
+      <i class="icon icon-forward"></i>Comment</p>
+    <p ng-if="openArticle.showChangeLog"  ng-click="openArticle.showMore()" class="item item-positive without-padding">
+      <i class="icon icon-undo"></i>Hide</p>
+    <div ng-if="openArticle.showChangeLog">
+       <form ng-submit="openArticle.writeComment()">
+          <label class="item item-input">
+             <textarea placeholder="Write shout" ng-model="openArticle.message"></textarea>
+          </label>
+          <button type="submit" class="button margin-zero button-center button-block icon-comment6 button-positive">
+            Comment!
+          </button>
+       </form>
+    </div>
+  </div>
+  <ion-infinite-scroll ng-if="openArticle.canGetMoreComments()" on-infinite="openArticle.getMore()">
+  </ion-infinite-scroll>
+</div>
+
+<back-button></back-button>

@@ -1,0 +1,53 @@
+<div class="card">
+	<div class="item item-divider text-center">
+      Military Unit:
+		<b>{{militaryUnit.militaryUnitData.name}}</b>
+	</div>
+	<div class="item item-text-wrap">
+		<div class="row">
+			<div class="col col-50 text-center">
+				<img class="full-image" ng-src="{{militaryUnit.militaryUnitData.avatar.NORMAL}}">
+			</div>
+			<div class="col col-center text-center">
+				<p>Country</p>
+				<!-- <img src="assets/img/flags/big/{{militaryUnit.militaryUnitData.countryName | flags}}.png"> -->
+				<!-- <h2>{{militaryUnit.militaryUnitData.countryName}}</h2> -->
+			</div>
+		</div>
+	</div>
+	<h3 class="item" href="#">
+		Military Rank
+		<span class="item-note"><b>{{militaryUnit.militaryUnitData.militaryRank}}</b></span>
+	</h3>
+	<h3 class="item" href="#">
+		Total Members
+		<span class="badge badge-positive">{{militaryUnit.militaryUnitData.totalMembers | number : 2}}</span>
+	</h3>
+	<h3 class="item" href="#">
+		Max Members
+		<span class="badge badge-positive">{{militaryUnit.militaryUnitData.maxMembers}}</span>
+	</h3>
+	<h3 class="item" href="#">
+		Total Demage
+		<span class="badge badge-positive">{{militaryUnit.militaryUnitData.totalDamage}}</span>
+	</h3>
+   <h3 class="item" href="#">
+		Total Today
+		<span class="badge badge-positive">{{militaryUnit.militaryUnitData.damageToday}}</span>
+	</h3>
+	<div class="item item-divider text-center">
+		Lider
+	</div>
+		<div class="text-center">
+			<h4 ng-click="militaryUnit.showProfile(militaryUnit.liderProfile.id)">
+   			<i ng-if="militaryUnit.liderProfile.premium" class="icon icon-star2 yellow"></i>
+   			{{militaryUnit.liderProfile.username}}
+   			<img src="assets/img/flags/small/{{militaryUnit.liderProfile.countryName | flags}}.png">
+			</h4>
+			<div>
+				<img class="avatar" ng-src="{{militaryUnit.liderProfile.avatar.NORMAL}}">
+			</div>
+		</div>
+</div>
+
+<back-button></back-button>

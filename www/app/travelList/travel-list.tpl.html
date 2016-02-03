@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Travel
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+      <div class="col col-50 col-offset-25 text-center">
+        Your current location: {{travel.current.name}} ({{travel.current.occupant.name}})
+        <img class="avatar" ng-src="assets/img/flags/small/{{travel.current.occupant.name| flags}}.png">
+      </div>
+    </div>
+    <div class="list">
+      <a class="button item-icon-left" ng-repeat="(letter, val) in travel.countryList" ng-click="travel.showMore(val)">
+            {{letter}}
+          </a>
+      <a class="item item-icon-left item-icon-right" ng-repeat="c in travel.smallCountryList" href="#/main/travel/{{c.countryId}}">
+        <img class="avatar" ng-src="assets/img/flags/small/{{c.name| flags}}.png"> {{c.name}}
+        <i class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+
+</div>

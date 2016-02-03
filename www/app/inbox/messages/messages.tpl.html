@@ -1,0 +1,48 @@
+<div style="margin-top:0;padding-top:60px" class="card">
+  <div class="item item-divider text-center">
+    Messages
+  </div>
+  <div class="item">
+    <div class="list card text-center" ng-if="messages.messages.length === 0">
+      No messages!
+    </div>
+    <div class="button-bar">
+			<a class="button button-padding button-positive" ng-click="messages.newMessage()">
+        <span class="button-small-font">
+          <i class="icon icon-size-small icon-left icon-comment2"></i>
+          New message
+        </span>
+      </a>
+			<a class="button button-padding button-positive" ng-click="messages.sentMessages()">
+        <span class="button-small-font">
+          <i class="icon icon-size-small icon-left icon-email2"></i>
+          Sent messages
+        </span>
+      </a>
+    </div>
+    <div class="list card" ng-repeat="message in messages.messages">
+      <a class="item item-avatar" ng-click="messages.showProfile(message.from.id)" href="#">
+        <img ng-src="{{message.from.avatar.SMALL}}">
+        <h2>{{message.from.username}}</h2>
+        <h4>{{message.timeStamp | date:'medium'}}</h4>
+      </a>
+      <!-- </a> -->
+      <div class="item item-body">
+        <h2>{{message.title}}</h2>
+        <p ng-bind-html="message.message | bbCode"></p>
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-alert"></i> Report
+        </a>
+        <a class="tab-item" ui-sref="main.writeMessage({receiver: message.from.username, title: message.title, receiverId: message.from.id})">
+          <i class="icon ion-chatbox"></i> Reply
+        </a>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="messages.canFetchMoreMessages()" on-infinite="messages.fetchMoreMessages()">
+    </ion-infinite-scroll>
+  </div>
+  <div ng-if="messages.showScrollTo" class="fixed">
+    <a class="button button-icon icon ion-arrow-up-c"></a>
+  </div>

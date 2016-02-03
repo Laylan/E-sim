@@ -1,0 +1,1652 @@
+[
+    {
+        "enumName": "POLAND",
+        "id": 1,
+        "name": "Poland",
+        "adjective": "Polish",
+        "shortName": "PL",
+        "currencyName": "PLN",
+        "capital": "Warsaw",
+        "capitalRegionId": 1
+    },
+    {
+        "enumName": "RUSSIA",
+        "id": 2,
+        "name": "Russia",
+        "adjective": "Russian",
+        "shortName": "RU",
+        "currencyName": "RUB",
+        "capital": "Moscow",
+        "capitalRegionId": 7
+    },
+    {
+        "enumName": "GERMANY",
+        "id": 3,
+        "name": "Germany",
+        "adjective": "German",
+        "shortName": "GER",
+        "currencyName": "DEM",
+        "capital": "Berlin",
+        "capitalRegionId": 13
+    },
+    {
+        "enumName": "FRANCE",
+        "id": 4,
+        "name": "France",
+        "adjective": "French",
+        "shortName": "FR",
+        "currencyName": "FRF",
+        "capital": "Paris",
+        "capitalRegionId": 19
+    },
+    {
+        "enumName": "SPAIN",
+        "id": 5,
+        "name": "Spain",
+        "adjective": "Spanish",
+        "shortName": "ES",
+        "currencyName": "ESP",
+        "capital": "Madrid",
+        "capitalRegionId": 28
+    },
+    {
+        "enumName": "UNITED_KINGDOM",
+        "id": 6,
+        "name": "United Kingdom",
+        "adjective": "British",
+        "shortName": "GB",
+        "currencyName": "GBP",
+        "capital": "London",
+        "capitalRegionId": 32
+    },
+    {
+        "enumName": "ITALY",
+        "id": 7,
+        "name": "Italy",
+        "adjective": "Italian",
+        "shortName": "IT",
+        "currencyName": "ITL",
+        "capital": "Rome",
+        "capitalRegionId": 40
+    },
+    {
+        "enumName": "HUNGARY",
+        "id": 8,
+        "name": "Hungary",
+        "adjective": "Hungarian",
+        "shortName": "HU",
+        "currencyName": "HUF",
+        "capital": "Budapest",
+        "capitalRegionId": 46
+    },
+    {
+        "enumName": "ROMANIA",
+        "id": 9,
+        "name": "Romania",
+        "adjective": "Romanian",
+        "shortName": "RO",
+        "currencyName": "RON",
+        "capital": "Bucharest",
+        "capitalRegionId": 51
+    },
+    {
+        "enumName": "BULGARIA",
+        "id": 10,
+        "name": "Bulgaria",
+        "adjective": "Bulgarian",
+        "shortName": "BG",
+        "currencyName": "BGN",
+        "capital": "Sofia",
+        "capitalRegionId": 56
+    },
+    {
+        "enumName": "SERBIA",
+        "id": 11,
+        "name": "Serbia",
+        "adjective": "Serbian",
+        "shortName": "RS",
+        "currencyName": "RSD",
+        "capital": "Belgrade",
+        "capitalRegionId": 67
+    },
+    {
+        "enumName": "CROATIA",
+        "id": 12,
+        "name": "Croatia",
+        "adjective": "Croatian",
+        "shortName": "HR",
+        "currencyName": "HRK",
+        "capital": "Zagreb",
+        "capitalRegionId": 73
+    },
+    {
+        "enumName": "BOSNIA_AND_HERZEGOVINA",
+        "id": 13,
+        "name": "Bosnia and Herzegovina",
+        "adjective": "Bosnian",
+        "shortName": "BA",
+        "currencyName": "BAM",
+        "capital": "Sarajevo",
+        "capitalRegionId": 75
+    },
+    {
+        "enumName": "GREECE",
+        "id": 14,
+        "name": "Greece",
+        "adjective": "Greek",
+        "shortName": "GR",
+        "currencyName": "GRD",
+        "capital": "Athens",
+        "capitalRegionId": 82
+    },
+    {
+        "enumName": "REPUBLIC_OF_MACEDONIA",
+        "id": 15,
+        "name": "Republic of Macedonia",
+        "adjective": "Macedonian",
+        "shortName": "MK",
+        "currencyName": "MKD",
+        "capital": "Skopje",
+        "capitalRegionId": 89
+    },
+    {
+        "enumName": "UKRAINE",
+        "id": 16,
+        "name": "Ukraine",
+        "adjective": "Ukrainian",
+        "shortName": "UA",
+        "currencyName": "UAH",
+        "capital": "Kiev",
+        "capitalRegionId": 92
+    },
+    {
+        "enumName": "SWEDEN",
+        "id": 17,
+        "name": "Sweden",
+        "adjective": "Swedish",
+        "shortName": "SE",
+        "currencyName": "SEK",
+        "capital": "Stockholm",
+        "capitalRegionId": 100
+    },
+    {
+        "enumName": "PORTUGAL",
+        "id": 18,
+        "name": "Portugal",
+        "adjective": "Portuguese",
+        "shortName": "PT",
+        "currencyName": "PTE",
+        "capital": "Lisbon",
+        "capitalRegionId": 106
+    },
+    {
+        "enumName": "LITHUANIA",
+        "id": 19,
+        "name": "Lithuania",
+        "adjective": "Lithuanian",
+        "shortName": "LT",
+        "currencyName": "LTL",
+        "capital": "Vilnius",
+        "capitalRegionId": 115
+    },
+    {
+        "enumName": "LATVIA",
+        "id": 20,
+        "name": "Latvia",
+        "adjective": "Latvian",
+        "shortName": "LV",
+        "currencyName": "LVL",
+        "capital": "Riga",
+        "capitalRegionId": 120
+    },
+    {
+        "enumName": "SLOVENIA",
+        "id": 21,
+        "name": "Slovenia",
+        "adjective": "Slovenian",
+        "shortName": "SI",
+        "currencyName": "SIT",
+        "capital": "Ljubljana",
+        "capitalRegionId": 124
+    },
+    {
+        "enumName": "TURKEY",
+        "id": 22,
+        "name": "Turkey",
+        "adjective": "Turkish",
+        "shortName": "TR",
+        "currencyName": "TRY",
+        "capital": "Ankara",
+        "capitalRegionId": 133
+    },
+    {
+        "enumName": "BRAZIL",
+        "id": 23,
+        "name": "Brazil",
+        "adjective": "Brazilian",
+        "shortName": "BR",
+        "currencyName": "BRL",
+        "capital": "Brasília",
+        "capitalRegionId": 137
+    },
+    {
+        "enumName": "ARGENTINA",
+        "id": 24,
+        "name": "Argentina",
+        "adjective": "Argentinian",
+        "shortName": "AR",
+        "currencyName": "ARS",
+        "capital": "Bueonos Aires",
+        "capitalRegionId": 141
+    },
+    {
+        "enumName": "MEXICO",
+        "id": 25,
+        "name": "Mexico",
+        "adjective": "Mexican",
+        "shortName": "MX",
+        "currencyName": "MXN",
+        "capital": "Mexico City",
+        "capitalRegionId": 149
+    },
+    {
+        "enumName": "USA",
+        "id": 26,
+        "name": "USA",
+        "adjective": "American",
+        "shortName": "US",
+        "currencyName": "USD",
+        "capital": "Washington",
+        "capitalRegionId": 155
+    },
+    {
+        "enumName": "CANADA",
+        "id": 27,
+        "name": "Canada",
+        "adjective": "Canadian",
+        "shortName": "CA",
+        "currencyName": "CAD",
+        "capital": "Ottawa",
+        "capitalRegionId": 160
+    },
+    {
+        "enumName": "CHINA",
+        "id": 28,
+        "name": "China",
+        "adjective": "Chinese",
+        "shortName": "CN",
+        "currencyName": "CNY",
+        "capital": "Beijing",
+        "capitalRegionId": 169
+    },
+    {
+        "enumName": "INDONESIA",
+        "id": 29,
+        "name": "Indonesia",
+        "adjective": "Indonesian",
+        "shortName": "ID",
+        "currencyName": "IDR",
+        "capital": "Jakarta",
+        "capitalRegionId": 171
+    },
+    {
+        "enumName": "IRAN",
+        "id": 30,
+        "name": "Iran",
+        "adjective": "Iranian",
+        "shortName": "IR",
+        "currencyName": "IRR",
+        "capital": "Tehran",
+        "capitalRegionId": 181
+    },
+    {
+        "enumName": "SOUTH_KOREA",
+        "id": 31,
+        "name": "South Korea",
+        "adjective": "South Korean",
+        "shortName": "KR",
+        "currencyName": "KRW",
+        "capital": "Seoul",
+        "capitalRegionId": 185
+    },
+    {
+        "enumName": "TAIWAN",
+        "id": 32,
+        "name": "Taiwan",
+        "adjective": "Taiwanese",
+        "shortName": "TW",
+        "currencyName": "TWD",
+        "capital": "Taipei",
+        "capitalRegionId": 189
+    },
+    {
+        "enumName": "ISRAEL",
+        "id": 33,
+        "name": "Israel",
+        "adjective": "Israeli",
+        "shortName": "IL",
+        "currencyName": "NIS",
+        "capital": "Jerusalem",
+        "capitalRegionId": 21
+    },
+    {
+        "enumName": "INDIA",
+        "id": 34,
+        "name": "India",
+        "adjective": "Indian",
+        "shortName": "IN",
+        "currencyName": "INR",
+        "capital": "New Delhi",
+        "capitalRegionId": 202
+    },
+    {
+        "enumName": "AUSTRALIA",
+        "id": 35,
+        "name": "Australia",
+        "adjective": "Australian",
+        "shortName": "AU",
+        "currencyName": "AUD",
+        "capital": "Canberra",
+        "capitalRegionId": 211
+    },
+    {
+        "enumName": "NETHERLANDS",
+        "id": 36,
+        "name": "Netherlands",
+        "adjective": "Netherlands",
+        "shortName": "NL",
+        "currencyName": "NLG",
+        "capital": "Amsterdam",
+        "capitalRegionId": 205
+    },
+    {
+        "enumName": "FINLAND",
+        "id": 37,
+        "name": "Finland",
+        "adjective": "Finnish",
+        "shortName": "FI",
+        "currencyName": "FIM",
+        "capital": "Helsinki",
+        "capitalRegionId": 221
+    },
+    {
+        "enumName": "IRELAND",
+        "id": 38,
+        "name": "Ireland",
+        "adjective": "Irish",
+        "shortName": "I",
+        "currencyName": "IEP",
+        "capital": "Dublin",
+        "capitalRegionId": 228
+    },
+    {
+        "enumName": "SWITZERLAND",
+        "id": 39,
+        "name": "Switzerland",
+        "adjective": "Swiss",
+        "shortName": "CH",
+        "currencyName": "CHF",
+        "capital": "Bern",
+        "capitalRegionId": 233
+    },
+    {
+        "enumName": "BELGIUM",
+        "id": 40,
+        "name": "Belgium",
+        "adjective": "Belgian",
+        "shortName": "BE",
+        "currencyName": "BEF",
+        "capital": "Brussels",
+        "capitalRegionId": 236
+    },
+    {
+        "enumName": "PAKISTAN",
+        "id": 41,
+        "name": "Pakistan",
+        "adjective": "Pakistani",
+        "shortName": "PK",
+        "currencyName": "PKR",
+        "capital": "Islamabad",
+        "capitalRegionId": 243
+    },
+    {
+        "enumName": "MALAYSIA",
+        "id": 42,
+        "name": "Malaysia",
+        "adjective": "Malaysian",
+        "shortName": "MY",
+        "currencyName": "MYR",
+        "capital": "Kuala Lumpur",
+        "capitalRegionId": 249
+    },
+    {
+        "enumName": "NORWAY",
+        "id": 43,
+        "name": "Norway",
+        "adjective": "Norwegian",
+        "shortName": "NO",
+        "currencyName": "NOK",
+        "capital": "Oslo",
+        "capitalRegionId": 258
+    },
+    {
+        "enumName": "PERU",
+        "id": 44,
+        "name": "Peru",
+        "adjective": "Peruwian",
+        "shortName": "PE",
+        "currencyName": "PEN",
+        "capital": "Lima",
+        "capitalRegionId": 260
+    },
+    {
+        "enumName": "CHILE",
+        "id": 45,
+        "name": "Chile",
+        "adjective": "Chilean",
+        "shortName": "CL",
+        "currencyName": "CLP",
+        "capital": "Santiago",
+        "capitalRegionId": 267
+    },
+    {
+        "enumName": "COLOMBIA",
+        "id": 46,
+        "name": "Colombia",
+        "adjective": "Colombian",
+        "shortName": "CO",
+        "currencyName": "COP",
+        "capital": "Bogotá",
+        "capitalRegionId": 275
+    },
+    {
+        "enumName": "MONTENEGRO",
+        "id": 47,
+        "name": "Montenegro",
+        "adjective": "Montenegrin",
+        "shortName": "ME",
+        "currencyName": "MEP",
+        "capital": "Podgorica",
+        "capitalRegionId": 281
+    },
+    {
+        "enumName": "AUSTRIA",
+        "id": 48,
+        "name": "Austria",
+        "adjective": "Austrian",
+        "shortName": "A",
+        "currencyName": "ATS",
+        "capital": "Vienna",
+        "capitalRegionId": 284
+    },
+    {
+        "enumName": "SLOVAKIA",
+        "id": 49,
+        "name": "Slovakia",
+        "adjective": "Slovakian",
+        "shortName": "SK",
+        "currencyName": "SKK",
+        "capital": "Bratislava",
+        "capitalRegionId": 289
+    },
+    {
+        "enumName": "DENMARK",
+        "id": 50,
+        "name": "Denmark",
+        "adjective": "Danish",
+        "shortName": "DK",
+        "currencyName": "DKK",
+        "capital": "Copenhagen",
+        "capitalRegionId": 299
+    },
+    {
+        "enumName": "CZECH_REPUBLIC",
+        "id": 51,
+        "name": "Czech Republic",
+        "adjective": "Czech",
+        "shortName": "CZ",
+        "currencyName": "CZK",
+        "capital": "Prague",
+        "capitalRegionId": 301
+    },
+    {
+        "enumName": "BELARUS",
+        "id": 52,
+        "name": "Belarus",
+        "adjective": "Belarusian",
+        "shortName": "BY",
+        "currencyName": "BYR",
+        "capital": "Minsk",
+        "capitalRegionId": 311
+    },
+    {
+        "enumName": "ESTONIA",
+        "id": 53,
+        "name": "Estonia",
+        "adjective": "Estonian",
+        "shortName": "EE",
+        "currencyName": "EEK",
+        "capital": "Tallinn",
+        "capitalRegionId": 315
+    },
+    {
+        "enumName": "PHILIPPINES",
+        "id": 54,
+        "name": "Philippines",
+        "adjective": "Philippine",
+        "shortName": "PH",
+        "currencyName": "PHP",
+        "capital": "Manila",
+        "capitalRegionId": 320
+    },
+    {
+        "enumName": "ALBANIA",
+        "id": 55,
+        "name": "Albania",
+        "adjective": "Albanian",
+        "shortName": "AL",
+        "currencyName": "ALL",
+        "capital": "Tirana",
+        "capitalRegionId": 325
+    },
+    {
+        "enumName": "VENEZUELA",
+        "id": 56,
+        "name": "Venezuela",
+        "adjective": "Venezuelan",
+        "shortName": "VE",
+        "currencyName": "VEF",
+        "capital": "Caracas",
+        "capitalRegionId": 331
+    },
+    {
+        "enumName": "EGYPT",
+        "id": 57,
+        "name": "Egypt",
+        "adjective": "Egyptian",
+        "shortName": "EG",
+        "currencyName": "EGP",
+        "capital": "Cairo",
+        "capitalRegionId": 337
+    },
+    {
+        "enumName": "JAPAN",
+        "id": 58,
+        "name": "Japan",
+        "adjective": "Japanese",
+        "shortName": "JP",
+        "currencyName": "JPY",
+        "capital": "Tokyo",
+        "capitalRegionId": 344
+    },
+    {
+        "enumName": "BANGLADESH",
+        "id": 59,
+        "name": "Bangladesh",
+        "adjective": "Bengali",
+        "shortName": "BD",
+        "currencyName": "BDT",
+        "capital": "Dhaka",
+        "capitalRegionId": 352
+    },
+    {
+        "enumName": "VIETNAM",
+        "id": 60,
+        "name": "Vietnam",
+        "adjective": "Vietnamese",
+        "shortName": "VN",
+        "currencyName": "VND",
+        "capital": "Hanoi",
+        "capitalRegionId": 356
+    },
+    {
+        "enumName": "YEMEN",
+        "id": 61,
+        "name": "Yemen",
+        "adjective": "Yemen",
+        "shortName": "YE",
+        "currencyName": "YER",
+        "capital": "Sana'a",
+        "capitalRegionId": 362
+    },
+    {
+        "enumName": "SAUDI_ARABIA",
+        "id": 62,
+        "name": "Saudi Arabia",
+        "adjective": "Saudi Arabian",
+        "shortName": "SA",
+        "currencyName": "SAR",
+        "capital": "Riyadh",
+        "capitalRegionId": 367
+    },
+    {
+        "enumName": "THAILAND",
+        "id": 63,
+        "name": "Thailand",
+        "adjective": "Thai",
+        "shortName": "TH",
+        "currencyName": "THB",
+        "capital": "Bangkok",
+        "capitalRegionId": 373
+    },
+    {
+        "enumName": "ALGERIA",
+        "id": 64,
+        "name": "Algeria",
+        "adjective": "Algerian",
+        "shortName": "DZ",
+        "currencyName": "DZD",
+        "capital": "Algiers",
+        "capitalRegionId": 379
+    },
+    {
+        "enumName": "ANGOLA",
+        "id": 65,
+        "name": "Angola",
+        "adjective": "Angolan",
+        "shortName": "AO",
+        "currencyName": "AOA",
+        "capital": "Luanda",
+        "capitalRegionId": 385
+    },
+    {
+        "enumName": "CAMEROON",
+        "id": 66,
+        "name": "Cameroon",
+        "adjective": "Cameroonian",
+        "shortName": "CM",
+        "currencyName": "CM",
+        "capital": "Yaounde",
+        "capitalRegionId": 391
+    },
+    {
+        "enumName": "IVORY_COAST",
+        "id": 67,
+        "name": "Ivory Coast",
+        "adjective": "Ivorian",
+        "shortName": "CI",
+        "currencyName": "CI",
+        "capital": "Yamoussoukro",
+        "capitalRegionId": 397
+    },
+    {
+        "enumName": "ETHIOPIA",
+        "id": 68,
+        "name": "Ethiopia",
+        "adjective": "Ethiopian",
+        "shortName": "ET",
+        "currencyName": "ETB",
+        "capital": "Addis Ababa",
+        "capitalRegionId": 403
+    },
+    {
+        "enumName": "GHANA",
+        "id": 69,
+        "name": "Ghana",
+        "adjective": "Ghanaian",
+        "shortName": "GH",
+        "currencyName": "GHS",
+        "capital": "Accra",
+        "capitalRegionId": 409
+    },
+    {
+        "enumName": "KENYA",
+        "id": 70,
+        "name": "Kenya",
+        "adjective": "Kenyan",
+        "shortName": "KE",
+        "currencyName": "KES",
+        "capital": "Nairobi",
+        "capitalRegionId": 415
+    },
+    {
+        "enumName": "LIBYA",
+        "id": 71,
+        "name": "Libya",
+        "adjective": "Libyan",
+        "shortName": "LY",
+        "currencyName": "LYD",
+        "capital": "Tripoli",
+        "capitalRegionId": 421
+    },
+    {
+        "enumName": "MOROCCO",
+        "id": 72,
+        "name": "Morocco",
+        "adjective": "Moroccan",
+        "shortName": "MA",
+        "currencyName": "MAD",
+        "capital": "Rabat",
+        "capitalRegionId": 427
+    },
+    {
+        "enumName": "MOZAMBIQUE",
+        "id": 73,
+        "name": "Mozambique",
+        "adjective": "Mozambican",
+        "shortName": "MZ",
+        "currencyName": "MZN",
+        "capital": "Maputo",
+        "capitalRegionId": 433
+    },
+    {
+        "enumName": "NIGERIA",
+        "id": 74,
+        "name": "Nigeria",
+        "adjective": "Nigerian",
+        "shortName": "NG",
+        "currencyName": "NGN",
+        "capital": "Abuja",
+        "capitalRegionId": 439
+    },
+    {
+        "enumName": "SENEGAL",
+        "id": 75,
+        "name": "Senegal",
+        "adjective": "Senegalese",
+        "shortName": "SN",
+        "currencyName": "SN",
+        "capital": "Dakar",
+        "capitalRegionId": 445
+    },
+    {
+        "enumName": "SOUTH_AFRICA",
+        "id": 76,
+        "name": "South Africa",
+        "adjective": "South African",
+        "shortName": "ZA",
+        "currencyName": "ZAR",
+        "capital": "Pretoria",
+        "capitalRegionId": 451
+    },
+    {
+        "enumName": "SUDAN",
+        "id": 77,
+        "name": "Sudan",
+        "adjective": "Sudanese",
+        "shortName": "SD",
+        "currencyName": "SDG",
+        "capital": "Khartoum",
+        "capitalRegionId": 457
+    },
+    {
+        "enumName": "TANZANIA",
+        "id": 78,
+        "name": "Tanzania",
+        "adjective": "Tanzanian",
+        "shortName": "TZ",
+        "currencyName": "TZS",
+        "capital": "Dodoma",
+        "capitalRegionId": 463
+    },
+    {
+        "enumName": "TOGO",
+        "id": 79,
+        "name": "Togo",
+        "adjective": "Togolese",
+        "shortName": "TG",
+        "currencyName": "TG",
+        "capital": "Lome",
+        "capitalRegionId": 469
+    },
+    {
+        "enumName": "TUNISIA",
+        "id": 80,
+        "name": "Tunisia",
+        "adjective": "Tunisian",
+        "shortName": "TN",
+        "currencyName": "TND",
+        "capital": "Tunis",
+        "capitalRegionId": 475
+    },
+    {
+        "enumName": "UGANDA",
+        "id": 81,
+        "name": "Uganda",
+        "adjective": "Ugandan",
+        "shortName": "UG",
+        "currencyName": "UGX",
+        "capital": "Kampala",
+        "capitalRegionId": 481
+    },
+    {
+        "enumName": "ZAMBIA",
+        "id": 82,
+        "name": "Zambia",
+        "adjective": "Zambian",
+        "shortName": "ZM",
+        "currencyName": "ZMW",
+        "capital": "Lusaka",
+        "capitalRegionId": 487
+    },
+    {
+        "enumName": "ZIMBABWE",
+        "id": 83,
+        "name": "Zimbabwe",
+        "adjective": "Zimbabwean",
+        "shortName": "ZW",
+        "currencyName": "ZWL",
+        "capital": "Harare",
+        "capitalRegionId": 493
+    },
+    {
+        "enumName": "BOTSWANA",
+        "id": 84,
+        "name": "Botswana",
+        "adjective": "Batswana",
+        "shortName": "BW",
+        "currencyName": "BWP",
+        "capital": "Gaborone",
+        "capitalRegionId": 499
+    },
+    {
+        "enumName": "BENIN",
+        "id": 85,
+        "name": "Benin",
+        "adjective": "Beninese",
+        "shortName": "BJ",
+        "currencyName": "BJ",
+        "capital": "Porto-Novo",
+        "capitalRegionId": 505
+    },
+    {
+        "enumName": "BURKINA_FASO",
+        "id": 86,
+        "name": "Burkina Faso",
+        "adjective": "Burkinabe",
+        "shortName": "BF",
+        "currencyName": "BF",
+        "capital": "Ouagadougou",
+        "capitalRegionId": 511
+    },
+    {
+        "enumName": "CONGO",
+        "id": 87,
+        "name": "Congo",
+        "adjective": "Congolese",
+        "shortName": "CG",
+        "currencyName": "CG",
+        "capital": "Brazzaville",
+        "capitalRegionId": 517
+    },
+    {
+        "enumName": "CENTRAL_AFRICAN_REPUBLIC",
+        "id": 88,
+        "name": "Central African Republic",
+        "adjective": "Central African",
+        "shortName": "CF",
+        "currencyName": "CF",
+        "capital": "Bangui",
+        "capitalRegionId": 523
+    },
+    {
+        "enumName": "DR_OF_THE_CONGO",
+        "id": 89,
+        "name": "DR of the Congo",
+        "adjective": "Congolese",
+        "shortName": "CD",
+        "currencyName": "CDF",
+        "capital": "Kinshasa",
+        "capitalRegionId": 529
+    },
+    {
+        "enumName": "ERITREA",
+        "id": 90,
+        "name": "Eritrea",
+        "adjective": "Eritrean",
+        "shortName": "ER",
+        "currencyName": "ERN",
+        "capital": "Asmara",
+        "capitalRegionId": 535
+    },
+    {
+        "enumName": "GABON",
+        "id": 91,
+        "name": "Gabon",
+        "adjective": "Gabonese",
+        "shortName": "GA",
+        "currencyName": "GA",
+        "capital": "Libreville",
+        "capitalRegionId": 541
+    },
+    {
+        "enumName": "CHAD",
+        "id": 92,
+        "name": "Chad",
+        "adjective": "Chadian",
+        "shortName": "TD",
+        "currencyName": "TD",
+        "capital": "NDjamena",
+        "capitalRegionId": 547
+    },
+    {
+        "enumName": "NIGER",
+        "id": 93,
+        "name": "Niger",
+        "adjective": "Nigerien",
+        "shortName": "NE",
+        "currencyName": "NE",
+        "capital": "Niamey",
+        "capitalRegionId": 553
+    },
+    {
+        "enumName": "MALI",
+        "id": 94,
+        "name": "Mali",
+        "adjective": "Malian",
+        "shortName": "ML",
+        "currencyName": "ML",
+        "capital": "Bamako",
+        "capitalRegionId": 559
+    },
+    {
+        "enumName": "MAURITANIA",
+        "id": 95,
+        "name": "Mauritania",
+        "adjective": "Mauritanian",
+        "shortName": "MR",
+        "currencyName": "MRO",
+        "capital": "Nouakchott",
+        "capitalRegionId": 565
+    },
+    {
+        "enumName": "GUINEA",
+        "id": 96,
+        "name": "Guinea",
+        "adjective": "Guinean",
+        "shortName": "GN",
+        "currencyName": "GNF",
+        "capital": "Conakry",
+        "capitalRegionId": 571
+    },
+    {
+        "enumName": "GUINEA_BISSAU",
+        "id": 97,
+        "name": "Guinea Bissau",
+        "adjective": "Bissau-Guinean",
+        "shortName": "GW",
+        "currencyName": "GW",
+        "capital": "Bissau",
+        "capitalRegionId": 577
+    },
+    {
+        "enumName": "SIERRA_LEONE",
+        "id": 98,
+        "name": "Sierra Leone",
+        "adjective": "Sierra Leonean",
+        "shortName": "SL",
+        "currencyName": "SLL",
+        "capital": "Freetown",
+        "capitalRegionId": 583
+    },
+    {
+        "enumName": "LIBERIA",
+        "id": 99,
+        "name": "Liberia",
+        "adjective": "Liberian",
+        "shortName": "LR",
+        "currencyName": "LRD",
+        "capital": "Monrovia",
+        "capitalRegionId": 589
+    },
+    {
+        "enumName": "EQUATORIAL_GUINEA",
+        "id": 100,
+        "name": "Equatorial Guinea",
+        "adjective": "Equatorial Guinean",
+        "shortName": "GQ",
+        "currencyName": "GQ",
+        "capital": "Malabo",
+        "capitalRegionId": 595
+    },
+    {
+        "enumName": "NAMIBIA",
+        "id": 101,
+        "name": "Namibia",
+        "adjective": "Namibian",
+        "shortName": "NA",
+        "currencyName": "NAD",
+        "capital": "Windhoek",
+        "capitalRegionId": 601
+    },
+    {
+        "enumName": "LESOTHO",
+        "id": 102,
+        "name": "Lesotho",
+        "adjective": "Mosotho",
+        "shortName": "LS",
+        "currencyName": "LSL",
+        "capital": "Maseru",
+        "capitalRegionId": 607
+    },
+    {
+        "enumName": "SWAZILAND",
+        "id": 103,
+        "name": "Swaziland",
+        "adjective": "Swazi",
+        "shortName": "SZ",
+        "currencyName": "SZL",
+        "capital": "Lobamba",
+        "capitalRegionId": 613
+    },
+    {
+        "enumName": "MADAGASCAR",
+        "id": 104,
+        "name": "Madagascar",
+        "adjective": "Malagasy",
+        "shortName": "MG",
+        "currencyName": "MGA",
+        "capital": "Antananarivo",
+        "capitalRegionId": 619
+    },
+    {
+        "enumName": "MALAWI",
+        "id": 105,
+        "name": "Malawi",
+        "adjective": "Malawian",
+        "shortName": "MW",
+        "currencyName": "MWK",
+        "capital": "Lilongwe",
+        "capitalRegionId": 625
+    },
+    {
+        "enumName": "SOMALIA",
+        "id": 106,
+        "name": "Somalia",
+        "adjective": "Somalian",
+        "shortName": "SO",
+        "currencyName": "SOS",
+        "capital": "Mogadishu",
+        "capitalRegionId": 631
+    },
+    {
+        "enumName": "DJIBOUTI",
+        "id": 107,
+        "name": "Djibouti",
+        "adjective": "Djiboutian",
+        "shortName": "DJ",
+        "currencyName": "DJF",
+        "capital": "Djibouti",
+        "capitalRegionId": 637
+    },
+    {
+        "enumName": "RWANDA",
+        "id": 108,
+        "name": "Rwanda",
+        "adjective": "Rwandan",
+        "shortName": "RW",
+        "currencyName": "RWF",
+        "capital": "Kigali",
+        "capitalRegionId": 643
+    },
+    {
+        "enumName": "BURUNDI",
+        "id": 109,
+        "name": "Burundi",
+        "adjective": "Burundian",
+        "shortName": "BI",
+        "currencyName": "BIF",
+        "capital": "Bujumbura",
+        "capitalRegionId": 649
+    },
+    {
+        "enumName": "UNITED_ARAB_EMIRATES",
+        "id": 110,
+        "name": "United Arab Emirates",
+        "adjective": "Emirati",
+        "shortName": "AE",
+        "currencyName": "AED",
+        "capital": "Abu Dhabi",
+        "capitalRegionId": 655
+    },
+    {
+        "enumName": "SYRIA",
+        "id": 111,
+        "name": "Syria",
+        "adjective": "Syrian",
+        "shortName": "SY",
+        "currencyName": "SYP",
+        "capital": "Damascus",
+        "capitalRegionId": 661
+    },
+    {
+        "enumName": "IRAQ",
+        "id": 112,
+        "name": "Iraq",
+        "adjective": "Iraqi",
+        "shortName": "IQ",
+        "currencyName": "IQD",
+        "capital": "Baghdad",
+        "capitalRegionId": 667
+    },
+    {
+        "enumName": "OMAN",
+        "id": 113,
+        "name": "Oman",
+        "adjective": "Omani",
+        "shortName": "OM",
+        "currencyName": "OMR",
+        "capital": "Muscat",
+        "capitalRegionId": 673
+    },
+    {
+        "enumName": "QATAR",
+        "id": 114,
+        "name": "Qatar",
+        "adjective": "Qatari",
+        "shortName": "QA",
+        "currencyName": "QAR",
+        "capital": "Doha",
+        "capitalRegionId": 679
+    },
+    {
+        "enumName": "JORDAN",
+        "id": 115,
+        "name": "Jordan",
+        "adjective": "Jordanian",
+        "shortName": "JO",
+        "currencyName": "JOD",
+        "capital": "Amman",
+        "capitalRegionId": 685
+    },
+    {
+        "enumName": "WESTERN_SAHARA",
+        "id": 116,
+        "name": "Western Sahara",
+        "adjective": "Western Saharan",
+        "shortName": "EH",
+        "currencyName": "EH",
+        "capital": "El Aaiun",
+        "capitalRegionId": 691
+    },
+    {
+        "enumName": "THE_GAMBIA",
+        "id": 117,
+        "name": "The Gambia",
+        "adjective": "Gambian",
+        "shortName": "GM",
+        "currencyName": "GMD",
+        "capital": "Banjul",
+        "capitalRegionId": 697
+    },
+    {
+        "enumName": "SOUTH_SUDAN",
+        "id": 118,
+        "name": "South Sudan",
+        "adjective": "South Sudanese",
+        "shortName": "SS",
+        "currencyName": "SSP",
+        "capital": "Juba",
+        "capitalRegionId": 703
+    },
+    {
+        "enumName": "CAMBODIA",
+        "id": 119,
+        "name": "Cambodia",
+        "adjective": "Cambodian",
+        "shortName": "KH",
+        "currencyName": "KHR",
+        "capital": "Phnom Penh",
+        "capitalRegionId": 709
+    },
+    {
+        "enumName": "NEPAL",
+        "id": 120,
+        "name": "Nepal",
+        "adjective": "Nepalese",
+        "shortName": "NP",
+        "currencyName": "NPR",
+        "capital": "Kathmandu",
+        "capitalRegionId": 715
+    },
+    {
+        "enumName": "BOLIVIA",
+        "id": 121,
+        "name": "Bolivia",
+        "adjective": "Bolivian",
+        "shortName": "BO",
+        "currencyName": "BOB",
+        "capital": "Sucre",
+        "capitalRegionId": 721
+    },
+    {
+        "enumName": "ECUADOR",
+        "id": 122,
+        "name": "Ecuador",
+        "adjective": "Ecuadorian",
+        "shortName": "EC",
+        "currencyName": "ECD",
+        "capital": "Quito",
+        "capitalRegionId": 727
+    },
+    {
+        "enumName": "PARAGUAY",
+        "id": 123,
+        "name": "Paraguay",
+        "adjective": "Paraguayan",
+        "shortName": "PY",
+        "currencyName": "PYG",
+        "capital": "Asuncion",
+        "capitalRegionId": 733
+    },
+    {
+        "enumName": "URUGUAY",
+        "id": 124,
+        "name": "Uruguay",
+        "adjective": "Uruguayan",
+        "shortName": "UY",
+        "currencyName": "UYU",
+        "capital": "Montevideo",
+        "capitalRegionId": 739
+    },
+    {
+        "enumName": "HONDURAS",
+        "id": 125,
+        "name": "Honduras",
+        "adjective": "Honduran",
+        "shortName": "HN",
+        "currencyName": "HNL",
+        "capital": "Tegucigalpa",
+        "capitalRegionId": 745
+    },
+    {
+        "enumName": "DOMINICAN_REPUBLIC",
+        "id": 126,
+        "name": "Dominican Republic",
+        "adjective": "Dominican",
+        "shortName": "DO",
+        "currencyName": "DOP",
+        "capital": "Santo Domingo",
+        "capitalRegionId": 751
+    },
+    {
+        "enumName": "GUATEMALA",
+        "id": 127,
+        "name": "Guatemala",
+        "adjective": "Guatemalan",
+        "shortName": "GT",
+        "currencyName": "GTQ",
+        "capital": "Guatemala City",
+        "capitalRegionId": 757
+    },
+    {
+        "enumName": "KAZAKHSTAN",
+        "id": 128,
+        "name": "Kazakhstan",
+        "adjective": "Kazakhstani",
+        "shortName": "KZ",
+        "currencyName": "KZT",
+        "capital": "Astana",
+        "capitalRegionId": 763
+    },
+    {
+        "enumName": "SRI_LANKA",
+        "id": 129,
+        "name": "Sri Lanka",
+        "adjective": "Sri Lankan",
+        "shortName": "LK",
+        "currencyName": "LKR",
+        "capital": "Colombo",
+        "capitalRegionId": 769
+    },
+    {
+        "enumName": "AFGHANISTAN",
+        "id": 130,
+        "name": "Afghanistan",
+        "adjective": "Afghan",
+        "shortName": "AF",
+        "currencyName": "AFN",
+        "capital": "Kabul",
+        "capitalRegionId": 775
+    },
+    {
+        "enumName": "ARMENIA",
+        "id": 131,
+        "name": "Armenia",
+        "adjective": "Armenian",
+        "shortName": "AM",
+        "currencyName": "AMD",
+        "capital": "Yerevan",
+        "capitalRegionId": 781
+    },
+    {
+        "enumName": "AZERBAIJAN",
+        "id": 132,
+        "name": "Azerbaijan",
+        "adjective": "Azerbaijani",
+        "shortName": "AZ",
+        "currencyName": "AZN",
+        "capital": "Baku",
+        "capitalRegionId": 787
+    },
+    {
+        "enumName": "GEORGIA",
+        "id": 133,
+        "name": "Georgia",
+        "adjective": "Georgian",
+        "shortName": "GE",
+        "currencyName": "GEL",
+        "capital": "Tbilisi",
+        "capitalRegionId": 793
+    },
+    {
+        "enumName": "KYRGYZSTAN",
+        "id": 134,
+        "name": "Kyrgyzstan",
+        "adjective": "Kyrgyz",
+        "shortName": "KG",
+        "currencyName": "KGS",
+        "capital": "Bishkek",
+        "capitalRegionId": 799
+    },
+    {
+        "enumName": "LAOS",
+        "id": 135,
+        "name": "Laos",
+        "adjective": "Laotian",
+        "shortName": "LA",
+        "currencyName": "LAK",
+        "capital": "Vientiane",
+        "capitalRegionId": 805
+    },
+    {
+        "enumName": "TAJIKISTAN",
+        "id": 136,
+        "name": "Tajikistan",
+        "adjective": "Tajik",
+        "shortName": "TJ",
+        "currencyName": "TJS",
+        "capital": "Dushanbe",
+        "capitalRegionId": 811
+    },
+    {
+        "enumName": "TURKMENISTAN",
+        "id": 137,
+        "name": "Turkmenistan",
+        "adjective": "Turkmen",
+        "shortName": "TM",
+        "currencyName": "TMT",
+        "capital": "Ashgabat",
+        "capitalRegionId": 817
+    },
+    {
+        "enumName": "UZBEKISTAN",
+        "id": 138,
+        "name": "Uzbekistan",
+        "adjective": "Uzbek",
+        "shortName": "UZ",
+        "currencyName": "UZS",
+        "capital": "Tashkent",
+        "capitalRegionId": 823
+    },
+    {
+        "enumName": "NEW_ZEALAND",
+        "id": 139,
+        "name": "New Zealand",
+        "adjective": "New Zealander",
+        "shortName": "NZ",
+        "currencyName": "NZD",
+        "capital": "Wellington",
+        "capitalRegionId": 829
+    },
+    {
+        "enumName": "GUYANA",
+        "id": 140,
+        "name": "Guyana",
+        "adjective": "Guyanese",
+        "shortName": "GY",
+        "currencyName": "GYT",
+        "capital": "Georgetown",
+        "capitalRegionId": 835
+    },
+    {
+        "enumName": "SURINAME",
+        "id": 141,
+        "name": "Suriname",
+        "adjective": "Surinamese",
+        "shortName": "SR",
+        "currencyName": "SRD",
+        "capital": "Paramaribo",
+        "capitalRegionId": 841
+    },
+    {
+        "enumName": "NICARAGUA",
+        "id": 142,
+        "name": "Nicaragua",
+        "adjective": "Nicaraguan",
+        "shortName": "NI",
+        "currencyName": "NIO",
+        "capital": "Managua",
+        "capitalRegionId": 847
+    },
+    {
+        "enumName": "PANAMA",
+        "id": 143,
+        "name": "Panama",
+        "adjective": "Panamanian",
+        "shortName": "PA",
+        "currencyName": "PAB",
+        "capital": "Panama City",
+        "capitalRegionId": 853
+    },
+    {
+        "enumName": "COSTA_RICA",
+        "id": 144,
+        "name": "Costa Rica",
+        "adjective": "Costa Rican",
+        "shortName": "CR",
+        "currencyName": "CRC",
+        "capital": "San Jose",
+        "capitalRegionId": 859
+    },
+    {
+        "enumName": "MONGOLIA",
+        "id": 145,
+        "name": "Mongolia",
+        "adjective": "Mongolian",
+        "shortName": "MN",
+        "currencyName": "MNT",
+        "capital": "Ulan Bator",
+        "capitalRegionId": 865
+    },
+    {
+        "enumName": "PAPUA_NEW_GUINEA",
+        "id": 146,
+        "name": "Papua New Guinea",
+        "adjective": "Papuan",
+        "shortName": "PG",
+        "currencyName": "PGK",
+        "capital": "Port Moresby",
+        "capitalRegionId": 871
+    },
+    {
+        "enumName": "CUBA",
+        "id": 147,
+        "name": "Cuba",
+        "adjective": "Cuban",
+        "shortName": "CU",
+        "currencyName": "CUC",
+        "capital": "Havana",
+        "capitalRegionId": 877
+    },
+    {
+        "enumName": "LEBANON",
+        "id": 148,
+        "name": "Lebanon",
+        "adjective": "Lebanonese",
+        "shortName": "LB",
+        "currencyName": "LBP",
+        "capital": "Beirut",
+        "capitalRegionId": 883
+    },
+    {
+        "enumName": "PUERTO_RICO",
+        "id": 149,
+        "name": "Puerto Rico",
+        "adjective": "Puerto Rican",
+        "shortName": "PR",
+        "currencyName": "PRD",
+        "capital": "San Juan",
+        "capitalRegionId": 889
+    },
+    {
+        "enumName": "MOLDOVA",
+        "id": 150,
+        "name": "Moldova",
+        "adjective": "Moldovan",
+        "shortName": "MD",
+        "currencyName": "MDL",
+        "capital": "Chisinau",
+        "capitalRegionId": 895
+    },
+    {
+        "enumName": "JAMAICA",
+        "id": 151,
+        "name": "Jamaica",
+        "adjective": "Jamaican",
+        "shortName": "JM",
+        "currencyName": "JMD",
+        "capital": "Kingston",
+        "capitalRegionId": 901
+    },
+    {
+        "enumName": "EL_SALVADOR",
+        "id": 152,
+        "name": "El Salvador",
+        "adjective": "Salvadoran",
+        "shortName": "SV",
+        "currencyName": "SVD",
+        "capital": "San Salvador",
+        "capitalRegionId": 907
+    },
+    {
+        "enumName": "HAITI",
+        "id": 153,
+        "name": "Haiti",
+        "adjective": "Haitian",
+        "shortName": "HT",
+        "currencyName": "HTG",
+        "capital": "Port-au-Prince",
+        "capitalRegionId": 913
+    },
+    {
+        "enumName": "GOLD",
+        "id": 0,
+        "name": "Gold",
+        "adjective": null,
+        "shortName": null,
+        "currencyName": "Gold",
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "CONFEDERATES",
+        "id": 666,
+        "name": "Confederates",
+        "adjective": "Confederate",
+        "shortName": "CON",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_BLACK",
+        "id": 668,
+        "name": "Team Black",
+        "adjective": "Black",
+        "shortName": "TBK",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_BLUE",
+        "id": 669,
+        "name": "Team Blue",
+        "adjective": "Blue",
+        "shortName": "TBL",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_BROWN",
+        "id": 670,
+        "name": "Team Brown",
+        "adjective": "Brown",
+        "shortName": "TBR",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_GREEN",
+        "id": 671,
+        "name": "Team Green",
+        "adjective": "Green",
+        "shortName": "TGN",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_GREY",
+        "id": 672,
+        "name": "Team Grey",
+        "adjective": "Grey",
+        "shortName": "TGR",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_ORANGE",
+        "id": 673,
+        "name": "Team Orange",
+        "adjective": "Orange",
+        "shortName": "TOR",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_PINK",
+        "id": 674,
+        "name": "Team Pink",
+        "adjective": "Pink",
+        "shortName": "TPW",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_RED",
+        "id": 675,
+        "name": "Team Red",
+        "adjective": "Red",
+        "shortName": "TRE",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_WHITE",
+        "id": 676,
+        "name": "Team White",
+        "adjective": "White",
+        "shortName": "TWH",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    },
+    {
+        "enumName": "TEAM_YELLOW",
+        "id": 677,
+        "name": "Team Yellow",
+        "adjective": "Yellow",
+        "shortName": "TYE",
+        "currencyName": null,
+        "capital": null,
+        "capitalRegionId": 0
+    }
+]

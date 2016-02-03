@@ -1,0 +1,33 @@
+<div class="card">
+	<div class="item item-divider text-center">
+		Train
+	</div>
+	<span class="item">
+		Total training sessions
+		<span class="badge badge-positive">{{train.trainData.trainingSessions}}</span>
+	</span>
+	<span class="item">
+		Strength
+		<span class="badge badge-positive">{{train.trainData.strength}}</span>
+	</span>
+	<span class="item">
+		Total damage done
+		<span class="badge badge-positive">{{train.trainData.totalDamage}}</span>
+	</span>
+	<span class="item text-center">
+		<h2>Military rank</h2>
+		<div class="row">
+			<div class="col col-50 col-offset-25 text-center">
+				<img class="full-image" ng-src="assets/img/ranks/{{train.trainData.rank.filename}}.png">
+			</div>
+		</div>
+		<p>{{train.trainData.rank.name}}</p>
+	</span>
+	<span class="item">
+		<div class="button-bar">
+			<a class="button button-positive" ng-click="train.openDamageModal()">Damage</a>
+			<a class="button button-positive" ng-if="!train.trainData.trainedToday" ng-click="train.performTrain()">Train</a>
+		</div>
+	</span>
+</div>
+<back-button></back-button>

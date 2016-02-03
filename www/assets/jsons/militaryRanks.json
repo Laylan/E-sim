@@ -1,0 +1,154 @@
+{
+    "ROOKIE": {
+        "name": "Rookie",
+        "filename": "Rookie"
+    },
+    "PRIVATE": {
+        "name": "Private",
+        "filename": "Private-glam"
+    },
+    "PRIVATE_FIRST_CLASS": {
+        "name": "Private First Class",
+        "filename": "Private-1st-Class-glam"
+    },
+    "CORPORAL": {
+        "name": "Corporal",
+        "filename": "Corporal-glam"
+    },
+    "SERGEANT": {
+        "name": "Sergeant",
+        "filename": "Sergeant-glam"
+    },
+    "STAFF_SERGEANT": {
+        "name": "Staff Sergeant",
+        "filename": "Staff-Sergeant-glam"
+    },
+    "SERGEANT_FIRST_CLASS": {
+        "name": "Sergeant First Class",
+        "filename": "First-Class-Sergeant-glam"
+    },
+    "MASTER_SERGEANT": {
+        "name": "Master Sergeant",
+        "filename": "Master-Sergeant-glam"
+    },
+    "FIRST_SERGEANT": {
+        "name": "First Sergeant",
+        "filename": "1st-Sergeant-glam"
+    },
+    "SERGEANT_MAJOR": {
+        "name": "Sergeant Major",
+        "filename": "Sergeant-Major-glam"
+    },
+    "COMMAND_SERGEANT_MAJOR": {
+        "name": "Command Sergeant Major",
+        "filename": "Command-Sergeant-Major-glam"
+    },
+    "SERGEANT_MAJOR_OF_THE_ARMY": {
+        "name": "Sergeant Major of the Army",
+        "filename": "Sergeant-Major-of-the-Army-glam"
+    },
+    "SECOND_LIEUTENANT": {
+        "name": "Second Lieutenant",
+        "filename": "Second-Lieutenant-glam"
+    },
+    "FIRST_LIEUTENANT": {
+        "name": "First Lieutenant",
+        "filename": "First-Lieutenant-glam"
+    },
+    "CAPTAIN": {
+        "name": "Captain",
+        "filename": "Captain-glam"
+    },
+    "MAJOR": {
+        "name": "Major",
+        "filename": "Major-glam"
+    },
+    "LIEUTENANT_COLONEL": {
+        "name": "Lieutenant Colonel",
+        "filename": "Lieutenant-Colonel-glam"
+    },
+    "COLONEL": {
+        "name": "Colonel",
+        "filename": "Colonel-glam"
+    },
+    "BRIGADIER_GENERAL": {
+        "name": "Brigadier General",
+        "filename": "Brigadier-General-glam"
+    },
+    "MAJOR_GENERAL": {
+        "name": "Major General",
+        "filename": "Major-General-glam"
+    },
+    "LIEUTENANT_GENERAL": {
+        "name": "Lieutenant General",
+        "filename": "Lieutenant-General-glam"
+    },
+    "GENERAL": {
+        "name": "General",
+        "filename": "General-glam"
+    },
+    "GENERAL_OF_THE_ARMY": {
+        "name": "General of the Army",
+        "filename": "General-of-the-Army-glam"
+    },
+    "MARSHALL": {
+        "name": "Marshall",
+        "filename": "Marshall-glam"
+    },
+    "FIELD_MARSHALL": {
+        "name": "Field Marshall",
+        "filename": "Field-Marshall-glam"
+    },
+    "SUPREME_MARSHALL": {
+        "name": "Supreme Marshall",
+        "filename": "Supreme-Marshall-glam"
+    },
+    "GENERALISSIMUS": {
+        "name": "Generalissimus",
+        "filename": "Generalissimus-glam"
+    },
+    "SUPREME_GENERALISSIMUS": {
+        "name": "Supreme Generalissimuss",
+        "filename": "Supreme-Generalissimus-glam"
+    },
+    "IMPERIAL_GENERALISSIMUS": {
+        "name": "Imperial Generalissimus",
+        "filename": "Imperial-Generalissimus-glam"
+    },
+    "LEGENDARY_GENERALISSIMUS": {
+        "name": "Legendary Generalissimuss",
+        "filename": "Legendary-Generalissimus"
+    },
+    "IMPERATOR": {
+        "name": "Imperator",
+        "filename": "Imperator-glam"
+    },
+    "IMPERATOR_CAESAR": {
+        "name": "Imperator Caesar",
+        "filename": "Imperator-Caesar-glam"
+    },
+    "DEUS_DIMIDIAM": {
+        "name": "Deus Dimidiam",
+        "filename": "Deus-Dimidiam-glam"
+    },
+    "DEUS": {
+        "name": "Deus",
+        "filename": "Deus-glam"
+    },
+    "SUMMI_DEUS": {
+        "name": "Summi Deus",
+        "filename": "Summi-Deus-glam"
+    },
+    "DEUS_IMPERIALIS": {
+        "name": "Deus Imperialis",
+        "filename": "Deus-Imperialis-glam"
+    },
+    "DEUS_FABULOSO": {
+        "name": "Deus Fabuloso",
+        "filename": "Deus-Fabuloso-glam"
+    },
+    "DEUS_ULTIMUM": {
+        "name": "Deus Ultimum",
+        "filename": "Deus-Ultimum"
+    }
+}

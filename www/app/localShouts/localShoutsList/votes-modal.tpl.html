@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider text-center">
+        Voted:
+      </div>
+      <div class="row" ng-repeat="vote in localShoutsList.votes" ng-click="localShoutsList.showProfile(vote.id)">
+        <!-- <a class="item item-left" href="#/main/profile/{{vote.id}}"> -->
+        <div class="col col-10">
+          <img ng-src="{{vote.avatar.SMALL}}">
+        </div>
+        <div class="col col-offset-10">
+          <h4><i ng-if="vote.premium" class="icon icon-star2 yellow"></i>
+                     {{vote.username}} <img src="assets/img/flags/small/{{vote.countryName | flags}}.png"></h4>
+        </div>
+        <!-- </a> -->
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="button icon-left icon-uniF472 button-positive" ng-click="localShoutsList.closeVotesModal()">
+            Back
+          </button>
+        </div>
+      </div>
+  </ion-content>
+</ion-modal-view>

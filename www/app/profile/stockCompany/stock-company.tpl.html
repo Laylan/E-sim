@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    <b>{{stockCompany.stockCompanyData.name}}</b> Company
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+      <div class="col col-50 text-center">
+        <img class="full-image" ng-src="{{stockCompany.stockCompanyData.avatar.NORMAL}}">
+      </div>
+      <div class="col col-center text-center">
+        <p>Nationality</p>
+        <img src="assets/img/flags/big/{{stockCompany.stockCompanyData.countryName | flags}}.png">
+        <h2>{{stockCompany.stockCompanyData.countryName}}</h2>
+      </div>
+    </div>
+  </div>
+  <h3 class="item" href="#">
+		Total shares
+		<span class="badge badge-positive">{{stockCompany.stockCompanyData.totalShares}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Estimated value
+		<span class="badge badge-positive">{{stockCompany.stockCompanyData.estimatedValue | number : 2}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Estimated value per share
+		<span class="badge badge-positive">{{stockCompany.stockCompanyData.estimatedValuePerShare | number : 2}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Total shareholders
+		<span class="badge badge-positive">{{stockCompany.stockCompanyData.totalShareholders}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Total companies
+		<span class="badge badge-positive">{{stockCompany.stockCompanyData.totalCompanies}}</span>
+	</h3>
+  <div class="item item-divider text-center">
+    Lider
+  </div>
+  <div class="text-center">
+    <h4 ng-click="stockCompany.showProfile(stockCompany.liderProfile.id)">
+				<i ng-if="stockCompany.liderProfile.premium" class="icon icon-star2 yellow"></i>
+				{{stockCompany.liderProfile.username}}
+				<img src="assets/img/flags/small/{{stockCompany.liderProfile.countryName | flags}}.png">
+			</h4>
+    <div>
+      <img class="avatar" ng-src="{{stockCompany.liderProfile.avatar.NORMAL}}">
+    </div>
+  </div>
+</div>
+
+<back-button></back-button>

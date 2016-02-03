@@ -1,0 +1,67 @@
+<div class="card">
+	<div class="item item-divider text-center">
+		Fight
+	</div>
+	<div class="item item-text-wrap text-center">
+		<h2>{{fight.currentFight.battle.battleName | capitalize}}</h2>
+		<h3>Round {{fight.currentFight.roundNumber}}</h3>
+		<h3 ng-if="!fight.currentFight.battle.frozen">
+			<timer max-time-unit="'hour'" countdown="(fight.currentFight.battle.milisLeftTimestamp / 1000)" interval="1000">{{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
+		</h3>
+		<h3 ng-if="fight.currentFight.battle.frozen">
+			Battle is frozen!
+		</h3>
+		<h4 ng-if="!fight.currentFight.open">This fight is closed.</h4>
+	</div>
+	<div class="item item-text-wrap">
+		<div class="progress progress-striped">
+			<div class="progress-bar" role="progressbar" aria-valuenow="{{fight.currentFight.battle.defenderDmgPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{fight.currentFight.battle.defenderDmgPercent}}%;">
+			</div>
+			<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{100 - fight.currentFight.battle.defenderDmgPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{100 - fight.currentFight.battle.defenderDmgPercent}}%;">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-left">
+				<h5>Defender</h5>
+				<h3>{{fight.currentFight.battle.defenderName}}</h3>
+				<hr>
+				<h5>Score</h5>
+				<h2>{{fight.currentFight.battle.defenderScore}}</h2>
+				<hr>
+				<h5>Damage</h5>
+				<h3>{{fight.currentFight.defenderTotalDamage | number:0}}</h3>
+				<h3>{{fight.currentFight.battle.defenderDmgPercent | number:2}} %</h3>
+				<div ng-if="fight.currentFight.battle.active && !fight.currentFight.battle.frozen && fight.currentFight.open">
+					<button ng-click="fight.openFightModal(true)" ng-if="fight.currentFight.canFightOnDefenderSide" class="button button-block button-positive">
+						Fight
+					</button>
+				</div>
+			</div>
+			<div class="col text-right">
+				<h5>Attacker</h5>
+				<h3>{{fight.currentFight.battle.attackerName}}</h3>
+				<hr>
+				<h5>Score</h5>
+				<h2>{{fight.currentFight.battle.attackerScore}}</h2>
+				<hr>
+				<h5>Damage</h5>
+				<h3>{{fight.currentFight.attackerTotalDamage | number:0}}</h3>
+				<h3>{{100 - fight.currentFight.battle.defenderDmgPercent | number:2}} %</h3>
+				<div ng-if="fight.currentFight.battle.active && !fight.currentFight.battle.frozen && fight.currentFight.open">
+					<button ng-click="fight.openFightModal(false)" ng-if="fight.currentFight.canFightOnAttackerSide" class="button button-block button-positive">
+						Fight
+					</button>
+				</div>
+			</div>
+			<div ng-if="!fight.currentFight.battle.active" class="text-center">
+				<h2>This battle is not active!</h2>
+			</div>
+		</div>
+	</div>
+	<a href="#/hub/fightList" class="item item-icon-left item-button-right">
+		<i class="icon icon-cannon"></i><span>Battles</span>
+		<button class="button button-positive">
+			<i class="icon ion-chevron-right"></i>
+		</button>
+	</a>
+</div>

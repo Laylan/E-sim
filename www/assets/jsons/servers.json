@@ -1,0 +1,27 @@
+[
+  {
+    "name":"Primera",
+    "address":"http://primera.e-sim.org/mobile"
+  },
+  {
+    "name":"Secura",
+    "address":"http://secura.e-sim.org/mobile"
+  },
+  {
+    "name":"Suna",
+    "address":"http://suna.e-sim.org/mobile"
+  },
+
+  {
+    "name":"Europa",
+    "address":"http://europa.e-sim.org/mobile"
+  },
+  {
+    "name":"America",
+    "address":"http://america.e-sim.org/mobile"
+  },
+  {
+    "name":"Testura",
+    "address":"http://testura.e-sim.org:8000/mobile"
+  }
+]

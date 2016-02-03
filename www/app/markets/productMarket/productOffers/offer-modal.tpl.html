@@ -1,0 +1,51 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <b>  Post your offer </b>
+      </div>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Product
+          </div>
+          <select ng-model="productOffers.product"
+            ng-options="resource as product.myName group by product.resource for (resource, product) in productOffers.storage">
+          </select>
+        </label>
+
+          <label class="item item-divider  item-input item-select">
+            <div class="input-label">
+              Country
+            </div>
+            <select
+              ng-model="productOffers.countryId"
+              ng-options="country.countryId as country.name for country in productOffers.countryList">
+            </select>
+          </label>
+
+          <label class="item item-input">
+            <input type="number" placeholder="Offered amount" ng-model="productOffers.amount" min="0" max="" name="name" >
+          </label>
+
+          <label class="item item-input">
+            <input type="number" placeholder="Price" ng-model="productOffers.price" min="0.0" max="" name="name" >
+          </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="productOffers.closeOfferModal()">
+          Back
+        </button>
+      </div>
+      <div class="col col-67">
+        <button class="button icon-left icon-uniF476 button-full button-balanced" ng-click="productOffers.createNew()">
+          Post new offer
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
+
+<back-button></back-button>

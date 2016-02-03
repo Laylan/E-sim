@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Special Items
+  </div>
+  <div class="item item-divider text-center clear"
+    <i class="icon icon-bag"></i><b>Already used</b>
+  </div>
+    <div class="list">
+      <div class='item item-icon-left' ng-class="{assertive: special.debuff ,balanced: special.buff  }"
+      ng-repeat="special in specialItems.usedSpecialItem">
+
+
+        <i class="icon-size-xlarge icon icon-{{special.type | lowercase  }}"></i>
+        {{special.type  |underscoreToSpace }} TIME LEFT:{{special.nextUsageTime | date:'medium' }}
+      </div>
+    </div>
+
+  <div class="item item-divider text-center">
+    <i class="icon icon-wallet"></i><b>Your Special Items</b>
+  </div>
+  <div class="storage">
+      <div class='storage_item ' ng-repeat="special in specialItems.specialItem">
+      <label class="item-radio">
+        <special-item-icon
+        ng-class="{assertive : (special.type === specialItems.selectedSpecialItem) }"
+        resource='{{special.type}}'
+        quantity='{{special.quantity}}'>
+
+        </special-item-icon>
+      <input type="radio" name="rbSpecialItem" value="{{special.type}}"
+      ng-model="specialItems.selectedSpecialItem" >
+      </label>
+      </div>
+  </div>
+
+</div>
+<span class="item">
+  <div class="button-bar">
+    <a ng-disabled="!specialItems.selectedSpecialItem" class="button button-balanced"
+     ng-click="specialItems.consumeSpecialItem(specialItems.selectedSpecialItem)">Use Special Item</a>
+  </div>
+</span>

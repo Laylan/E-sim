@@ -1,0 +1,86 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Product Market
+  </div>
+  <div class="list">
+    <div class="item item-divider text-center">
+      <div class="button-bar">
+        <a class="button button-padding button-positive" ng-click="products.yourProductOffers()">
+          <span class="button-big-font">
+            <i class="icon ion-bag icon-left  "></i>
+              Your offers
+          </span>
+        </a>
+      </div>
+    </div>
+    <form ng-submit="products.filter()">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Quality
+        </div>
+        <select ng-model="products.quality">
+          <option value="0">Any</option>
+          <option value="1">Q1</option>
+          <option value="2">Q2</option>
+          <option value="3">Q3</option>
+          <option value="4">Q4</option>
+          <option value="5">Q5</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Resources
+        </div>
+        <select ng-model="products.resource">
+          <option value="">Any</option>
+          <option value="FOOD">Food</option>
+          <option value="GIFT">Gift</option>
+          <option value="WEAPON">Weapon</option>
+          <option value="TICKET">Ticket</option>
+          <option value="IRON">Iron</option>
+          <option value="GRAIN">Grain</option>
+          <option value="OIL">Oil</option>
+          <option value="STONE">Stone</option>
+          <option value="WOOD">Wood</option>
+          <option value="DIAMONDS">Diamonds</option>
+          <option value="HOUSE">House</option>
+          <option value="DEFENSE_SYSTEM">Defense System</option>
+          <option value="HOSPITAL">Hospital</option>
+          <option value="ESTATE">Estate</option>
+        </select>
+      </label>
+      <label class="item item-divider  item-input item-select">
+        <div class="input-label">
+          Country
+        </div>
+        <select ng-model="products.countryId" ng-options="country.countryId as country.name for country in products.countryList">
+        </select>
+      </label>
+      <span class="item">
+        <div class="button-bar">
+          <!-- <a class="button button-positive" ng-click="monetaryMarket.swapCurriencies()">Swap Curriencies</a> -->
+          <button type="submit" class="button button-positive">View offers</button>
+        </div>
+      </span>
+      <!-- <button type="submit" class="button button-block button-positive">
+        View offers
+      </button> -->
+    </form>
+  </div>
+  <div>
+    <ul class="list">
+      <li class="item row" ng-click="products.openTransactionModal(product)" ng-repeat="product in products.products">
+        <product-icon resource='{{product.resource}}' quality='{{product.quality}}'></product-icon>
+        <div class="col col-50 ellipsis col-center">
+          {{product.owner.name}}
+          <br> ({{product.quantity}})
+        </div>
+        <span class="badge badge-energized">
+          {{product.price}} {{product.currencyName}}
+        </span>
+      </li>
+    </ul>
+  </div>
+  <ion-infinite-scroll ng-if="products.canGetMoreOffer()" on-infinite="products.getMore()">
+  </ion-infinite-scroll>
+</div>

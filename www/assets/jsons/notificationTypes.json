@@ -1,0 +1,122 @@
+{
+    "MONETARY_MARKET_ALERT": {
+        "name": "Monetary market alert",
+        "icon": "icon-cash"
+    },
+    "COMPANY_ALERT": {
+        "name": "Company alert",
+        "icon": "icon-factory"
+    },
+    "SUBSTIDY_RECEIVED": {
+        "name": "Subsidy alert",
+        "icon": "icon-gift"
+    },
+    "CITIZEN_PROGRESS": {
+        "name": "Citizen progress alert",
+        "icon": "icon-accessibility"
+    },
+    "MEDAL_RECEIVED": {
+        "name": "Medal alert",
+        "icon": "icon-warmedal"
+    },
+    "ELECTIONS": {
+        "name": "Election alert",
+        "icon": "icon-thumbs-up"
+    },
+    "CONGRESS": {
+        "name": "Congress alert",
+        "icon": "icon-certificate2"
+    },
+    "OTHER": {
+        "name": "Other alert",
+        "icon": "icon-info"
+    },
+    "DONATION": {
+        "name": "Donation",
+        "icon": "icon-gift-2"
+    },
+    "TUTORIAL": {
+        "name": "Tutorial",
+        "icon": "icon-info"
+    },
+    "CONTRACTS": {
+        "name": "Contracts",
+        "icon": "icon-sc"
+    },
+    "MODERATORS": {
+        "name": "Moderators",
+        "icon": "icon-info-2"
+    },
+    "MILITARY_UNIT": {
+        "name": "Military Unit",
+        "icon": "icon-bookmark"
+    },
+    "PREMIUM_ACCOUNT": {
+        "name": "Premium Account",
+        "icon": "icon-star"
+    },
+    "STOCK_MARKET": {
+        "name": "Stock Market",
+        "icon": "icon-wallet"
+    },
+    "EQUIPMENT": {
+        "name": "Equipment",
+        "icon": "icon-dagger"
+    },
+    "AUCTIONS": {
+        "name": "Auctions",
+        "icon": "icon-law"
+    },
+    "ACHIEVEMENT_RECEIVED": {
+        "name": "Achievement alert",
+        "icon": "icon-medal"
+    },
+    "FORCE_SELL_EQUIPMENT": {
+        "name": "Equipment force sell alert",
+        "icon": "icon-bolt"
+    },
+    "FORCE_EQUIPMENT_OFF": {
+        "name": "Equipment forced off alert",
+        "icon": "icon-bolt"
+    },
+    "ACCOUNT_SITTING": {
+        "name": "Account sitting alert",
+        "icon": "icon-user-2"
+    },
+    "MISSION_COMPLETED": {
+        "name": "Mission alert",
+        "icon": "icon-checkmark"
+    },
+    "MOTIVATION": {
+        "name": "Motivation",
+        "icon": "icon-cupcake"
+    },
+    "EVENT": {
+        "name": "Event",
+        "icon": "icon-trophy"
+    },
+    "BROADCAST_SENT": {
+        "name": "Broadcast alert",
+        "icon": "icon-rss"
+    },
+    "PARTY": {
+        "name": "Party",
+        "icon": "icon-friends"
+    },
+    "MENTORING": {
+        "name": "Mentoring",
+        "icon": "icon-phpbb"
+    },
+    "PRODUCT_MARKET": {
+        "name": "Product market alert",
+        "icon": "icon-diamond"
+    },
+    "SPECIAL_ITEM": {
+        "name": "Special item alert",
+        "icon": "icon-lightning2"
+    },
+    "SOCIAL_MENTION": {
+        "name": "Social mention alert",
+        "icon": "icon-info"
+    }
+}

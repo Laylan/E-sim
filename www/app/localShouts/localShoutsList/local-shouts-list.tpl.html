@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Shout from {{localShoutsList.shout.citizen.username}}
+  </div>
+  <div class="item">
+    <a class="item item-avatar-left" ng-click="localShoutsList.showProfile(localShoutsList.shout.citizen.id)" href="#">
+      <img ng-src="{{localShoutsList.shout.citizen.avatar.SMALL}}">
+      <span class="item padding-zero">
+            <h2><i ng-if="localShoutsList.shout.isPremium" class="icon icon-star2 yellow"></i>
+               {{localShoutsList.shout.citizen.username}}</h2>
+            <h4>{{localShoutsList.shout.time | date:'medium'}}</h4>
+         </span>
+    </a>
+    <div class="item item-body">
+      <!-- <span>{{localShoutsList.shout.message | bbCode}}</span> -->
+      <span ng-bind-html="localShoutsList.shout.message | bbCode"></span>
+    </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" ng-click="localShoutsList.openVotesModal(localShoutsList.shout.id)" href="#">
+            {{localShoutsList.shout.votes}} <i class="icon ion-thumbsup"></i> Likes
+         </a>
+      <span class="tab-item">
+            {{localShoutsList.shout.replies}} <i class="icon ion-chatbox"></i> Comments
+         </span>
+    </div>
+    <div class="list line" ng-repeat="comment in localShoutsList.comments">
+      <a class="item item-avatar-left" ng-click="localShoutsList.showProfile(comment.citizen.id)" href="#">
+        <img ng-src="{{comment.citizen.avatar.SMALL}}">
+        <span class="item padding-zero">
+               <h3><i ng-if="comment.isPremium" class="icon icon-star2 yellow"></i>
+                  {{comment.citizen.username}}</h3>
+                   <p class="shout-message" ng-bind-html="comment.message | bbCode"></p>
+               <h4>{{comment.time | date:'medium'}}</h4>
+            </span>
+      </a>
+    </div>
+    <div class="card">
+      <p ng-hide="localShoutsList.showChangeLog"  ng-click="localShoutsList.showMore()" class="item item-positive without-padding">
+        <i class="icon icon-forward"></i>Comment</p>
+      <p ng-if="localShoutsList.showChangeLog"  ng-click="localShoutsList.showMore()" class="item item-positive without-padding">
+        <i class="icon icon-undo"></i>Hide</p>
+      <div ng-if="localShoutsList.showChangeLog">
+         <form ng-submit="localShoutsList.writeComment()">
+            <label class="item item-input">
+               <textarea placeholder="Write shout" ng-model="localShoutsList.message"></textarea>
+            </label>
+            <button type="submit" class="button margin-zero button-center button-block icon-comment6 button-positive">
+              Comment!
+            </button>
+         </form>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="localShoutsList.canGetMoreComments()" on-infinite="localShoutsList.getMore()">
+    </ion-infinite-scroll>
+  </div>
+</div>
+<back-button></back-button>

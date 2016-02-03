@@ -1,0 +1,45 @@
+<ion-content scroll="true">
+	<div class="card">
+		<div class="item item-divider text-center">
+			Login
+		</div>
+		<span class="item text-center">
+			<div class="row">
+				<div class="col col-50 col-offset-25 text-center">
+					<img class="full-image" src="assets/img/logo.png">
+				</div>
+			</div>
+		</span>
+		<form class="list" ng-submit="main.login()">
+			<label class="item item-input">
+				<input name="username" type="text" placeholder="Username" ng-model="main.loginParameters.username" />
+			</label>
+			<label class="item item-input">
+				<input name="password" type="password" placeholder="Password" ng-model="main.loginParameters.password" />
+			</label>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Server
+				</div>
+				<select name="server" ng-model="main.selectedServer" ng-change="main.setServer(main.selectedServer)" ng-options="server.name for server in main.servers"></select>
+			</label>
+			<!-- <label class="item item-input item-select">
+				<div class="input-label">
+					Serverss
+				</div>
+				<button class="button button-positive" ng-click="main.serverList()">Lista serwerow</button>
+					<select name="server" ng-model="main.selectedServer"  ng-options="server.name for server in main.serverss"></select>
+			</label> -->
+			<ion-checkbox ng-model="main.loginParameters.rememberMe">Remember me</ion-checkbox>
+			<div class="item">
+				<button type="submit" class="button button-full button-positive">
+					Login!
+				</button>
+				<!-- <button class="button button-block button-positive" ng-click="main.goAbout()">
+					About
+				</button> -->
+			</div
+		</form>
+	</div>
+</ion-content>

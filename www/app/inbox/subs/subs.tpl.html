@@ -1,0 +1,17 @@
+<div style="margin-top:0;padding-top:60px" class="card">
+  <div class="item item-divider text-center">
+    Subs
+  </div>
+  <span class="item text-center" ng-if="subs.subs.length === 0">
+		No subs!
+	</span>
+  <span class="item item-avatar item-text-wrap" href="#" ng-repeat="sub in subs.subs">
+		<img ng-src="{{sub.newspaper.avatar.SMALL}}">
+		<h2>{{sub.newspaper.name}}</h2>
+		<p>{{sub.title}}</p>
+		<span class="badge badge-positive">{{sub.totalVotes}}</span>
+  </span>
+
+  <ion-infinite-scroll ng-if="subs.canFetchMoreSubs()" on-infinite="subs.fetchMoreSubs()">
+  </ion-infinite-scroll>
+</div>

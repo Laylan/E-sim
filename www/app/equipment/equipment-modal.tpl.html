@@ -1,0 +1,43 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <h2>{{equipment.currentEquip.slot | lowercase | underscoreToSpace}}</h2>
+      </div>
+
+        <a class="item center padding-zero" href="#">
+          <i class="icon icon-size-xxlarge icon-{{equipment.currentEquip.slot | lowercase}}{{equipment.currentEquip.quality}}"></i>
+        </a>
+        <div class="list margin-zero" ng-repeat="param in equipment.currentEquip.parameters">
+        <a  class="item item-icon-left" href="#">
+          <i class="icon icon-uniF471"></i>{{param.name}}
+          <span class="badge badge-posotion badge-positive">
+            {{param.value}}
+             <span ng-if="param.percentValue"> %</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="button icon-left icon-uniF478 button-full button-positive" ng-click="equipment.closeEquipmentModal()">
+          Back
+        </button>
+      </div>
+      <div ng-if="!equipment.currentEquip.equipped"class="col">
+        <button class="button icon-left icon-uniF477 button-full button-positive" ng-click="equipment.splitEquipment()">
+          Split
+        </button>
+      </div>
+      <div class="col">
+        <button ng-if="!equipment.currentEquip.equipped" class="button icon-left icon-uniF479 button-full button-balanced" ng-click="equipment.equPutOn()">
+          Put on
+        </button>
+        <button ng-if="equipment.currentEquip.equipped" class="button icon-left icon-uniF470 button-full button-balanced" ng-click="equipment.equPutOff()">
+          Put off
+        </button>
+      </div>
+    </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

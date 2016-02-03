@@ -1,0 +1,1199 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.sprite.ADVERTISER_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ADVERTISER_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ADVERTISER_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ALL_MEDALS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.APPREANTICE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ARTIST {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.AVATAR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.A_GIRLS_BEST_FRIEND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BAWLER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BECOME_PRESIDENT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BH_COLLECTOR_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BH_COLLECTOR_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BH_COMBO_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BH_COMBO_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BIG_FISH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BOMBER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.BUG_TRAINER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CANDIDATE_FOR_PARTY_LEADER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CANDIDATE_FOR_PRESIDENT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CHATTERBOX {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CHILL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CHUCK_WOOD {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.COMMUNITY_MANAGERS_FRIEND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CONQUEROR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CONSISTENT_FIGHTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.COOL_STORY_BRO {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CORPORATION_MANAGER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.COUNTRY_DESIGNER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CURRENCY_KEEPER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.CURRENCY_TRADER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DAMAGE_100000 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DAMAGE_500000 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DEATH_INCARNATION {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DECISIVE_HIT_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DECISIVE_HIT_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DEFENCE_DESTRUCTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DEMOLISHER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DESTROYER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DONATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DO_I_FEEL_LUCKY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.DROPBUSTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EARN_100_GOLD_FROM_REFS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EARN_10_MONEY_IN_BATTLES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EARN_200_MONEY_IN_BATTLES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EASY_MONEY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ELITE_CONSPIRATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ELITE_MOTIVATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EMPEROR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ENTERTAINER_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ENTERTAINER_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ENTERTAINER_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_IV {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_TO_THE_MAX {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_V {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EQUIPPED_VI {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EXMILITARY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EXPERIENCED_BUSINESSMAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EXTENDING_BORDERS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.EXTREME_HIT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.FAMOUS_POLITICIAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.FAMOUS_REDACTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.FANTASTIC_HIT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.FIRST_WORK {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GANGSTA {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GLOBETROTTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GOOD_CATCH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GOOD_HEART {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GREEDY_HAND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GRIM_REAPER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.GRINCH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.HAMSTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.HAVE_100_FRIENDS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.HITS_100 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.IMPERATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.IMPORTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INDEFATIGABLE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INFLAMER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INTERROGATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVESTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVINCIBLE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITED_10_COUNTRYMATES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITED_PEOPLE_FROM5_COUNTRIES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_CONGRESSMAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_FRIEND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_FRIEND_WITH_2000_XP {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_FRIEND_WITH_MEDAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_LVL7_CITIZEN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_PRESIDENT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.INVITE_SOCIETY_BUILDER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.IRON_MAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.ITEM_SPECIALIST {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.JOIN_MILITARY_UNIT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.JOURNALIST_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.JOURNALIST_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.JOURNALIST_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LAST_STAND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LAW_CREATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEAGUE_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEAGUE_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEAGUE_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEAGUE_IV {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEAGUE_V {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LEGENDARY_EQUIPMENT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LIBERATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LOYALIST {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.LUCKY_13 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MAD_DOG {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MAKE_MY_DAY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MASS_INVITER_I {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MASS_INVITER_II {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MASS_INVITER_III {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MATHEMATICIAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MERGING_ELITE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MERGING_LEGEND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MERGING_NOVICE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MERGING_RECRUIT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MERGING_VETERAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MILION_DAMAGE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.MIRACLE_CURE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.NIGGARD {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.NOVICE_COLLECTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.NOVICE_CONSPIRATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.NOVICE_MOTIVATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OIL_DRILLER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_100_MEDALS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_10_MEDALS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_4_DIFF_MEDALS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_COMPANY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_ESTATE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_HOUSE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_MEDAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.OWN_NEWSPAPER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.PARTY_MEMBER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.PATRIOT {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.PERSISTENT_REDACTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.POLITICAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.RARE_MEDAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.REBEL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.REFERENDUM {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.RENEGADE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.REVOLUTIONALIST {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SAME_2_MEDALS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SCARECROW {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SHAMELESS_SELF_ADVERTISING {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SHAREHOLDER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SHARE_MASTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SHOUTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SLAYER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SNIPER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SOCIETY_BUILDER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SOUL_OF_CREATIVITY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SPARTAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SPLENDID {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.STILL_STANDING {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.STOCK_INVESTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.STONE_WEALTH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SUBSIDIZED_BATTLE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SUPERHEROES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SUPREME_COLLECTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.SWISS_INVITER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TANK {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_BH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_FINAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_SEMI_FINAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_TOP10 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_TOP3 {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_VETERAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TEAM_CUP_WINNER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -70px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TERMINATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -140px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TESTER_MEDAL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -210px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.THOUSAND_DAMAGE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -280px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.THRIFT_SHOP {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -350px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TOP_3_CONGRESS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -420px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TOP_3_DAMAGE {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -490px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TOP_SOLDIER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -560px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TRADER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -630px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TRANSLATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -700px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TRAVELING_AGENCY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -770px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TRAVELING_MERCENERY {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -840px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.TREASURE_GUARDIAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: 0px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VETERAN_COLLECTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -70px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VETERAN_CONSPIRATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -140px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VETERAN_MOTIVATOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -210px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VETERAN_TRAINER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -280px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VETERAN_WORKER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -350px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.VOTER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -420px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WALL_STREE_MOGUL {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -490px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WHO_AM_I_FIGHTING_WITH {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -560px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WON_PARTY_ELECTIONS {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -630px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WORLD_FAMOUS_REDACTOR {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -700px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WORLD_WAR_HERO {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -770px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WORLD_WAR_LEGEND {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -840px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WORLD_WAR_VETERAN {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -910px -910px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WORLD_WAR_WINNER {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -980px 0px;
+  width: 70px;
+  height: 70px;
+}
+.sprite.WRITE_ARTICLE_WITH_100_VOTES {
+  background-image: url(../img/sprites/achievement_small_black.png);
+  background-position: -980px -70px;
+  width: 70px;
+  height: 70px;
+}

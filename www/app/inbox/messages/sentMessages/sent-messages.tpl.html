@@ -1,0 +1,34 @@
+<div class="card">
+   <div class="item item-divider item-positive text-center">
+        Sent messages
+   </div>
+   <div class="list card" ng-repeat="message in sentMessages.sent">
+          <a class="item item-avatar" ng-click="sentMessages.showProfile(message.receiver.id)" href="#">
+              <img ng-src="{{message.receiver.avatar.SMALL}}">
+              <h2><i ng-if="message.receiver.premium" class="icon icon-star2 energized"></i>
+                {{message.receiver.username}}
+                <i ng-if="!message.read" class="icon ion-android-notifications assertive"></i>
+              </h2>
+             <h4>{{message.timeStamp | date:'medium'}}</h4>
+          </a>
+       <!-- </a> -->
+       <div class="item item-body">
+           <span><b>{{message.title}}</b></span>
+           <p ng-bind-html="message.message | bbCode"></p>
+       </div>
+       <div class="item tabs tabs-secondary tabs-icon-left">
+           <!-- <a class="tab-item" href="#">
+               <i class="icon ion-alert"></i>
+               Report
+           </a> -->
+           <a class="tab-item" ui-sref="main.writeMessage({receiver: message.receiver.username, title: message.title, receiverId: message.receiver.id})">
+               <i class="icon ion-chatbox"></i>
+               Send another
+           </a>
+       </div>
+   </div>
+
+ </div>
+ <ion-infinite-scroll ng-if="sentMessages.canFetchMoreMessages()" on-infinite="sentMessages.fetchMoreMessages()">
+</ion-infinite-scroll>
+<back-button></back-button>

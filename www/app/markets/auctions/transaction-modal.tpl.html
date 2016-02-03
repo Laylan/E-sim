@@ -1,0 +1,75 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <!-- <h2>
+          <i class="icon icon-{{auctions.currentAuction.resource}}"></i>Buy
+        </h2> -->
+        Auction
+      </div>
+      <a class="item item-thumbnail-left" ng-click="auctions.showProfile(auctions.currentAuction.owner.id)" href="#">
+        <img class="full-image" ng-src="{{auctions.currentAuction.owner.avatar.NORMAL}}">
+        <div>
+          <i class="icon icon-user"></i>{{auctions.currentAuction.owner.username}}
+        </div>
+        <!-- <div>
+          <i class="icon icon-cart"></i>Max amount
+          <span class="item-note">
+            <b>  {{products.currentProduct.quantity}}  </b>
+          </span>
+        </div> -->
+        <div>
+          <i class="icon icon-price"></i>Price
+          <span class="item-note">
+            <b>  {{auctions.currentAuction.currentPriceInGold | number : 2}} GOLD </b>
+          </span>
+        </div>
+        <div>
+          <i class="icon icon-star3"></i>Equipment
+          <span class="item-note">
+            <b> {{auctions.currentAuction.equipment.quality}} </b>
+          </span>
+        </div>
+      </a>
+      <a class="item item-icon-left" href="#">
+        <i class="icon icon-{{auctions.currentAuction.equipment.slot | lowercase}}{{auctions.currentAuction.equipment.quality}}"></i>
+        {{auctions.currentAuction.equipment.slot | lowercase | underscoreToSpace}} {{auctions.currentAuction.equipment.quality}}
+      </a>
+    </div>
+    <div class="list">
+      <a class="item item-icon-left" href="#">
+         <i class="icon ion-clock"></i> Time to finish
+         <span class="badge badge-energized">{{auctions.currentAuction.finishTime | date: 'medium'}}</span>
+       </a>
+     <a class="item item-icon-left" href="#">
+        <i class="icon icon-wallet"></i> Your gold
+        <span class="badge badge-assertive">{{auctions.money[0].ammount | number : 2}} GOLD </span>
+      </a>
+      <!-- <a class="item item-icon-left" href="#">
+        <i class="icon icon-value"></i> Summary
+        <span class="badge badge-assertive" ng-if="(products.amount * products.currentProduct.price )>products.money[products.currentProduct.countryId].ammount">
+           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
+        </span>
+        <span class="badge badge-positive" ng-if="(products.amount * products.currentProduct.price )<products.money[products.currentProduct.countryId].ammount">
+           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
+        </span>
+      </a> -->
+      <label class="item item-input">
+        <span class="input-label">Minimal bid</span>
+        <input type="text" placeholder="{{auctions.currentAuction.minimalOutbid}}" ng-model="auctions.price" name="name">
+      </label>
+      <div class="row">
+        <div class="col">
+          <button class="button icon-left icon-uniF478 button-full button-positive" ng-click="auctions.closeTransactionModal()">
+            Back
+          </button>
+        </div>
+        <div class="col col-67">
+          <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="auctions.bid()">
+            Bid
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

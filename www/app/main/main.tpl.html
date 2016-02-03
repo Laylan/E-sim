@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    <i ng-if="main.player.premium" class="icon icon-star2 yellow"></i> {{main.player.username}}
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+      <div class="col col-50 col-offset-25 text-center">
+        <img class="full-image" ng-src="{{main.player.avatar.NORMAL}}">
+      </div>
+    </div>
+  </div>
+  <h3 class="item" href="#">
+		Level
+		<span class="badge badge-positive">{{main.player.level}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Strength
+		<span class="badge badge-positive">{{main.player.strength}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Economy skill
+		<span class="badge badge-positive">{{main.player.economySkill}}</span>
+	</h3>
+  <span class="item text-center">
+		<h2>Military rank</h2>
+		<div class="row">
+			<div class="col col-50 col-offset-25 text-center">
+				<img ng-src="assets/img/ranks/{{main.player.rankFileName}}.png">
+			</div>
+		</div>
+		<p>{{main.player.rankName}}</p>
+	</span>
+  <div class="item row">
+    <div class="col col-80 col-offset-10 text-center">
+      <h3>HP - {{main.player.health}}%</h3>
+      <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{main.player.health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{main.player.health}}%;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <h3>XP - {{main.player.xp}} / {{main.xpToNextLvl}}</h3>
+      <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{main.player.xp}}" aria-valuemin="0" aria-valuemax="100" style="width: {{main.xpPercentage}}%;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <h3>Next rank - {{main.player.totalDamage}} / {{main.dmgToNextRank}}</h3>
+      <div class="progress progress-striped">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{main.player.totalDamage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{main.damagePercentage}}%;">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="item item-icon-left item-button-right" ui-sref="main.friends({friendId: main.player.id, page: '1'})">
+		<i class="icon icon-friends"></i><span>Friends</span>
+		<button class="button button-positive">
+			<i class="icon ion-chevron-right"></i>
+		</button>
+	</a>
+  <a href="#/main/equipment" class="item item-icon-left item-button-right">
+		<i class="icon icon-dagger"></i><span>Equipment</span>
+		<button class="button button-positive">
+			<i class="icon ion-chevron-right"></i>
+		</button>
+	</a>
+  <a class="item item-icon-left item-button-right" href="#/main/achievements/{{main.player.id}}">
+		<i class="icon icon-trophy"></i><span>Achievements</span>
+		<button class="button button-positive">
+			<i class="icon ion-chevron-right"></i>
+		</button>
+	</a>
+  <div class="row">
+    <div class="col col-33 col-offset-67">
+      <div ng-click="main.goAbout()" class="button button-block button-positive">About</div>
+    </div>
+  </div>
+</div>

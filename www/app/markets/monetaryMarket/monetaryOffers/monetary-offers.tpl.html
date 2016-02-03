@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Monetary Offers
+  </div>
+  <div class="item button-bar">
+    <a class="button button-padding button-positive" ng-click="monetaryOffers.openOfferModal()">
+      <span class="button-big-font">
+        <i class="icon icon-size-small icon-left icon-comment2"></i>
+        Post your offer
+      </span>
+    </a>
+  </div>
+  <div class="item item-divider text-center">
+  </div>
+  <div>
+    <ul class="list">
+      <li class="item row" ng-repeat="offer in monetaryOffers.myOffers">
+        <div>
+
+          <p> Max amount:
+            <b>
+              {{offer.amount | number : 2}} {{monetaryOffers.currienciesList[offer.sellerCurrencyId].currencyName}}
+            </b>
+          </p>
+
+          <span class="badge badge-energized badge-left em-down">
+            1 {{monetaryOffers.currienciesList[offer.sellerCurrencyId].currencyName}}={{offer.ratio }} {{monetaryOffers.currienciesList[offer.buyerCurrencyId].currencyName}}
+          </span>
+        </div>
+        <div class="col col-offset-20">
+          <button class="button button-positive" ng-click="monetaryOffers.deleteOffer(offer.offerId)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ion-infinite-scroll ng-if="monetaryOffers.canGetMoreOffer()" on-infinite="monetaryOffers.getMore()">
+  </ion-infinite-scroll>
+</div>
+<back-button></back-button>

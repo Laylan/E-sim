@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Monetary Market
+  </div>
+
+  <div class="list">
+    <div class="item item-divider text-center">
+      <div class="button-bar">
+        <a class="button button-padding button-positive" ng-click="monetaryMarket.yourOffers()">
+          <span class="button-big-font">
+            <i class="icon icon-bank icon-left  "></i>
+              Your offers
+          </span>
+        </a>
+      </div>
+    </div>
+    <form ng-submit="monetaryMarket.getOffers()">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Buyer Currency
+        </div>
+        <select class="maxWidth" ng-model="monetaryMarket.buyerCurrencyId" ng-options="countryId as currency.nameAndCurrency for (countryId, currency) in monetaryMarket.currienciesList">
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Seller Currency
+        </div>
+        <select class="maxWidth" ng-model="monetaryMarket.sellerCurrencyId" ng-options="countryId as currency.nameAndCurrency for (countryId, currency) in monetaryMarket.currienciesList">
+        </select>
+      </label>
+      <span class="item">
+        <div class="button-bar">
+          <a class="button button-positive" ng-click="monetaryMarket.swapCurriencies()">Swap Curriencies</a>
+          <button type="submit" class="button button-positive">View offers</button>
+        </div>
+      </span>
+    </form>
+  </div>
+  <div>
+    <ul class="list">
+      <li class="item row" ng-click="monetaryMarket.openTransactionModal(offer)" ng-repeat="offer in monetaryMarket.offers">
+        <!-- <li class="item row" ng-repeat="offer in monetaryMarket.offers"> -->
+        <div>
+          <b>  {{offer.owner.name}}</b>
+          <br>
+          <!-- (Amount: {{offer.amount | number : 2}} {{monetaryMarket.currienciesList[offer.sellerCurrencyId].currencyName}}) -->
+
+          <p> Max amount:
+            <br>
+            <b>
+              {{offer.amount | number : 2}} {{monetaryMarket.currienciesList[offer.sellerCurrencyId].currencyName}}
+            </b>
+          </p>
+        </div>
+        <div class="col col-offset-50">
+          <span class="badge badge-energized em-down">
+            1 {{monetaryMarket.currienciesList[offer.sellerCurrencyId].currencyName}}={{offer.ratio }} {{monetaryMarket.currienciesList[offer.buyerCurrencyId].currencyName}}
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ion-infinite-scroll ng-if="monetaryMarket.canGetMoreOffer()" on-infinite="monetaryMarket.getMore()">
+  </ion-infinite-scroll>
+</div>

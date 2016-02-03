@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Battles
+  </div>
+  <a ng-repeat="fight in fightList.fights" href="#/main/fight/{{fight.battleId}}" class="item text-center item-text-wrap">
+    <h2>{{fight.battleName | capitalize}}</h2>
+    <h3 ng-if="!fight.frozen">
+			<timer max-time-unit="'hour'" countdown="(fight.milisLeftTimestamp / 1000)" interval="1000">{{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
+		</h3>
+    <h3 ng-if="fight.frozen">
+			Battle is frozen!
+		</h3>
+    <div class="progress progress-striped">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{fight.defenderDmgPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{fight.defenderDmgPercent}}%;">
+      </div>
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{100 - fight.defenderDmgPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{100 - fight.defenderDmgPercent}}%;">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-left">
+        <h3>{{fight.defenderName}} - {{fight.defenderScore}}</h3>
+      </div>
+      <div class="col text-right">
+        <h3>{{fight.attackerName}} - {{fight.attackerScore}}</h3>
+      </div>
+    </div>
+    <div ng-if="!fight.active" class="row text-center">
+      <h3>This battle is not active!</h3>
+    </div>
+  </a>
+</div>

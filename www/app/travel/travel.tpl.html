@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Select region
+  </div>
+  <div class="item item-text-wrap">
+    <div class="list">
+
+      <label ng-repeat="region in travel.regions" class="item item-radio">
+        <input ng-model="travel.selectedRgion" type="radio" name="region" ng-value="region.regionId">
+        <div class="item-content">
+          <img class="avatar" ng-src="assets/img/flags/small/{{region.occupant.name| flags}}.png"> {{region.name}}
+        </div>
+        <i class="radio-icon icon-airplane"></i>
+      </label>
+
+      <label class="item item-input item-select">
+        <i class="icon-ticket"> </i>
+        <div class="input-label">
+          Ticket
+        </div>
+        <select ng-options="ticket.quality as ticket.name for ticket in travel.tickets" ng-model="travel.selectedTicket">
+          <option>Select ticket</option>
+        </select>
+      </label>
+
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col col-33">
+    <a class="button icon-left icon-uniF478 button-full button-positive" href="#/main/travelList">Back</a>
+  </div>
+  <div class="col">
+    <button ng-click="travel.travel()" ng-disabled="!travel.selectedTicket" type="submit" class="button icon-left icon-uniF479 button-full button-balanced">
+      Travel
+    </button>
+  </div>
+</div>

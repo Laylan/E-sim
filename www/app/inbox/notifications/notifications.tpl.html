@@ -1,0 +1,16 @@
+<div style="margin-top:0;padding-top:60px" class="card">
+  <div class="item item-divider text-center">
+    Notifications
+  </div>
+  <span class="item text-center" ng-if="notifications.notifications.length === 0">
+		No notifications!
+	</span>
+  <span class="item item-icon-left item-text-wrap" href="#" ng-repeat="notification in notifications.notifications">
+		<i class="icon" ng-class="notification.type.icon"></i>
+		<h2>{{notification.type.name | underscoreToSpace}}</h2>
+    <p ng-bind-html="notification.message | bbCode"></p>
+
+	</span>
+  <ion-infinite-scroll ng-if="notifications.canFetchMoreNotifications()" on-infinite="notifications.fetchMoreNotifications()">
+  </ion-infinite-scroll>
+</div>

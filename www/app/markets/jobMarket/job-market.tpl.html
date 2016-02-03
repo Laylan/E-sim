@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Job Market
+  </div>
+  <div ng-click="jobMarket.toggleFilter(jobMarket.hideFilter)" class="item item-toggle">
+    Show filter
+    <label class="toggle toggle-positive">
+      <input type="checkbox">
+      <div class="track">
+        <div class="handle"></div>
+      </div>
+    </label>
+  </div>
+  <label ng-class="{hide: jobMarket.hideFilter}" class="item item-input item-select">
+    <div class="input-label">
+      Country
+    </div>
+    <select ng-model="jobMarket.countryId" ng-options="country.countryId as country.name for country in jobMarket.countries">
+    </select>
+  </label>
+  <label ng-class="{hide: jobMarket.hideFilter}" class="item item-input item-stacked-label">
+    <span class="input-label">Economic Skill</span>
+    <input type="tel" placeholder="Economic Skill" name="minimalEcoSkill" ng-model="jobMarket.minimalEcoSkill">
+  </label>
+  <div ng-class="{hide: jobMarket.hideFilter}" class="item">
+    <button class="button button-block button-positive" ng-click="jobMarket.applyForm()">
+      Filter
+    </button>
+  </div>
+
+  <div ng-repeat="offer in jobMarket.jobOffers" ng-if="jobMarket.workData.company == null" ng-click="jobMarket.showConfirm(offer.offerId)" class="item item-avatar">
+    <img ng-src="{{offer.company.avatarLink}}">
+    <h2>{{offer.company.resourceObj.name}} - Q{{offer.company.quality}}</h2>
+    <h3>{{offer.company.name}}</h3>
+    <h3>Minimal economy skill - {{offer.minimalEconomicSkill}}</h3>
+    <span class="badge badge-positive">{{offer.salary}} {{offer.currencyName}}</span>
+  </div>
+
+  <div ng-repeat="offer in jobMarket.jobOffers" ng-if="jobMarket.workData.company != null" ng-click="jobMarket.showToast()" class="item item-avatar">
+    <img ng-src="{{offer.company.avatarLink}}">
+    <h2>{{offer.company.resourceObj.name}} - Q{{offer.company.quality}}</h2>
+    <h3>{{offer.company.name}}</h3>
+    <h3>Minimal economy skill - {{offer.minimalEconomicSkill}}</h3>
+    <span class="badge badge-positive">{{offer.salary}} {{offer.currencyName}}</span>
+  </div>
+
+  <ion-infinite-scroll ng-if="jobMarket.canFetchMoreOffers()" on-infinite="jobMarket.fetchMoreOffers()">
+  </ion-infinite-scroll>
+</div>

@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Product Offers
+  </div>
+  <br>
+  <div class="button-bar">
+    <a class="button button-padding button-positive icon icon-left ion-plus" ng-click="productOffers.openOfferModal()">
+      <!-- <i class=" "></i> -->
+        Post your offer
+
+      <!-- </div> -->
+    </a>
+  </div>
+  <div>
+    <ul class="list">
+      <li class="item row" ng-repeat="offer in productOffers.myProductOffers">
+        <product-icon resource='{{offer.resource}}' quality='{{offer.quality}}'></product-icon>
+          <div class="col col-50 ellipsis col-center">
+            <b>{{offer.price}} {{offer.currencyName}}</b>
+            <br>
+            <p>({{offer.quantity}})</p>
+          </div>
+
+          <div class="col col-offset-10 col-20 col-center ">
+            <button
+                class="button button-assertive icon ion-close-round"
+                ng-click="productOffers.deleteOffer(offer.offerId)"></button>
+          </div>
+  </li>
+  </ul>
+</div>
+<ion-infinite-scroll ng-if="productOffers.canGetMoreOffer()" on-infinite="productOffers.getMore()">
+</ion-infinite-scroll>
+</div>
+<back-button></back-button>

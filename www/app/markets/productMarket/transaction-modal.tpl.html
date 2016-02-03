@@ -1,0 +1,67 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <h2> <i class="icon icon-{{products.currentProduct.resource | lowercase}}"></i>Buy </h2>
+      </div>
+      <a class="item item-thumbnail-left" ng-click="products.showProfile(products.currentProduct.owner.id, products.currentProduct.owner.ownerType)" href="#">
+        <img class="full-image" ng-src="{{products.currentProduct.owner.avatarLink | avatar : 'normal'}}">
+        <div>
+          <i class="icon icon-user"></i>{{products.currentProduct.owner.name}}
+        </div>
+        <div>
+          <i class="icon icon-cart"></i>Max amount
+          <span class="item-note">
+            <b>  {{products.currentProduct.quantity}}  </b>
+          </span>
+        </div>
+        <div>
+          <i class="icon icon-price"></i>Price
+          <span class="item-note">
+            <b>  {{products.currentProduct.price}} {{products.currentProduct.currencyName}} </b>
+          </span>
+        </div>
+        <div>
+          <i class="icon icon-star3"></i>Quality
+          <span class="item-note">
+            <b> {{products.currentProduct.quality}} </b>
+          </span>
+        </div>
+      </a>
+    </div>
+    </div>
+    <div class="list">
+      <a class="item item-icon-left" href="#">
+        <i class="icon icon-wallet"></i> Your money
+        <span class="badge badge-assertive">{{products.money[products.currentProduct.countryId].ammount | number : 2}} {{products.currentProduct.currencyName}}</span>
+      </a>
+      <a class="item item-icon-left" href="#">
+        <i class="icon icon-value"></i> Summary
+        <!-- <span class="badge" ng-class=" products.canBuy  : badge-positive, !products.canBuy : badge-assertive"> -->
+        <!-- {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}} -->
+        <!-- </span> -->
+        <span class="badge badge-assertive" ng-if="(products.amount * products.currentProduct.price )>products.money[products.currentProduct.countryId].ammount">
+           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
+        </span>
+        <span class="badge badge-positive" ng-if="(products.amount * products.currentProduct.price )<products.money[products.currentProduct.countryId].ammount">
+           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
+        </span>
+      </a>
+      <label class="item item-input">
+        <input type="tel" placeholder="Amount" ng-model="products.amount" min="1" max="{{products.currentProduct.quantity}}" name="name" >
+      </label>
+      <div class="row">
+        <div class="col">
+          <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="products.closeTransactionModal()">
+            Back
+          </button>
+        </div>
+        <div class="col col-67">
+          <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="products.buy()">
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

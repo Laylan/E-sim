@@ -1,0 +1,105 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        Fight <i class="icon icon-house"></i>
+      </div>
+      <div class="item row">
+        <div class="col col-80 col-offset-10 text-center">
+
+          <h2>{{loggedPlayer.username}}</h2>
+          <h3>HP - {{loggedPlayer.health}}%</h3>
+          <div class="col">
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{loggedPlayer.health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{loggedPlayer.health}}%;">
+                <span class="sr-only"></span>
+              </div>
+
+            </div>
+            <div class="text-left">
+              <span  align="center" ng-if ="fight.fightData.damage">Damage done: {{fight.fightData.damage| number:0}} ({{fight.fightData.hitName}}) </span>
+              <!-- <h2>Bonuses:
+                <span ng-if="fight.fightData.avoidDamage">Damage avoid!</span>
+                <span ng-if="fight.fightData.defenseBonusInPercent > 0">Defense bonus: ({{fight.fightData.defenseBonusInPercent}})!</span>
+                <span ng-if="fight.fightData.locationBonus">Location bonus!</span>
+                <span ng-if="fight.fightData.muBonus > 0">Military Unit bonus ({{fight.fightData.muBonus}})!</span>
+              </h2> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="button-bar">
+          <a class="button button-assertive" ng-disabled="loggedPlayer.health < 10" ng-click="fight.fetchFightResult(fight.selectedWeapon, false)">Fight</a>
+          <a class="button button-assertive" ng-disabled="loggedPlayer.health < 50" ng-click="fight.fetchFightResult(fight.selectedWeapon, true)">Berserk</a>
+        </div>
+      </div>
+
+      <!-- Weapons -->
+      <div class="row">
+        <div align="center" class="col no-border item storage_item" ng-repeat="weapon in fight.weapons" >
+         <label for="weaponq{{weapon.quality}}" class=" item-radio">
+            <stash-product-icon
+                ng-class="{assertive : ('w'+weapon.quality === fight.selectedWeapon) }"
+                resource='{{weapon.resource}}'
+                quality='{{weapon.quality}}'
+                quantity ='{{weapon.quantity}}'></stash-product-icon>
+            <input
+                type="radio"
+                name="rbweapon"
+                ng-model="fight.selectedWeapon"
+                value="w{{weapon.quality}}"
+                id="weaponq{{weapon.quality}}"
+                ng-disabled="(weapon.quantity===0)" />
+          </label>
+        </div>
+      </div>
+
+      <div class="item item-divider text-right ">
+
+        Consume items
+        <span>
+          <i class="icon icon-FOOD icon-size-xsmall" > </i>({{fight.foodLimit}})
+          <i class="icon icon-GIFT icon-size-xsmall"> </i>({{fight.giftLimit}})
+        </span>
+      </div>
+      <div class="row">
+        <div align="center" class="col no-border item storage_item " ng-repeat="food in fight.foods" >
+          <label class=" item-radio">
+             <stash-product-icon
+                ng-class="{balanced : ('f'+{{food.quality}} === fight.selectedItem) }"
+                resource='{{food.resource}}'
+                quality='{{food.quality}}'
+                quantity ='{{food.quantity}}'></stash-product-icon>
+             <input
+                type="radio"
+                name="rbconsume"
+                ng-model="fight.selectedItem"
+                value="f{{food.quality}}"  />
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div align="center" class="col no-border item storage_item " ng-repeat="gift in fight.gifts" >
+          <label class=" item-radio">
+             <stash-product-icon
+               ng-class="{balanced : ('g'+{{gift.quality}} === fight.selectedItem) }"
+                      resource='{{gift.resource}}'
+                      quality='{{gift.quality}}'
+                      quantity ='{{gift.quantity}}'
+                      ></stash-product-icon>
+                      <input type="radio" name="rbconsume" ng-model="fight.selectedItem"
+                      value="g{{gift.quality}}"  />
+          </label>
+        </div>
+      </div>
+      <span class="item">
+        <div class="button-bar">
+          <a class="button button-positive col-33"  ng-click="fight.closeFightModal()" >Close</a>
+          <a ng-disabled="!fight.selectedItem" class="button button-balanced col-67" ng-click="fight.consume(fight.selectedItem)">Consume</a>
+        </div>
+      </span>
+      </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Local Shouts
+  </div>
+
+  <div class="item">
+    <div class="list card" ng-if="localShouts.shouts.length === 0">
+      No shouts!
+    </div>
+    <div class="card">
+      <p ng-hide="localShouts.showChangeLog" ng-click="localShouts.showMore()" class="item item-positive without-padding">
+        <i class="icon icon-forward"></i>Write a new shout</p>
+      <p ng-if="localShouts.showChangeLog" ng-click="localShouts.showMore()" class="item item-positive without-padding">
+        <i class="icon icon-undo"></i>Hide</p>
+      <div ng-if="localShouts.showChangeLog">
+        <form ng-submit="localShouts.writeShout()">
+          <label class="item item-input">
+            <textarea placeholder="Write shout" ng-model="localShouts.message"></textarea>
+          </label>
+          <button type="submit" class="button margin-zero button-center button-block icon-comment6 button-positive">
+            Shout!
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="shout in localShouts.shouts">
+      <a class="item item-avatar-left" ng-click="localShouts.showProfile(shout.citizen.id)" href="#">
+        <img ng-src="{{shout.citizen.avatar.SMALL}}">
+        <span class="item padding-zero">
+          <h2><i ng-if="shout.isPremium" class="icon icon-star2 yellow"></i> {{shout.citizen.username}}</h2>
+          <h4>{{shout.time | date:'medium'}}</h4>
+        </span>
+      </a>
+      <div class="item item-body boxhead" >
+        <span ng-bind-html="shout.message | bbCode" ></span>
+
+
+        <p>{{shout.votes}} Votes {{shout.replies}} Comments
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click="localShouts.likeIt(shout)" href="#">
+          {{shout.votes}} <i class="icon ion-thumbsup" ng-class="{positive : !shout.votedAlready}"></i> Like
+        </a>
+        <a class="tab-item" href="#/main/shoutsList/{{shout.id}}">
+          {{shout.replies}} <i class="icon ion-chatbox"></i> Comment
+        </a>
+      </div>
+    </div>
+  </div>
+  <ion-infinite-scroll ng-if="localShouts.canGetMoreShouts()" on-infinite="localShouts.getMore()">
+  </ion-infinite-scroll>
+</div>

@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    <i ng-if="profile.profileData.premium" class="icon icon-star2 yellow"></i>
+    <b>{{profile.profileData.username}}</b>
+  </div>
+  <div class="item item-text-wrap">
+    <div class="row">
+      <div class="col col-50 text-center">
+        <img class="full-image" ng-src="{{profile.profileData.avatar.NORMAL}}">
+      </div>
+      <div class="col col-center text-center">
+        <p>Citizenship</p>
+        <img src="assets/img/flags/big/{{profile.profileData.countryName | flags}}.png">
+        <h2>{{profile.profileData.countryName}}</h2>
+      </div>
+    </div>
+  </div>
+  <h3 class="item" href="#">
+		Level
+		<span class="badge badge-positive">{{profile.profileData.level}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Strength
+		<span class="badge badge-positive">{{profile.profileData.strength}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Total Damage
+		<span class="badge badge-positive">{{profile.profileData.totalDamage}}</span>
+	</h3>
+  <h3 class="item" href="#">
+		Economy skill
+		<span class="badge badge-positive">{{profile.profileData.economySkill}}</span>
+	</h3>
+  <span class="item text-center">
+		<h2>Military rank</h2>
+		<div class="row">
+			<div class="col col-50 col-offset-25 text-center">
+				<img ng-src="assets/img/ranks/{{profile.profileData.rankFileName}}.png">
+			</div>
+		</div>
+		<p>{{profile.profileData.rankName}}</p>
+	</span>
+  <a class="item item-icon-left item-button-right" ui-sref="main.friends({friendId: profile.profileData.id, page: '1'})">
+    <i class="icon icon-friends"></i><span>Friends</span>
+    <button class="button button-positive">
+      <i class="icon ion-chevron-right"></i>
+    </button>
+  </a>
+</div>
+
+<back-button></back-button>

@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Articles ::
+    {{articles.pageTitle}}
+  </div>
+  <div class="item" ng-repeat="article in articles.articles">
+    <a class="item item-thumbnail-left without-padding" href="#/main/openArticle/{{article.id}}">
+
+      <img ng-src="{{article.newspaper.avatar.NORMAL}}"/>
+      <h2>
+        {{article.newspaper.name}}
+      </h2>
+      <p>{{article.title}}</p>
+      <div>{{article.newspaper.citizen.countryName}}</div>
+      <div class="row row-center">
+        <div class="col center">
+          <i class="ion-speakerphone"></i>{{article.newspaper.totalSubs}}
+        </div>
+        <div class="col center">
+          <i class="icon-voteIcon"></i>{{article.totalVotes}}
+        </div>
+        <div class="col center">
+          <i class="icon-bubbles-2"></i>{{article.totalComments}}
+        </div>
+      </div>
+
+    </a>
+  </div>
+  <ion-infinite-scroll ng-if="articles.canGetMoreArticles()" on-infinite="articles.getMore()"></ion-infinite-scroll>
+</div>

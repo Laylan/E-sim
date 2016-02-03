@@ -1,0 +1,142 @@
+{
+    "IRON": {
+        "name": "Iron",
+        "shortName": "Iron",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Used to create weapons",
+        "motivationalProduct": false
+    },
+    "GRAIN": {
+        "name": "Grain",
+        "shortName": "Grain",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Raw material to produce food",
+        "motivationalProduct": false
+    },
+    "OIL": {
+        "name": "Oil",
+        "shortName": "Oil",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Used to create tickets",
+        "motivationalProduct": false
+    },
+    "STONE": {
+        "name": "Stone",
+        "shortName": "Stone",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Used to build hospitals, estates and defense system",
+        "motivationalProduct": false
+    },
+    "WOOD": {
+        "name": "Wood",
+        "shortName": "Wood",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Used to build houses",
+        "motivationalProduct": false
+    },
+    "DIAMONDS": {
+        "name": "Diamonds",
+        "shortName": "Diam.",
+        "raw": true,
+        "rawResource": null,
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Used to produce gifts",
+        "motivationalProduct": false
+    },
+    "WEAPON": {
+        "name": "Weapon",
+        "shortName": "Weap.",
+        "raw": false,
+        "rawResource": "IRON",
+        "productivityRequired": 2,
+        "building": false,
+        "hint": "Increases damage in battle",
+        "motivationalProduct": true
+    },
+    "HOUSE": {
+        "name": "House",
+        "shortName": "House",
+        "raw": false,
+        "rawResource": "WOOD",
+        "productivityRequired": 300,
+        "building": false,
+        "hint": "Increases maximum food limit",
+        "motivationalProduct": false
+    },
+    "GIFT": {
+        "name": "Gift",
+        "shortName": "Gift",
+        "raw": false,
+        "rawResource": "DIAMONDS",
+        "productivityRequired": 2,
+        "building": false,
+        "hint": "Restores health",
+        "motivationalProduct": true
+    },
+    "FOOD": {
+        "name": "Food",
+        "shortName": "Food",
+        "raw": false,
+        "rawResource": "GRAIN",
+        "productivityRequired": 1,
+        "building": false,
+        "hint": "Restores health",
+        "motivationalProduct": true
+    },
+    "TICKET": {
+        "name": "Ticket",
+        "shortName": "Ticket",
+        "raw": false,
+        "rawResource": "OIL",
+        "productivityRequired": 4,
+        "building": false,
+        "hint": "Used to travel around the world",
+        "motivationalProduct": false
+    },
+    "DEFENSE_SYSTEM": {
+        "name": "Defense System",
+        "shortName": "DS",
+        "raw": false,
+        "rawResource": "STONE",
+        "productivityRequired": 300,
+        "building": true,
+        "hint": "Increases defenders damage in battle by 5%-25% (depends on defense system quality)",
+        "motivationalProduct": false
+    },
+    "HOSPITAL": {
+        "name": "Hospital",
+        "shortName": "Hosp.",
+        "raw": false,
+        "rawResource": "STONE",
+        "productivityRequired": 300,
+        "building": true,
+        "hint": "Reduces health loss in battle from 10 down to 7.5 (depends on hospital quality)",
+        "motivationalProduct": false
+    },
+    "ESTATE": {
+        "name": "Estate",
+        "shortName": "Est.",
+        "raw": false,
+        "rawResource": "STONE",
+        "productivityRequired": 600,
+        "building": false,
+        "hint": "Increases maximum gift limit",
+        "motivationalProduct": false
+    }
+}

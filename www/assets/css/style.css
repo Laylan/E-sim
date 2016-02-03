@@ -1,0 +1,295 @@
+/* Empty. Add your own CSS if you like */
+
+.maxWidth {
+  max-width: 50% !important;
+  padding-right: 35px !important;
+  padding-left: 0 !important;
+}
+.center {
+  text-align: center;
+}
+.checkboxx {
+  width: 50px !important;
+}
+.swap-button {
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.badge-left {
+  left: 16px !important;
+  right: auto !important;
+}
+.grey {
+  color: #ddd;
+}
+.dark-grey {
+  color: rgba(61, 61, 61, 0.71);
+}
+.align-right {
+  text-align: right !important;
+}
+.side-menu {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.ellipsisMax {
+  max-width: 8em;
+}
+.curriencies {
+  display: block;
+  float: left !important;
+  margin: .5em 0;
+  text-align: left !important;
+  width: 50% !important;
+}
+.clear {
+  clear: both;
+}
+.curriencies > img,
+.curriencies > div {
+  display: inline;
+  vertical-align: middle;
+}
+.line {
+  margin-bottom: 0px !important;
+  border-top: 1px !important;
+  color: #ddd !important;
+  border-top-style: solid !important;
+}
+.yellow {
+  color: rgb(255, 229, 5) !important;
+}
+.button-small-font {
+  font-size: 0.66em;
+}
+.button-padding {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+.padding-zero {
+  padding: 0 !important;
+  border-width: 0px !important;
+}
+.without-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.margin-zero {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.badge-posotion{
+  right: 15px !important;
+}
+span.border-zero,
+.border-zero {
+  padding: 11px !important;
+  border-width: 0px !important;
+}
+.no-border{
+  border-width: 0px !important;
+}
+.shout-message {
+  text-overflow: clip;
+  overflow: visible;
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+.em-down {
+  margin-top: 1em;
+}
+.fixed {
+  height: 40px;
+  width: 60px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  /*border-radius: 10px 0 0 0;*/
+  z-index: 1000;
+  /*display:none;*/
+  /*background:rgba(232, 98, 86,0.9);*/
+}
+.icon-size-small {
+  font-size: 0.66em !important;
+}
+.icon-size-large {
+  font-size: 2em !important;
+}
+.icon-size-xlarge {
+  font-size: 2.5em !important;
+}
+.icon-size-xxlarge {
+  font-size: 5em !important;
+}
+.eq-stars i {
+  margin: -0.33em;
+}
+.avatar {
+  max-width: 100px !important;
+}
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+.progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.item .badge {
+  right: 16px;
+}
+.storage_item {
+  flex-grow: 3;
+  float: left;
+  min-width: 30% text-align: center;
+}
+.storage_specialitem {
+  flex-grow: 3;
+  float: left;
+  padding: 5px;
+  min-width: 30% text-align: center;
+}
+.storage_item h5,
+.storage_item .eq-stars,
+.storage_item .icon-size-xlarge {
+  display: display: block !important;
+  text-align: center !important;
+}
+.storage_item > div {
+  margin: 0.25em;
+}
+.storage_item .icon-size-xlarge {
+  margin: 0.125em;
+  padding: 0;
+}
+.float_left {
+  float: left;
+}
+.storage {
+  display: flex;
+  text-align: center;
+  flex-flow: center;
+  align-content: center;
+}
+.full-image {
+  max-width: 150px;
+}
+.list .item.item-accordion {
+  line-height: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 16px;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.side-menu .bar-footer {
+  height: 84px;
+}
+.side-menu .bar-footer h1 {
+  line-height: 22px;
+  font-size: 16px;
+}
+.side-menu .ion-chevron-right {
+  color: grey;
+}
+a.boxhead {
+ color: grey;
+ text-decoration: none;
+}

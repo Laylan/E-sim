@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-content>
+  <div class="card">
+     <div class="item item-divider item-positive text-center">
+          <b>Achievement: {{achievements.currentAchiv.name}}</b>
+     </div>
+     <div class="row">
+       <div class="col col-20 col-center center">
+         <div class="sprite {{achievements.currentAchiv.type}}"></div>
+       </div>
+       <div class="col col-offset-10">
+         <div>
+           Category
+           <span class="item-note"> <b>{{achievements.currentAchiv.category}}</b></span>
+         </div>
+         <div>
+          Description
+          <span class="item-note"> {{achievements.currentAchiv.description}}</span>
+        </div>
+      </div>
+    </div>
+       <a ng-if="achievements.currentAchiv.reason" class="item" href="#">
+         Reason
+         <span class="item-note shout-message"> {{achievements.currentAchiv.reason | htmlFormat | bbCode}}</span>
+       </a>
+       <a class="item" href="#">
+         Achieved
+         <span class="item-note"> {{achievements.currentAchiv.time | date:'medium'}}</span>
+       </a>
+   </div>
+   <div class="row">
+     <div class="col">
+       <button class="button icon-left icon-uniF478 button-full button-positive" ng-click="achievements.closeAchievementsModal()">
+         Back
+       </button>
+     </div>
+   </div>
+  </ion-modal-view>
+</ion-content>

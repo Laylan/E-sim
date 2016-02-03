@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Auctions
+  </div>
+  <div class="list">
+    <form ng-submit="auctions.filter()">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Auction type
+        </div>
+        <select ng-model="auctions.type">
+          <option value="">Any</option>
+          <option value="COMPANY">Companies</option>
+          <option value="EQUIPMENT">Equipment</option>
+          <option value="SPECIAL_ITEM">Special item</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Auction Progress
+        </div>
+        <select ng-model="auctions.progress">
+          <option value="IN_PROGRESS">In progress</option>
+          <option value="CLOSED">Closed</option>
+          <option value="SOLD">Sold</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Auction Sort
+        </div>
+        <select ng-model="auctions.sorted">
+          <option value="TIME">Time remaining</option>
+          <option value="PRICE">Price</option>
+          <option value="BIDS">Total bids</option>
+        </select>
+      </label>
+      <button type="submit" class="button button-block button-positive">
+        View auctions
+      </button>
+      <div class="list list-inset">
+        <label ng-if="auctions.auctions.length > 0" class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="auctions.searchText">
+        </label>
+      </div>
+    </form>
+  </div>
+  <div>
+    <ul class="list">
+      <li class="item" ng-click="auctions.openTransactionModal(auction)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
+        <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.finishTime}}"></auction-item>
+      </li>
+    </ul>
+  </div>
+  <ion-infinite-scroll ng-if="auctions.canGetMoreAuctions()" on-infinite="auctions.getMore()">
+  </ion-infinite-scroll>
+</div>
