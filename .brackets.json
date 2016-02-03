@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/media/truecrypt1/ionic/ionic-e-sim-app/Gruntfile.js",
+        "/media/truecrypt1/ionic/ionic-e-sim-app/src/app/login/loginController.js"
+    ]
+}
