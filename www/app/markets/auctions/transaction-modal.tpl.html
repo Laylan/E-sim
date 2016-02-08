@@ -60,7 +60,8 @@
       </a>
       <a class="item item-icon-left" href="#">
          <i class="icon ion-clock"></i> Time to finish
-         <span class="badge badge-energized">{{auctions.currentAuction.finishTime | date: 'medium'}}</span>
+         <timer max-time-unit="'hour'" countdown="(auctions.currentAuction.finishTime / 1000)" interval="1000">{{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
+         <!-- <span class="badge badge-energized">{{auctions.currentAuction.finishTime | date: 'medium'}}</span> -->
        </a>
      <a class="item item-icon-left" href="#">
         <i class="icon icon-wallet"></i> Your gold
@@ -76,8 +77,8 @@
         </span>
       </a> -->
       <label class="item item-input">
-        <span class="input-label">Minimal bid</span>
-        <input type="text" placeholder="{{auctions.currentAuction.minimalOutbid}}" ng-model="auctions.price">
+        <span class="input-label">Bid</span>
+        <input type="text" placeholder="Minimal {{auctions.currentAuction.minimalOutbid}}" ng-model="auctions.price">
       </label>
       <div class="row">
         <div class="col">
