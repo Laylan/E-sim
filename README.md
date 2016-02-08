@@ -13,7 +13,7 @@ Boilerplate for quickly start building ionic's apps. Based on ng-boilerplate by 
 Install Node.js and then:
 
 ```sh
-$ git git@github.com:Laylan/E-sim.git
+$ git clone https://github.com/Laylan/E-sim.git
 $ cd E-sim
 $ sudo npm -g install grunt-cli karma bower cordova ionic
 $ npm install
