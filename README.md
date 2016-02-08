@@ -60,6 +60,13 @@ Android development:
  You may need OEM Drivers to be able to run app on phone with (ionic run android).<br>
 
 Happy hacking!
+
+### Rules
+By participating in project you will need to follow the rules from GitHub:
+* Every developer works on  individual branch.
+* To upload your code on Git, use option “pull request”. Then we will verify it. If the code will be clear our dev will accept it and add to the project.
+* Everybody can suggest new features. After accepting them we will be creating new issues.
+
 ## Learn
 
 ### Overall Directory Structure
