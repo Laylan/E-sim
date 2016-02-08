@@ -24,7 +24,7 @@
     vm.progress = 'IN_PROGRESS';
     vm.sorted = 'TIME';
     vm.currentAuction = null;
-    vm.price = 0;
+    vm.price = '';
 
     // definitions
     vm.filter = filter;

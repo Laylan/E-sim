@@ -8,23 +8,24 @@
   LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast', 'servers'];
 
   /* @ngInject */
-  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast , servers) {
+  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast, servers) {
 
     // vars
     var vm = this;
     vm.property = 'LoginController';
     vm.loginParameters = {};
     vm.servers = servers;
-//    vm.servers = [
-//  {
-//    "name":"Primera",
-//    "address":"http://primera.e-sim.org/mobile"
-//  },
-//  {
-//    "name":"Secura",
-//    "address":"http://secura.e-sim.org/mobile"
-//  }
-// ];
+// vm.servers = [
+//   {
+//     "name": "Michał",
+//     "address": "http://10.1.1.91:8080/mobile"
+//   },{
+//   "name": "Testura",
+//   "address": "http://testura.e-sim.org:8000/mobile"
+// }, {
+//   "name": "Primera",
+//   "address": "http://primera.e-sim.org/mobile"
+// }];
     vm.selectedServer = vm.servers[0];
     $rootScope.loggedPlayer = null;
 
@@ -35,29 +36,11 @@
     vm.initAutoLogin = initAutoLogin;
     vm.goAbout = goAbout;
     vm.initModal =initModal;
-    //vm.serverList = serverList;
 
     // inits
     vm.initAutoLogin();
     vm.initModal();
-    //serverList();
     ////////////////
-
-    // function serverList(){
-    //   console.log('serverList');
-    //   Login.getServerList()
-    //   .then(function Success(data) {
-    //     console.log('lista serwerow');
-    //     Toast("odebrano liste serwerow")
-    //     console.log(data);
-    //     vm.serverss = data;
-    //     console.log('serverss');
-    //     console.log(vm.serverss);
-    //   }, function Error(msg) {
-    //     console.log('error w kontrolerze');
-    //     Toast(msg);
-    //   });
-    // }
 
     function successfulLoginCallback(loggedPlayerData) {
       var ionicUser = {
@@ -117,8 +100,6 @@
     }
 
     function initAutoLogin() {
-      // Login
-      //   .serverList();
       Login
         .autoLogin()
         .then(successfulLoginCallback);
@@ -129,7 +110,6 @@
     }
 
     function login() {
-      //serverList();
       Login
         .login(vm.loginParameters, vm.selectedServer)
         .then(successfulLoginCallback, Toast);

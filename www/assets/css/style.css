@@ -20,6 +20,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.negative-margin{
+  margin-left: -15px !important;
+}
 .badge-left {
   left: 16px !important;
   right: auto !important;

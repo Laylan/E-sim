@@ -2,7 +2,7 @@
   <div class="item item-divider text-center">
     Auctions
   </div>
-  <div class="list">
+  <div class="list margin-zero">
     <form ng-submit="auctions.filter()">
       <label class="item item-input item-select">
         <div class="input-label">
@@ -47,8 +47,8 @@
     </form>
   </div>
   <div>
-    <ul class="list">
-      <li class="item" ng-click="auctions.openTransactionModal(auction)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
+    <ul class="list line">
+      <li class="item without-padding" ng-click="auctions.openTransactionModal(auction)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
         <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.finishTime}}"></auction-item>
       </li>
     </ul>
