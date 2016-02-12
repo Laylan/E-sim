@@ -1,10 +1,5 @@
-ionic-ng-boilerplate
+e-Sim Mobile app 
 ====================
-
-Boilerplate for quickly start building ionic's apps. Based on ng-boilerplate by Josh David Miller (http://joshdmiller.github.com/ng-boilerplate).
-
-
-
 
 ***
 
