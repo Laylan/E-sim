@@ -2,102 +2,91 @@
   'use strict';
 
   angular
-    .module('auctions.module')
-    .factory('AuctionsData', AuctionsData);
+    .module('auctions-offers.module')
+    .factory('AuctionsOffersData', AuctionsOffersData);
 
-  AuctionsData.$inject = ['$http', '$ionicLoading', '$rootScope', '$q', '$log', 'Toast'];
+  AuctionsOffersData.$inject = ['$http', '$q', '$log', '$ionicLoading', '$rootScope', 'Toast'];
 
   /* @ngInject */
-  function AuctionsData($http, $ionicLoading, $rootScope, $q, $log, Toast) {
+  function AuctionsOffersData($http, $q, $log, $ionicLoading, $rootScope, Toast) {
 
     // return functions
     var exports = {
-      fetchAuctions: fetchAuctions,
-      fetchAuction: fetchAuction,
-      bid: bid,
-      remove: remove,
+      fetchMyAuctions: fetchMyAuctions,
+      createNewAuctionOffer: createNewAuctionOffer,
+      removeAuctionOffer: removeAuctionOffer
     };
 
     return exports;
 
     ////////////////
 
-    function fetchAuctions(page, status, sorting, type) {
+    function fetchMyAuctions(page, status) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.get($rootScope.server.address + '/auctions/?page=' + page + '&status=' + status + '&sorting=' + sorting + '&type=' + type)
+      console.log('fetchMyAuctions');
+      $http.get($rootScope.server.address + '/ownedAuctions?page=' + page + '&status=' + status)
+        //serwer zwraca dane w druga strone
         .success(function Success(results) {
+          console.log('successss');
           console.log(results);
           deferred.resolve(results);
         })
-        .error(function Error(msg, code) {
-          $log.error(msg, code);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
-    }
-
-    function fetchAuction(id) {
-//znalezienie konkretnej aukcji do bidowania
-    }
-
-    function bid(auctionId, bid) {
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      console.log('parametry');
-      console.log(auctionId);
-      console.log(bid);
-      $http.post($rootScope.server.address + '/bidAuction', {
-          auctionId: auctionId,
-          bid: bid
-        })
-        .success(function (data) {
-          if (data) {
-            console.log('zabidowane');
-            console.log(data);
-            deferred.resolve(data);
-
-            return;
-          }
-          deferred.resolve("OK");
-          Toast("OK");
-        })
-        .error(function (msg) {
-          console.log('errorek');
+        .error(function Error(msg) {
+          console.log('cos nie tak' + msg);
           $log.error(msg);
           deferred.reject(msg);
         })
         .finally($ionicLoading.hide);
       return deferred.promise;
     }
-    function remove(auctionId) {
+
+    function createNewAuctionOffer(resource,quality, amount, countryId, price) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      console.log('parametry');
-      console.log(auctionId);
-      $http.post($rootScope.server.address + '/cancelAuction', {
-          auctionId: auctionId,
+      $http.post($rootScope.server.address + '/productMarket/postOffer', {
+          resource: resource,
+          quality: quality,
+          amount: amount,
+          countryId: countryId,
+          price: price
         })
         .success(function (data) {
           if (data) {
-            console.log('Removed!');
-            console.log(data);
             deferred.resolve(data);
-
+            Toast(data);
             return;
           }
           deferred.resolve("OK");
-          Toast("OK");
         })
         .error(function (msg) {
-          console.log('errorek');
+          $log.error(msg);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
+    }
+
+    function removeAuctionOffer(id) {
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      $http.get($rootScope.server.address + '/productMarket/removeOffer?offerId='+id)
+        .success(function (data) {
+          if (data) {
+            deferred.resolve(data);
+            Toast(data);
+            console.log('succes');
+            return;
+          }
+          deferred.resolve("OK");
+        })
+        .error(function (msg) {
           $log.error(msg);
           deferred.reject(msg);
         })
@@ -105,4 +94,5 @@
       return deferred.promise;
     }
   }
+
 })();

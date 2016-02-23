@@ -7,12 +7,20 @@
         </h2> -->
         Auction
       </div>
-      <div class="row" ng-click="auctions.showProfile(auctions.currentAuction.owner.id)">
-        <!-- <img ng-src="{{auctions.currentAuction.owner.avatar.NORMAL}}">
-        <div>
-          <i class="icon icon-user"></i>{{auctions.currentAuction.owner.username}}
-        </div> -->
-        <div class="col col-20 item"><b>Owner:</b></div>
+      <a class="item item-avatar" ng-click="auctions.showProfile(auctions.currentAuction.owner.id)" href="#">
+        <img ng-src="{{auctions.currentAuction.owner.avatar.SMALL}}">
+        <h2 class="ellipsis"><i ng-if="auctions.currentAuction.owner.premium" class="icon icon-star2 yellow"></i>
+          {{auctions.currentAuction.owner.username}} <img src="assets/img/flags/small/{{auctions.currentAuction.owner.countryName | flags}}.png"></h2>
+        <!-- <h4>{{message.timeStamp | date:'medium'}}</h4> -->
+      </a>
+      <a class="item item-avatar" ng-click="auctions.showProfile(auctions.currentAuction.topBidder.id)" href="#">
+        <img ng-src="{{auctions.currentAuction.topBidder.avatar.SMALL}}">
+        <h2 class="ellipsis"><i ng-if="auctions.currentAuction.topBidder.premium" class="icon icon-star2 yellow"></i>
+          {{auctions.currentAuction.topBidder.username}} <img src="assets/img/flags/small/{{auctions.currentAuction.topBidder.countryName | flags}}.png"></h2>
+        <!-- <h4>{{message.timeStamp | date:'medium'}}</h4> -->
+      </a>
+      <!-- <div class="row" ng-click="auctions.showProfile(auctions.currentAuction.owner.id)">
+        <div class="col col-20"><b>Owner:</b></div>
         <div class="col col-10 negative-margin">
           <img ng-src="{{auctions.currentAuction.owner.avatar.SMALL}}">
         </div>
@@ -30,64 +38,44 @@
           <h4 class="ellipsis"><i ng-if="auctions.currentAuction.topBidder.premium" class="icon icon-star2 yellow"></i>
                      {{auctions.currentAuction.topBidder.username}} <img src="assets/img/flags/small/{{auctions.currentAuction.topBidder.countryName | flags}}.png"></h4>
         </div>
-      </div>
-        <!-- <div>
-          <i class="icon icon-cart"></i>Max amount
-          <span class="item-note">
-            <b>  {{products.currentProduct.quantity}}  </b>
-          </span>
-        </div> -->
-        <!-- <div>
-          <i class="icon icon-price"></i>Price
-          <span class="item-note">
-            <b>  {{auctions.currentAuction.currentPriceInGold | number : 2}} GOLD </b>
-          </span>
-        </div> -->
-        <!-- <div>
-          <i class="icon icon-star3"></i>Equipment
-          <span class="item-note">
-            <b> {{auctions.currentAuction.equipment.quality}} </b>
-          </span>
-        </div> -->
+      </div> -->
+      <div class="line"></div>
     <div class="list">
       <a class="item item-icon-left" href="#">
          <i class="icon icon-price"></i> Current price
          <span class="badge badge-assertive">{{auctions.currentAuction.currentPriceInGold | number : 2}} GOLD </span>
        </a>
-      <a class="item item-icon-left" href="#">
+      <!-- <a class="item item-icon-left" href="#">
         <i class="icon icon-{{auctions.currentAuction.equipment.slot | lowercase}}{{auctions.currentAuction.equipment.quality}}"></i>
         {{auctions.currentAuction.equipment.slot | lowercase | underscoreToSpace}} {{auctions.currentAuction.equipment.quality}}
-      </a>
+      </a> -->
+      <equipment-item icon="{{auctions.currentAuction.equipment.slot | lowercase}}" quality="{{auctions.currentAuction.equipment.quality}}" slot="{{auctions.currentAuction.equipment.slot | lowercase | underscoreToSpace}}" parameters="auctions.currentAuction.equipment.parameters"></equipment-item>
       <a class="item item-icon-left" href="#">
-         <i class="icon ion-clock"></i> Time to finish
-         <timer max-time-unit="'hour'" countdown="(auctions.currentAuction.finishTime / 1000)" interval="1000">{{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
-         <!-- <span class="badge badge-energized">{{auctions.currentAuction.finishTime | date: 'medium'}}</span> -->
+         <i class="icon ion-clock"></i> Finish time
+         <!-- <h3>
+         <timer max-time-unit="'hour'" countdown="auctions.countdownTime" interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+</h3> -->
+         <span class="badge badge-energized">{{auctions.currentAuction.finishTime | date:'medium'}}</span>
        </a>
      <a class="item item-icon-left" href="#">
         <i class="icon icon-wallet"></i> Your gold
         <span class="badge badge-assertive">{{auctions.money[0].ammount | number : 2}} GOLD </span>
       </a>
-      <!-- <a class="item item-icon-left" href="#">
-        <i class="icon icon-value"></i> Summary
-        <span class="badge badge-assertive" ng-if="(products.amount * products.currentProduct.price )>products.money[products.currentProduct.countryId].ammount">
-           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
-        </span>
-        <span class="badge badge-positive" ng-if="(products.amount * products.currentProduct.price )<products.money[products.currentProduct.countryId].ammount">
-           {{(products.amount * products.currentProduct.price )| number : 2 }} {{products.currentProduct.currencyName}}
-        </span>
-      </a> -->
       <label class="item item-input">
         <span class="input-label">Bid</span>
         <input type="text" placeholder="Minimal {{auctions.currentAuction.minimalOutbid}}" ng-model="auctions.price">
       </label>
       <div class="row">
         <div class="col">
-          <button class="button icon-left icon-uniF478 button-full button-positive" ng-click="auctions.closeTransactionModal()">
+          <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="auctions.closeTransactionModal()">
             Back
           </button>
         </div>
-        <div class="col col-67">
-          <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="auctions.bid()">
+        <div class="col col-66">
+          <button ng-if="(auctions.currentAuction.owner.id === auctions.player.id)" class="button icon-left icon-uniF479 button-full button-assertive" ng-click="auctions.delete()">
+            Cancel auction
+          </button>
+          <button ng-if="!(auctions.currentAuction.owner.id === auctions.player.id)" class="button icon-left icon-uniF479 button-full button-balanced" ng-click="auctions.bid()">
             Bid
           </button>
         </div>

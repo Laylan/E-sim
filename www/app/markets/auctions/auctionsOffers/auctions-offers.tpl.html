@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Your auctions
+  </div>
+  <div>
+    <ul class="list line">
+      <li class="item without-padding" ng-repeat="auction in auctionsOffers.myAuctions">
+        <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item>
+      </li>
+    </ul>
+  </div>
+</div>
+<back-button></back-button>
