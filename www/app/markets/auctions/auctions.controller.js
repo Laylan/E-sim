@@ -26,12 +26,14 @@
     vm.sorted = 'TIME';
     vm.currentAuction = null;
     vm.price = '';
+    vm.auctionId = '';
     vm.countdownTime = (vm.auctions[0].milisLeftTimestamp/1000);
 
     // definitions
     vm.filter = filter;
     vm.showYourAuctions = showYourAuctions;
     vm.showProfile = showProfile;
+    vm.getAuction = getAuction;
     vm.canGetMoreAuctions = canGetMoreAuctions;
     vm.getMore = getMore;
     vm.initModal = initModal;
@@ -53,6 +55,17 @@
       $state.go('main.profile', {
         profileId: id
       });
+    }
+
+    function getAuction() {
+      console.log('getAuction');
+      console.log(vm.auctionId);
+      AuctionsData.fetchAuction(vm.auctionId)
+        .then(function FetchAuctionSuccess(data) {
+          vm.currentAuction = data;
+        }, function FetchAuctionOffersError(error) {
+          Toast(error);
+        });
     }
 
     function bid() {
@@ -106,11 +119,11 @@
         vm.modal = modal;
       });
 
-      vm.openTransactionModal = function(auction) {
-        vm.currentAuction = auction;
-        vm.countdownTime = 180;
+      vm.openTransactionModal = function(id) {
+        vm.auctionId = id;
+        vm.getAuction();
         //vm.countdownTime = parseInt(vm.currentAuction.milisLeftTimestamp);
-        console.log(vm.countdownTime);
+        console.log('currentAuction');
         console.log(vm.currentAuction);
         vm.modal.show();
       };

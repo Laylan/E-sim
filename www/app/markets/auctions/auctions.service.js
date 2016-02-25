@@ -40,8 +40,24 @@
       return deferred.promise;
     }
 
-    function fetchAuction(id) {
-//znalezienie konkretnej aukcji do bidowania
+    function fetchAuction(auctionId) {
+      console.log('fetchAuction#############');
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      $http.get($rootScope.server.address + '/auction/' + auctionId)
+        .success(function Success(results) {
+          console.log(results);
+          deferred.resolve(results);
+        })
+        .error(function Error(msg, code) {
+          console.log('fetchAuction error');
+          $log.error(msg, code);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
     }
 
     function bid(auctionId, bid) {
