@@ -221,9 +221,9 @@
           templateUrl: 'app/login/login.tpl.html',
           controller: 'LoginController as main',
           resolve: {
-            // servers: function ServersResolver(Login){
-            //   return Login.getServerList();
-            // }
+            servers: function ServersResolver(Login){
+              return Login.getServerList();
+            }
           }
         })
         .state('main.main', {

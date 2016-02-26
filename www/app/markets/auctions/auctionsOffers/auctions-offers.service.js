@@ -30,12 +30,10 @@
       $http.get($rootScope.server.address + '/ownedAuctions?page=' + page + '&status=' + status)
         //serwer zwraca dane w druga strone
         .success(function Success(results) {
-          console.log('successss');
-          console.log(results);
           deferred.resolve(results);
         })
         .error(function Error(msg) {
-          console.log('cos nie tak' + msg);
+          //console.log('smothing wrong' + msg);
           $log.error(msg);
           deferred.reject(msg);
         })

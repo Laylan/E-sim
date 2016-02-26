@@ -29,8 +29,17 @@
       });
       $http.get($rootScope.server.address + '/auctions/?page=' + page + '&status=' + status + '&sorting=' + sorting + '&type=' + type)
         .success(function Success(results) {
-          console.log(results);
-          deferred.resolve(results);
+          if(results.length===0){
+            Toast("No results");
+          }
+          else{
+            if(type==="SPECIAL_ITEM" || type==="COMPANY"){
+              alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
+            }
+            else{
+              deferred.resolve(results);
+            }
+          }
         })
         .error(function Error(msg, code) {
           $log.error(msg, code);
@@ -41,7 +50,6 @@
     }
 
     function fetchAuction(auctionId) {
-      console.log('fetchAuction#############');
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
@@ -52,7 +60,6 @@
           deferred.resolve(results);
         })
         .error(function Error(msg, code) {
-          console.log('fetchAuction error');
           $log.error(msg, code);
           deferred.reject(msg);
         })
@@ -65,16 +72,15 @@
       $ionicLoading.show({
         template: 'Loading...'
       });
-      console.log('parametry');
-      console.log(auctionId);
-      console.log(bid);
+      // console.log('parameters');
+      // console.log(auctionId);
+      // console.log(bid);
       $http.post($rootScope.server.address + '/bidAuction', {
           auctionId: auctionId,
           bid: bid
         })
         .success(function (data) {
           if (data) {
-            console.log('zabidowane');
             console.log(data);
             deferred.resolve(data);
 
@@ -84,7 +90,7 @@
           Toast("OK");
         })
         .error(function (msg) {
-          console.log('errorek');
+          //console.log('little error');
           $log.error(msg);
           deferred.reject(msg);
         })
@@ -92,33 +98,32 @@
       return deferred.promise;
     }
     function remove(auctionId) {
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      console.log('parametry');
-      console.log(auctionId);
-      $http.post($rootScope.server.address + '/cancelAuction', {
-          auctionId: auctionId,
-        })
-        .success(function (data) {
-          if (data) {
-            console.log('Removed!');
-            console.log(data);
-            deferred.resolve(data);
-
-            return;
-          }
-          deferred.resolve("OK");
-          Toast("OK");
-        })
-        .error(function (msg) {
-          console.log('errorek');
-          $log.error(msg);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
+      alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
+      // var deferred = $q.defer();
+      // $ionicLoading.show({
+      //   template: 'Loading...'
+      // });
+      // console.log('parametry');
+      // console.log(auctionId);
+      // $http.post($rootScope.server.address + '/cancelAuction/' + auctionId)
+      //   .success(function (data) {
+      //     if (data) {
+      //       console.log('Removed!');
+      //       console.log(data);
+      //       deferred.resolve(data);
+      //
+      //       return;
+      //     }
+      //     deferred.resolve("OK");
+      //     Toast("OK");
+      //   })
+      //   .error(function (msg) {
+      //     console.log('errorek');
+      //     $log.error(msg);
+      //     deferred.reject(msg);
+      //   })
+      //   .finally($ionicLoading.hide);
+      // return deferred.promise;
     }
   }
 })();

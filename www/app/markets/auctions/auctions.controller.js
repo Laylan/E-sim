@@ -45,7 +45,19 @@
     ////////////////
 
     function filter() {
-
+      _currntPage = 0;
+      console.log('fliter');
+      console.log(vm.progress);
+      console.log(vm.sorted);
+      console.log(vm.type);
+      AuctionsData.fetchAuctions(_currntPage, vm.progress, vm.sorted, vm.type)
+        .then(function FetchAuctionOffersSuccess(data) {
+          vm.auctions = data;
+          _currentAuctionsCount = data.length;
+        }, function FetchAuctionOffersError(error) {
+          Toast(error);
+          _blockFetchingNextPages = true;
+        });
     }
     function showYourAuctions() {
       console.log('idz do aukcji');
@@ -63,7 +75,7 @@
       AuctionsData.fetchAuction(vm.auctionId)
         .then(function FetchAuctionSuccess(data) {
           vm.currentAuction = data;
-        }, function FetchAuctionOffersError(error) {
+        }, function FetchAuctionError(error) {
           Toast(error);
         });
     }

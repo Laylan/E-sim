@@ -2,12 +2,35 @@
   <div class="item item-divider text-center">
     Your auctions
   </div>
+  <div class="button-bar">
+    <a class="button button-padding button-positive icon icon-left ion-plus" ng-click="auctionsOffers.createNew()">
+        Post your offer
+    </a>
+  </div>
   <div>
+    <div ng-if="auctionsOffers.auctionsNumber===0">You don't have any auctions.</div>
     <ul class="list line">
       <li class="item without-padding" ng-repeat="auction in auctionsOffers.myAuctions">
         <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item>
+        <!-- <div class="col col-20 col-center">
+          <i class="icon-{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}} icon-size-xlarge"></i>
+        </div>
+        <div class="col col-60 ellipsis col-center">
+          {{auction.equipment.slot | lowercase | capitalize}}
+          <br>
+          <h3 ng-if="time>0"> Time left:
+            <timer max-time-unit="'hour'" countdown="((auction.milisLeftTimestamp / 1000))" interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+          </h3>
+          <h3 ng-if="time<0"> Finished</h3>
+          <br>
+          Price: {{auction.currentPriceInGold | number : 2}} GOLD
+        </div>
+        <button class="button button-assertive">
+          <i class="icon icon-uniF470"></i>
+        </button> -->
       </li>
     </ul>
+
   </div>
 </div>
 <back-button></back-button>

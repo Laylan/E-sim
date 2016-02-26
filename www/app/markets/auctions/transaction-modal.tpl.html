@@ -2,9 +2,6 @@
   <ion-content>
     <div class="card">
       <div class="item item-divider text-center">
-        <!-- <h2>
-          <i class="icon icon-{{auctions.currentAuction.resource}}"></i>Buy
-        </h2> -->
         Auction
       </div>
       <a class="item item-avatar" ng-click="auctions.showProfile(auctions.currentAuction.owner.id)" href="#">
@@ -12,28 +9,20 @@
         <h4>Seller: </h4>
         <h2 class="ellipsis"><i ng-if="auctions.currentAuction.owner.premium" class="icon icon-star2 yellow"></i>
           {{auctions.currentAuction.owner.username}} <img src="assets/img/flags/small/{{auctions.currentAuction.owner.countryName | flags}}.png"></h2>
-        <!-- <h4>{{message.timeStamp | date:'medium'}}</h4> -->
       </a>
       <a class="item item-avatar" ng-click="auctions.showProfile(auctions.currentAuction.topBidder.id)" href="#">
-        <h3>Tob bidder: </h3><img ng-if="auctions.currentAuction.topBidder" ng-src="{{auctions.currentAuction.topBidder.avatar.SMALL}}">
+        <img ng-if="auctions.currentAuction.topBidder" ng-src="{{auctions.currentAuction.topBidder.avatar.SMALL}}">
+        <h4>Tob bidder: </h4>
         <h2 ng-if="auctions.currentAuction.topBidder" class="ellipsis"><i ng-if="auctions.currentAuction.topBidder.premium" class="icon icon-star2 yellow"></i>
           {{auctions.currentAuction.topBidder.username}} <img src="assets/img/flags/small/{{auctions.currentAuction.topBidder.countryName | flags}}.png"></h2>
           <h2 ng-if="!(auctions.currentAuction.topBidder)">None</h2>
-        <!-- <h4>{{message.timeStamp | date:'medium'}}</h4> -->
       </a>
 
       <div class="line"></div>
     <div class="list">
-      <!-- <a class="item item-icon-left" href="#">
-        <i class="icon icon-{{auctions.currentAuction.equipment.slot | lowercase}}{{auctions.currentAuction.equipment.quality}}"></i>
-        {{auctions.currentAuction.equipment.slot | lowercase | underscoreToSpace}} {{auctions.currentAuction.equipment.quality}}
-      </a> -->
       <equipment-item icon="{{auctions.currentAuction.equipment.slot | lowercase}}" quality="{{auctions.currentAuction.equipment.quality}}" slot="{{auctions.currentAuction.equipment.slot | lowercase | underscoreToSpace}}" parameters="auctions.currentAuction.equipment.parameters"></equipment-item>
       <a class="item item-icon-left" href="#">
          <i class="icon ion-clock"></i> Finish time
-         <!-- <h3>
-         <timer max-time-unit="'hour'" countdown="auctions.countdownTime" interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
-</h3> -->
          <span class="badge badge-positive">{{auctions.currentAuction.finishTime | date:'medium'}}</span>
        </a>
       <a class="item item-icon-left" href="#">
@@ -49,15 +38,15 @@
         <input type="text" placeholder="Minimal {{auctions.currentAuction.minimalOutbid}}" ng-model="auctions.price">
       </label>
       <div class="row">
-        <div class="col">
+        <div class="col col-33">
           <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="auctions.closeTransactionModal()">
             Back
           </button>
         </div>
-        <div class="col col-66">
-          <button ng-if="(auctions.currentAuction.owner.id === auctions.player.id)" class="button icon-left icon-uniF479 button-full button-assertive" ng-click="auctions.delete()">
+        <div class="col">
+          <!-- <button ng-if="(auctions.currentAuction.owner.id === auctions.player.id)" class="button icon-left icon-uniF479 button-full button-assertive" ng-click="auctions.remove()">
             Cancel auction
-          </button>
+          </button> -->
           <button ng-if="!(auctions.currentAuction.owner.id === auctions.player.id)" class="button icon-left icon-uniF479 button-full button-balanced" ng-click="auctions.bid()">
             Bid
           </button>

@@ -9,9 +9,10 @@
     </div> -->
     <!-- <equipment-item icon="{{auctItem.slot | lowercase}}" quality="{{auctItem.quality}}" slot="{{auctItem.slot | lowercase | underscoreToSpace}}" parameters="auctItem.parameters"></equipment-item> -->
     <br>
-    <h3> Time left:
+    <h3 ng-if="time>0"> Time left:
       <timer max-time-unit="'hour'" countdown="((time / 1000))" interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
     </h3>
+    <h3 ng-if="time<0"> Finished</h3>
   </div>
   <span class="badge badge-energized">
     {{price | number : 2}} GOLD

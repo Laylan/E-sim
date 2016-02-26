@@ -16,8 +16,9 @@
     var tmp = '';
     var _currntPage = 1;
     var _blockFetchingNextPages = false;
-    //var _currentProductCount = myProductOffers.length;
+    //var _currentOffersCount = myAuctionsOffers.length;
     var _productsPerPage = 5;
+    vm.auctionsNumber = myAuctionsOffers.length;
     vm.myAuctions = myAuctionsOffers;
 
     // definitions
@@ -34,6 +35,7 @@
     ////////////////
 
     function createNew() {
+      alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
       // vm.resource = vm.product.resource;
       // vm.quality = vm.product.quality + '';
       //
@@ -57,26 +59,12 @@
     }
 
     function deleteOffer(offerId) {
-      //console.log(offerId);
-      // Show the action sheet
-      // var hideSheet = $ionicActionSheet.show({
-      //   destructiveText: 'Delete',
-      //   titleText: 'Delete offer?',
-      //   cancelText: 'Cancel',
-      //   destructiveButtonClicked: function(index) {
-      //     ProductOffersData.removeProductOffer(offerId)
-      //       .then(function Success() {
-      //           vm.refreshData();
-      //       }, function FetchProductOfferError(error) {
-      //         Toast(error);
-      //         _blockFetchingNextPages = true;
-      //       });
-      //     return true;
-      //   }
-      // });
+        alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
+
     }
 
     function getMore() {
+      alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
       // ProductOffersData.fetchMyProductOffers(++_currntPage)
       //   .then(function FetchJobOffersSuccess(data) {
       //     vm.myProductOffers = vm.myProductOffers.concat(data);

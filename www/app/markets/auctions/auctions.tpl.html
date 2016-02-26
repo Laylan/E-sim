@@ -54,17 +54,12 @@
           <input type="text" placeholder="Search" ng-model="auctions.searchText">
         </label>
       </div>
-      <!-- <h3>
-      <timer max-time-unit="'hour'" countdown="auctions.countdownTime" interval="1000">{{hours}}:{{minutes}}:{{seconds}}</timer>
-</h3> -->
     </form>
   </div>
   <div>
     <ul class="list line">
       <li class="item without-padding" ng-click="auctions.openTransactionModal(auction.id)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
-        <!-- <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item> -->
-      <!-- <equipment-item icon="{{auction.equipment.slot | lowercase}}" quality="{{auction.equipment.quality}}" slot="{{auction.equipment.slot | lowercase | underscoreToSpace}}" parameters="auction.equipment.parameters"></equipment-item> -->
-        <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item>
+        <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize | underscoreToSpace}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item>
       </li>
     </ul>
   </div>
