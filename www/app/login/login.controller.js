@@ -19,7 +19,7 @@
 //   {
 //   "name": "Testura",
 //   "address": "http://testura.e-sim.org:8000/mobile"
-// },s{
+// },{
 //   "name": "Primera",
 //   "address": "http://primera.e-sim.org/mobile"
 // }];
