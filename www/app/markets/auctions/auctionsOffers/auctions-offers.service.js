@@ -27,6 +27,7 @@
         template: 'Loading...'
       });
       console.log('fetchMyAuctions');
+      console.log('page '+page+' status '+status);
       $http.get($rootScope.server.address + '/ownedAuctions?page=' + page + '&status=' + status)
         //serwer zwraca dane w druga strone
         .success(function Success(results) {
@@ -41,40 +42,42 @@
       return deferred.promise;
     }
 
-    function createNewAuctionOffer(resource,quality, amount, countryId, price) {
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.post($rootScope.server.address + '/productMarket/postOffer', {
-          resource: resource,
-          quality: quality,
-          amount: amount,
-          countryId: countryId,
-          price: price
-        })
-        .success(function (data) {
-          if (data) {
-            deferred.resolve(data);
-            Toast(data);
-            return;
-          }
-          deferred.resolve("OK");
-        })
-        .error(function (msg) {
-          $log.error(msg);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
+    function createNewAuctionOffer(item, price) {
+      // var deferred = $q.defer();
+      // $ionicLoading.show({
+      //   template: 'Loading...'
+      // });
+      // $http.post($rootScope.server.address + '/productMarket/postOffer', {
+      //     resource: resource,
+      //     quality: quality,
+      //     amount: amount,
+      //     countryId: countryId,
+      //     price: price
+      //   })
+      //   .success(function (data) {
+      //     if (data) {
+      //       deferred.resolve(data);
+      //       Toast(data);
+      //       return;
+      //     }
+      //     deferred.resolve("OK");
+      //   })
+      //   .error(function (msg) {
+      //     $log.error(msg);
+      //     deferred.reject(msg);
+      //   })
+      //   .finally($ionicLoading.hide);
+      // return deferred.promise;
     }
 
-    function removeAuctionOffer(id) {
+    function removeAuctionOffer(auctionId) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.get($rootScope.server.address + '/productMarket/removeOffer?offerId='+id)
+      console.log('usuwanie oferty');
+      $http.post($rootScope.server.address + '/cancelAuction?auctionId=' + auctionId)
+      // $http.get($rootScope.server.address + '/productMarket/removeOffer?offerId='+id)
         .success(function (data) {
           if (data) {
             deferred.resolve(data);

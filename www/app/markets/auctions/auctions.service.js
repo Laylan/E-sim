@@ -98,32 +98,32 @@
       return deferred.promise;
     }
     function remove(auctionId) {
-      alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
-      // var deferred = $q.defer();
-      // $ionicLoading.show({
-      //   template: 'Loading...'
-      // });
-      // console.log('parametry');
-      // console.log(auctionId);
-      // $http.post($rootScope.server.address + '/cancelAuction/' + auctionId)
-      //   .success(function (data) {
-      //     if (data) {
-      //       console.log('Removed!');
-      //       console.log(data);
-      //       deferred.resolve(data);
-      //
-      //       return;
-      //     }
-      //     deferred.resolve("OK");
-      //     Toast("OK");
-      //   })
-      //   .error(function (msg) {
-      //     console.log('errorek');
-      //     $log.error(msg);
-      //     deferred.reject(msg);
-      //   })
-      //   .finally($ionicLoading.hide);
-      // return deferred.promise;
+      //alert("This function is not implemented yet. This project is OPEN SOURCE, you can join it and implement this function!\nLink to project in 'about' section.");
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      console.log('parametry');
+      console.log(auctionId);
+      $http.post($rootScope.server.address + '/cancelAuction?auctionId=' + auctionId)
+        .success(function (data) {
+          if (data) {
+            console.log('Removed!');
+            console.log(data);
+            deferred.resolve(data);
+
+            return;
+          }
+          deferred.resolve("OK");
+          Toast("OK");
+        })
+        .error(function (msg) {
+          console.log('errorek');
+          $log.error(msg);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
     }
   }
 })();

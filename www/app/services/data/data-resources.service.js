@@ -10,7 +10,8 @@
   function ResourcesData($http, $ionicLoading, $rootScope, $q, $log) {
     return {
       fetchResourceItem: FetchResourceItem,
-      fetchAllResources: FetchAllResources
+      fetchAllResources: FetchAllResources,
+      fetchMyEquipmentOff: fetchMyEquipmentOff
     }
 
     function FetchResourceItem(resourceName) {
@@ -43,6 +44,29 @@
           deferred.resolve(data);
         })
         .error(function (msg) {
+          $log.error(msg);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
+    }
+
+    function fetchMyEquipmentOff() {
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      $http.get($rootScope.server.address + '/equipmentOff/')
+        .success(function(data) {
+          angular.forEach(data, function(val, key ){
+            data[key].myName = val.slot + ' ' + val.quality;
+          });
+          console.log('equipment Off');
+          console.log(data);
+          deferred.resolve(data);
+        })
+        .error(function(msg) {
+          console.log('error');
           $log.error(msg);
           deferred.reject(msg);
         })
