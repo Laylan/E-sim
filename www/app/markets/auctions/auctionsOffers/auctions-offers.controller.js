@@ -21,8 +21,10 @@
     vm.auctionsNumber = myAuctionsOffers.length;
     vm.myAuctions = myAuctionsOffers;
     vm.myEquipment = [];
-    vm.item = '';
+    vm.equipmentId = '';
     vm.price = '';
+    vm.lengthInHours = '';
+    vm.additionalMinutes = 0;
 
     // definitions
     vm.initModal = initModal;
@@ -36,7 +38,7 @@
     // inits
     $ionicScrollDelegate.scrollTop();
     vm.initModal();
-    console.log('myEquipment ' + vm.myEquipment);
+    //console.log('myEquipment ' + vm.myEquipment);
 
     ////////////////
 
@@ -45,12 +47,13 @@
       //vm.item = vm.product.resource;
       //vm.quality = vm.product.quality + '';
 
-      AuctionsOffersData.createNewAuctionOffer(vm.item, vm.price)
+      AuctionsOffersData.createNewAuctionOffer(vm.price, vm.lengthInHours, vm.additionalMinutes, vm.equipmentId, null, null)
         .then(function Success() {
           _currntPage = 0;
-          AuctionsOffersData.fetchMyAuctions(++_currntPage)
+          AuctionsOffersData.fetchMyAuctions(++_currntPage, 'IN_PROGRESS')
             .then(function(data) {
-                vm.refreshData();
+                //vm.refreshData();
+                vm.myAuctions = data;
               },
               function(err) {
                 Tost('Something went terribly wrong');
@@ -86,7 +89,7 @@
     }
     function refreshData(){
       _currntPage = 0;
-      AuctionsOffersData.fetchMyAuctions(++_currntPage)
+      AuctionsOffersData.fetchMyAuctions(++_currntPage, 'IN_PROGRESS')
         .then(function FetchAuctionOffersSuccess(data) {
           vm.myAuctions = data;
           _currentAuctionsCount = data.length;
@@ -140,6 +143,9 @@
         vm.modal = modal;
       });
       vm.openOfferModal = function() {
+        vm.price = '';
+        vm.equipmentId = '';
+        vm.lengthInHours = '';
         vm.updateEquipment();
         vm.modal.show();
       };

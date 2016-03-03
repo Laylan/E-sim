@@ -42,32 +42,34 @@
       return deferred.promise;
     }
 
-    function createNewAuctionOffer(item, price) {
-      // var deferred = $q.defer();
-      // $ionicLoading.show({
-      //   template: 'Loading...'
-      // });
-      // $http.post($rootScope.server.address + '/productMarket/postOffer', {
-      //     resource: resource,
-      //     quality: quality,
-      //     amount: amount,
-      //     countryId: countryId,
-      //     price: price
-      //   })
-      //   .success(function (data) {
-      //     if (data) {
-      //       deferred.resolve(data);
-      //       Toast(data);
-      //       return;
-      //     }
-      //     deferred.resolve("OK");
-      //   })
-      //   .error(function (msg) {
-      //     $log.error(msg);
-      //     deferred.reject(msg);
-      //   })
-      //   .finally($ionicLoading.hide);
-      // return deferred.promise;
+    function createNewAuctionOffer(price, lengthInHours, additionalMinutes, equipmentId, companyId, specialItemType) {
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      console.log('Price: ' + price + ', lengthInHours:'+ lengthInHours + ', additionalMinutes:' + additionalMinutes + ', equipmentId:'+ equipmentId +', companyId:' + companyId + ', specialItemType:' + specialItemType);
+      $http.post($rootScope.server.address + '/createAuction', {
+          price: price,
+          lengthInHours: lengthInHours,
+          additionalMinutes: additionalMinutes,
+          equipmentId: equipmentId,
+          companyId: companyId,
+          specialItemType: specialItemType
+        })
+        .success(function (data) {
+          if (data) {
+            deferred.resolve(data);
+            Toast(data);
+            return;
+          }
+          deferred.resolve("created!");
+        })
+        .error(function (msg) {
+          $log.error(msg);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
     }
 
     function removeAuctionOffer(auctionId) {
@@ -85,7 +87,7 @@
             console.log('succes');
             return;
           }
-          deferred.resolve("OK");
+          deferred.resolve("auction removed");
         })
         .error(function (msg) {
           $log.error(msg);

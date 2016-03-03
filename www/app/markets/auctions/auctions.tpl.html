@@ -58,7 +58,7 @@
   </div>
   <div>
     <ul class="list line">
-      <li class="item without-padding" ng-click="auctions.openTransactionModal(auction.id)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
+      <li class="item without-padding padding-out" ng-click="auctions.openTransactionModal(auction.id)" ng-repeat="auction in auctions.auctions | filter:auctions.searchText">
         <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize | underscoreToSpace}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item>
       </li>
     </ul>

@@ -114,7 +114,7 @@
 
             return;
           }
-          deferred.resolve("OK");
+          deferred.resolve("auction removed");
           Toast("OK");
         })
         .error(function (msg) {

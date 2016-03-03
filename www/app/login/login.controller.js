@@ -5,16 +5,16 @@
     .module('login.module')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast', 'servers'];
+  LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast'];
 
   /* @ngInject */
-  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast, servers) {
+  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast) {
 
     // vars
     var vm = this;
     vm.property = 'LoginController';
     vm.loginParameters = {};
-    vm.servers = servers;
+    vm.servers = {};
 // vm.servers = [
 //   {
 //   "name": "Testura",
@@ -23,7 +23,7 @@
 //   "name": "Primera",
 //   "address": "http://primera.e-sim.org/mobile"
 // }];
-    vm.selectedServer = vm.servers[0];
+    vm.selectedServer = '';
     $rootScope.loggedPlayer = null;
 
     // definitions
@@ -33,10 +33,12 @@
     vm.initAutoLogin = initAutoLogin;
     vm.goAbout = goAbout;
     vm.initModal =initModal;
+    vm.getServers = getServers;
 
     // inits
     vm.initAutoLogin();
     vm.initModal();
+    vm.getServers();
     ////////////////
 
     function successfulLoginCallback(loggedPlayerData) {
@@ -115,6 +117,18 @@
     function goAbout() {
       vm.modal.show();
 
+    }
+
+    function getServers(){
+      Login.getServerList()
+        .then(function FetchServersSuccess(data) {
+          vm.servers = data;
+          vm.selectedServer = vm.servers[0];
+          console.log('pobrane dane');
+        }, function FetchServersError(error) {
+          Toast(error);
+
+        });
     }
 
 

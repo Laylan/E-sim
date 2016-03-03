@@ -59,7 +59,7 @@
       $http.get($rootScope.server.address + '/equipmentOff/')
         .success(function(data) {
           angular.forEach(data, function(val, key ){
-            data[key].myName = val.slot + ' ' + val.quality;
+            data[key].myName = val.slot.replace('_', ' ')+ ' ' + val.quality;
           });
           console.log('equipment Off');
           console.log(data);

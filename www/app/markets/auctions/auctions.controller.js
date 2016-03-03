@@ -98,6 +98,7 @@
         .then(function Success() {
           $state.go('main.markets.auctions');
           vm.closeTransactionModal();
+          vm.refreshData();
         }, function Error(msg) {
           Toast(msg);
         });
@@ -119,6 +120,21 @@
 
     function canGetMoreAuctions() {
       return _currentAuctionsCount === _auctionsPerPage && !_blockFetchingNextPages;
+    }
+
+    function refreshData(){
+      _currntPage = 0;
+      AuctionsData.fetchAuctions(++_currntPage, vm.progress, vm.sorted, vm.type)
+        .then(function FetchAuctionOffersSuccess(data) {
+          vm.myAuctions = data;
+          _currentAuctionsCount = data.length;
+        }, function FetchJobOffersError(error) {
+          Toast(error);
+          _blockFetchingNextPages = true;
+        })
+        .then(function BroadcastFinish() {
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        });
     }
 
     function initModal() {
