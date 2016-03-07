@@ -1,10 +1,5 @@
-ionic-ng-boilerplate
+e-Sim Mobile app
 ====================
-
-Boilerplate for quickly start building ionic's apps. Based on ng-boilerplate by Josh David Miller (http://joshdmiller.github.com/ng-boilerplate).
-
-
-
 
 ***
 
@@ -13,7 +8,7 @@ Boilerplate for quickly start building ionic's apps. Based on ng-boilerplate by 
 Install Node.js and then:
 
 ```sh
-$ git git@github.com:Laylan/E-sim.git
+$ git clone https://github.com/Laylan/E-sim.git
 $ cd E-sim
 $ sudo npm -g install grunt-cli karma bower cordova ionic
 $ npm install
@@ -60,6 +55,13 @@ Android development:
  You may need OEM Drivers to be able to run app on phone with (ionic run android).<br>
 
 Happy hacking!
+
+### Rules
+By participating in project you will need to follow the rules from GitHub:
+* Every developer works on  individual branch.
+* To upload your code on Git, use option “pull request”. Then we will verify it. If the code will be clear our dev will accept it and add to the project.
+* Everybody can suggest new features. After accepting them we will be creating new issues.
+
 ## Learn
 
 ### Overall Directory Structure
@@ -69,8 +71,7 @@ At a high level, the structure looks roughly like this:
 ```
 ionic-ng-boilerplate/
   |- grunt-tasks/
-  |- karma/
-  |- src/
+  |- www/
   |  |- app/
   |  |  |- <app logic>
   |  |- assets/
@@ -94,8 +95,7 @@ What follows is a brief description of each entry, but most directories contain
 their own `README.md` file with additional documentation, so browse around to
 learn more.
 
-- `karma/` - test configuration.
-- `src/` - our application sources. [Read more &raquo;](src/README.md)
+- `www/` - our application sources.
 - `vendor/` - third-party libraries. [Bower](http://bower.io) will install
   packages here. Anything added to this directory will need to be manually added
   to `build.config.js` and `karma/karma-unit.js` to be picked up by the build
@@ -106,7 +106,6 @@ learn more.
   list of Bower dependencies we need.
 - `build.config.js` - our customizable build settings; see "The Build System"
   below.
-- `Gruntfile.js` - our build script; see "The Build System" below.
 - `module.prefix` and `module.suffix` - our compiled application script is
   wrapped in these, which by default are used to place the application inside a
   self-executing anonymous function to ensure no clashes with other libraries.
@@ -174,7 +173,7 @@ changes:
 
 
 
-### My own command
+### command for build and install on Android device
 
 ```sh
 $ cordova build android && adb install -r /media/truecrypt1/test3/platforms/android/ant-build/CordovaApp-debug.apk && adb -s BX9031M2WD logcat | grep D/CordovaLog
