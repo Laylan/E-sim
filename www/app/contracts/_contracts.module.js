@@ -3,6 +3,7 @@
 
   angular
     .module('contracts.module', [
+    'ionic',
     'data.module',
     'globals.module'
     ]);

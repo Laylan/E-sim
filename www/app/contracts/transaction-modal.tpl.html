@@ -1,0 +1,49 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <h2>
+          <i class="icon icon-sc"></i>
+        </h2>
+        Contract {{contracts.currentContract.name}}
+      </div>
+      <a class="item item-thumbnail-left" ng-click="contracts.currentContract.showProfile(contracts.currentContract.offerer.id)" href="#">
+        <img class="full-image" ng-src="{{contracts.currentContract.offerer.avatar.SMALL}}">
+        <div>
+          <i class="icon icon-user"></i>{{contracts.currentContract.offerer.username}}
+        </div>
+        <!-- <div>
+          <i class="icon icon-cart"></i>Max amount
+          <span class="item-note">
+            <b>  {{products.currentProduct.quantity}}  </b>
+          </span>
+        </div>
+        <div>
+          <i class="icon icon-price"></i>Price
+          <span class="item-note">
+            <b>  {{products.currentProduct.price}} {{products.currentProduct.currencyName}} </b>
+          </span>
+        </div>
+        <div>
+          <i class="icon icon-star3"></i>Quality
+          <span class="item-note">
+            <b> {{products.currentProduct.quality}} </b>
+          </span>
+        </div> -->
+      </a>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="contracts.closeTransactionModal()">
+          Back
+        </button>
+      </div>
+      <div class="col col-67">
+        <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="constract.accept()">
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+</ion-modal-view>

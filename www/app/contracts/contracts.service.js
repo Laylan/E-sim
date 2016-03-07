@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('contracts-market.module')
+    .module('contracts.module')
     .factory('ContractsData', ContractsData);
 
   ContractsData.$inject = ['$http', '$q', '$log', '$ionicLoading', '$rootScope', 'Toast'];
@@ -56,14 +56,13 @@
       return deferred.promise;
     }
 
-    function accept(amount, offerId) {
+    function accept(contractId) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.post($rootScope.server.address + '/contracts/deal', {
-          offerId: offerId,
-          amount: amount
+      $http.post($rootScope.server.address + '/acceptContract', {
+          contractId: contractId
         })
         .success(function (data) {
           if (data) {
@@ -87,7 +86,7 @@
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.post($rootScope.server.address + '/cancelContracts', {
+      $http.post($rootScope.server.address + '/cancelContract', {
         id: id
       })
         .success(function (data) {

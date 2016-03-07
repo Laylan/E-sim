@@ -8,23 +8,21 @@
   LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast', 'servers'];
 
   /* @ngInject */
-  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast , servers) {
+  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast, servers) {
 
     // vars
     var vm = this;
     vm.property = 'LoginController';
     vm.loginParameters = {};
     vm.servers = servers;
-//    vm.servers = [
-//  {
-//    "name":"Primera",
-//    "address":"http://primera.e-sim.org/mobile"
-//  },
-//  {
-//    "name":"Secura",
-//    "address":"http://secura.e-sim.org/mobile"
-//  }
-// ];
+    // vm.servers = [
+    //   {
+    //   "name": "Testura",
+    //   "address": "http://testura.e-sim.org:8000/mobile"
+    // },{
+    //   "name": "Primera",
+    //   "address": "http://primera.e-sim.org/mobile"
+    // }];
     vm.selectedServer = vm.servers[0];
     $rootScope.loggedPlayer = null;
 

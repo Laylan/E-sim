@@ -47,6 +47,16 @@
             },
           }
         })
+        .state('main.contracts', {
+          url: '/contracts',
+          templateUrl: 'app/contracts/contracts.tpl.html',
+          controller: 'ContractsController as contracts',
+          resolve: {
+            contractsList: function contractsResolver(ContractsData) {
+              return ContractsData.fetchContracts();
+            }
+          }
+        })
         .state('main.equipment', {
           url: '/equipment',
           templateUrl: 'app/equipment/equipment.tpl.html',

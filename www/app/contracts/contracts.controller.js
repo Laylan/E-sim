@@ -2,91 +2,89 @@
   'use strict';
 
   angular
-    .module('contracts-market.module')
+    .module('contracts.module')
     .controller('ContractsController', ContractsController);
 
-  ContractsController.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$ionicModal', 'ContractsData'];
+  ContractsController.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$ionicModal', 'Toast', 'ContractsData', 'contractsList'];
 
   /* @ngInject */
-  function ContractsController($scope, $state, $rootScope, $ionicScrollDelegate, $ionicModal, ContractsData) {
+  function ContractsController($scope, $state, $rootScope, $ionicScrollDelegate, $ionicModal, Toast, ContractsData, contractsList) {
 
     // vars
     var vm = this;
     vm.property = 'ContractsController';
     var _currntPage = 0;
     var _blockFetchingNextPages = false;
-    var _currentProductCount = products.length;
-    var _productsPerPage = 5;
+    var _currentContractsCount = contractsList.length;
+    var _contractsPerPage = 5;
+    vm.contractsList = contractsList;
+    vm.contractId = '';
+
 
     // definitions
+    vm.initModal = initModal;
+    vm.showProfile = showProfile;
 
     // inits
     $ionicScrollDelegate.scrollTop();
     vm.initModal();
+    console.log('Welcome to contracts!!!!');
+    console.log(vm.contractsList);
 
     ////////////////
 
-    function showProfile(id, type) {
-      switch (type) {
-        case "CITIZEN":
-          $state.go('main.profile', {
-            profileId: id
-          });
-          break;
-
-        case "STOCK_COMPANY":
-          $state.go('main.profileSc', {
-            companyId: id
-          });
-          break;
-        default:
-          break;
-      }
+    function showProfile(id){
+      $state.go('main.profile', {
+        profileId: id
+      });
     }
 
-    function yourProductOffers() {
-      $state.go('main.productOffers');
-    }
-
-    function getMore() {
-      ProductMarketData.fetchProducts(++_currntPage, vm.countryId, vm.quality, vm.resource)
-        .then(function FetchJobOffersSuccess(data) {
-          vm.products = vm.products.concat(data);
-          _currentProductCount = data.length;
-        }, function FetchJobOffersError(error) {
+    function getContract() {
+      console.log('getContract');
+      console.log(vm.contractId);
+      ContractsData.fetchContract(vm.contractId)
+        .then(function FetchContractSuccess(data) {
+          vm.currentContract = data;
+        }, function FetchAuctionError(error) {
           Toast(error);
-          _blockFetchingNextPages = true;
-        })
-        .then(function BroadcastFinish() {
-          $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     }
 
-    function canGetMoreOffer() {
-      return _currentProductCount === _productsPerPage && !_blockFetchingNextPages;
-    }
+    // function getMore() {
+    //   ProductMarketData.fetchProducts(++_currntPage, vm.countryId, vm.quality, vm.resource)
+    //     .then(function FetchJobOffersSuccess(data) {
+    //       vm.products = vm.products.concat(data);
+    //       _currentProductCount = data.length;
+    //     }, function FetchJobOffersError(error) {
+    //       Toast(error);
+    //       _blockFetchingNextPages = true;
+    //     })
+    //     .then(function BroadcastFinish() {
+    //       $scope.$broadcast('scroll.infiniteScrollComplete');
+    //     });
+    // }
+    //
+    // function canGetMoreOffer() {
+    //   return _currentProductCount === _productsPerPage && !_blockFetchingNextPages;
+    // }
 
     function initModal() {
       $ionicModal.fromTemplateUrl(
-        'app/markets/productMarket/transaction-modal.tpl.html', {
+        'app/contracts/transaction-modal.tpl.html', {
           scope: $scope
         }
       ).then(function (modal) {
         vm.modal = modal;
       });
-      vm.openTransactionModal = function (product) {
-        vm.currentProduct = product;
-        console.log(vm.currentProduct);
-        //console.log(JSON.stringify(vm.currentProduct));
+      vm.openTransactionModal = function (contract) {
+        vm.getContract();
+        // vm.currentContract = contract;
+        console.log(vm.currentContract);
         vm.modal.show();
       };
       vm.closeTransactionModal = function () {
-        vm.amount = '';
         vm.modal.hide();
       };
-      vm.CanBuy = false;
-
-      //(vm.amount * vm.currentProduct.price ) <= vm.money[vm.currentProduct.countryId].ammount;
 
       $scope.$on('$destroy', function () {
         vm.modal.remove();
