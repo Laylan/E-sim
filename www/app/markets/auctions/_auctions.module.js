@@ -4,7 +4,9 @@
   angular
     .module('auctions.module', [
     'ionic',
-    'tags.module'
+    'tags.module',
+    'globals.module',
+    'auctions-offers.module'
     ]);
 
 })();

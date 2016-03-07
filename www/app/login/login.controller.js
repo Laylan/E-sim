@@ -5,27 +5,25 @@
     .module('login.module')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast', 'servers'];
+  LoginController.$inject = ['$http', '$scope', '$rootScope', '$ionicUser', '$ionicPush', '$ionicModal', '$state', 'Login', 'Toast'];
 
   /* @ngInject */
-  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast , servers) {
+  function LoginController($http, $scope, $rootScope, $ionicUser, $ionicPush, $ionicModal, $state, Login, Toast) {
 
     // vars
     var vm = this;
     vm.property = 'LoginController';
     vm.loginParameters = {};
-    vm.servers = servers;
-//    vm.servers = [
-//  {
-//    "name":"Primera",
-//    "address":"http://primera.e-sim.org/mobile"
-//  },
-//  {
-//    "name":"Secura",
-//    "address":"http://secura.e-sim.org/mobile"
-//  }
-// ];
-    vm.selectedServer = vm.servers[0];
+    vm.servers = {};
+// vm.servers = [
+//   {
+//   "name": "Testura",
+//   "address": "http://testura.e-sim.org:8000/mobile"
+// },{
+//   "name": "Primera",
+//   "address": "http://primera.e-sim.org/mobile"
+// }];
+    vm.selectedServer = '';
     $rootScope.loggedPlayer = null;
 
     // definitions
@@ -35,29 +33,13 @@
     vm.initAutoLogin = initAutoLogin;
     vm.goAbout = goAbout;
     vm.initModal =initModal;
-    //vm.serverList = serverList;
+    vm.getServers = getServers;
 
     // inits
     vm.initAutoLogin();
     vm.initModal();
-    //serverList();
+    vm.getServers();
     ////////////////
-
-    // function serverList(){
-    //   console.log('serverList');
-    //   Login.getServerList()
-    //   .then(function Success(data) {
-    //     console.log('lista serwerow');
-    //     Toast("odebrano liste serwerow")
-    //     console.log(data);
-    //     vm.serverss = data;
-    //     console.log('serverss');
-    //     console.log(vm.serverss);
-    //   }, function Error(msg) {
-    //     console.log('error w kontrolerze');
-    //     Toast(msg);
-    //   });
-    // }
 
     function successfulLoginCallback(loggedPlayerData) {
       var ionicUser = {
@@ -117,8 +99,6 @@
     }
 
     function initAutoLogin() {
-      // Login
-      //   .serverList();
       Login
         .autoLogin()
         .then(successfulLoginCallback);
@@ -129,7 +109,6 @@
     }
 
     function login() {
-      //serverList();
       Login
         .login(vm.loginParameters, vm.selectedServer)
         .then(successfulLoginCallback, Toast);
@@ -138,6 +117,18 @@
     function goAbout() {
       vm.modal.show();
 
+    }
+
+    function getServers(){
+      Login.getServerList()
+        .then(function FetchServersSuccess(data) {
+          vm.servers = data;
+          vm.selectedServer = vm.servers[0];
+          console.log('pobrane dane');
+        }, function FetchServersError(error) {
+          Toast(error);
+
+        });
     }
 
 

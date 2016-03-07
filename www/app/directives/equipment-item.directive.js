@@ -3,27 +3,28 @@
 
   angular
     .module('tags.module')
-    .directive('auctionItem', auctionItem);
+    .directive('equipmentItem', equipmentItem);
 
   /* @ngInject */
-  function auctionItem() {
+  function equipmentItem() {
     // Usage:
     //
     // Creates:
     //
+    console.log('###########uzycie dyrektywy');
     var directive = {
       restrict: 'E',
       replace: true,
       scope: {
         icon: '@',
-        name: '@',
-        price: '@',
-        time: '@',
-        // auctItem: "="
+        slot: '@',
+        quality: '@',
+        parameters: "="
       },
       link: link,
-      templateUrl: 'app/directives/auction-item.tpl.html'
+      templateUrl: 'app/directives/equipment-item.tpl.html'
     };
+console.log('directive');
 console.log(directive);
     return directive;
 

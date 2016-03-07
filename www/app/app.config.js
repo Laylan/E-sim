@@ -221,9 +221,9 @@
           templateUrl: 'app/login/login.tpl.html',
           controller: 'LoginController as main',
           resolve: {
-            servers: function ServersResolver(Login){
-              return Login.getServerList();
-            }
+            // servers: function ServersResolver(Login){
+            //   return Login.getServerList();
+            // }
           }
         })
         .state('main.main', {
@@ -250,6 +250,16 @@
             },
             money: function money(CountryData) {
               return CountryData.fetchMoney();
+            }
+          }
+        })
+        .state('main.auctionsOffers', {
+          url: '/auctionsOffers',
+          templateUrl: 'app/markets/auctions/auctionsOffers/auctions-offers.tpl.html',
+          controller: 'AuctionsOffersController as auctionsOffers',
+          resolve: {
+            myAuctionsOffers: function auctionsOffersResolver(AuctionsOffersData) {
+              return AuctionsOffersData.fetchMyAuctions(1, 'IN_PROGRESS');
             }
           }
         })
