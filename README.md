@@ -1,4 +1,4 @@
-e-Sim Mobile app 
+e-Sim Mobile app
 ====================
 
 ***
@@ -95,7 +95,7 @@ What follows is a brief description of each entry, but most directories contain
 their own `README.md` file with additional documentation, so browse around to
 learn more.
 
-- `www/` - our application sources. 
+- `www/` - our application sources.
 - `vendor/` - third-party libraries. [Bower](http://bower.io) will install
   packages here. Anything added to this directory will need to be manually added
   to `build.config.js` and `karma/karma-unit.js` to be picked up by the build

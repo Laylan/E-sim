@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="item item-divider text-center">
+    Your auctions
+  </div>
+  <div class="button-bar">
+    <a class="button button-padding button-positive icon icon-left ion-plus" ng-click="auctionsOffers.openOfferModal()">
+        Post your offer
+    </a>
+  </div>
+  <div>
+    <div ng-if="auctionsOffers.auctionsNumber===0">You don't have any auctions.</div>
+    <ul class="list line">
+      <li class="item without-padding padding-out" ng-repeat="auction in auctionsOffers.myAuctions">
+        <div class="row">
+        <!-- <auction-item ng-if="auction.type == 'EQUIPMENT'" icon="{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}}" name="{{auction.equipment.slot | lowercase | capitalize}} {{auction.equipment.quality}}" price="{{auction.currentPriceInGold}}" time="{{auction.milisLeftTimestamp}}"></auction-item> -->
+        <div class="col col-20 col-center">
+          <i class="icon-{{auction.equipment.slot | lowercase}}{{auction.equipment.quality}} icon-size-xlarge"></i>
+        </div>
+        <div class="col ellipsis col-center">
+          {{auction.equipment.slot | lowercase | capitalize | underscoreToSpace}} {{auction.equipment.quality}}
+          <br>
+          <h3 class="margin-zero" ng-if="auction.milisLeftTimestamp>0"> Time left:
+            <timer max-time-unit="'hour'" countdown="((auction.milisLeftTimestamp / 1000))" interval="1000">{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+          </h3>
+          <h3 ng-if="auction.milisLeftTimestamp<0"> Finished</h3>
+          <p>Current price: {{auction.currentPriceInGold | number : 2}} GOLD</p>
+        </div>
+        <div class="col col-20 col-center">
+          <button class="button button-assertive icon icon-uniF470" ng-click="auctionsOffers.deleteOffer(auction.id)">
+          </button>
+        </div>
+      </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+<back-button></back-button>

@@ -20,6 +20,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.negative-margin{
+  margin-left: -15px !important;
+}
 .badge-left {
   left: 16px !important;
   right: auto !important;
@@ -78,6 +81,10 @@
 .without-padding {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+.padding-out{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .margin-zero {
   margin-top: 0 !important;

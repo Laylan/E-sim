@@ -1,0 +1,98 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <b>  Post your offer </b>
+      </div>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Item
+          </div>
+          <select ng-model="auctionsOffers.equipmentId"
+            ng-options="equipment.id as equipment.myName group by equipment.quality for equipment in auctionsOffers.myEquipment">
+          </select>
+        </label>
+
+          <label class="item item-divider  item-input item-select">
+            <div class="input-label">
+              Auction Duration
+            </div>
+            <select ng-model="auctionsOffers.lengthInHours">
+              <!-- <option selected="selected" value="24">24 hours</option> -->
+    					<option value="1">1 hour</option>
+      				<option value="2">2 hours</option>
+      				<option value="3">3 hours</option>
+      				<option value="4">4 hours</option>
+      				<option value="5">5 hours</option>
+      				<option value="6">6 hours</option>
+      				<option value="7">7 hours</option>
+      				<option value="8">8 hours</option>
+      				<option value="9">9 hours</option>
+      				<option value="10">10 hours</option>
+      				<option value="11">11 hours</option>
+      				<option value="12">12 hours</option>
+      				<option value="13">13 hours</option>
+      				<option value="14">14 hours</option>
+      				<option value="15">15 hours</option>
+      				<option value="16">16 hours</option>
+      				<option value="17">17 hours</option>
+      				<option value="18">18 hours</option>
+      				<option value="19">19 hours</option>
+      				<option value="20">20 hours</option>
+      				<option value="21">21 hours</option>
+      				<option value="22">22 hours</option>
+      				<option value="23">23 hours</option>
+      				<option value="24">24 hours</option>
+      				<option value="25">25 hours</option>
+      				<option value="26">26 hours</option>
+      				<option value="27">27 hours</option>
+      				<option value="28">28 hours</option>
+      				<option value="29">29 hours</option>
+      				<option value="30">30 hours</option>
+      				<option value="31">31 hours</option>
+      				<option value="32">32 hours</option>
+      				<option value="33">33 hours</option>
+      				<option value="34">34 hours</option>
+      				<option value="35">35 hours</option>
+      				<option value="36">36 hours</option>
+      				<option value="37">37 hours</option>
+      				<option value="38">38 hours</option>
+      				<option value="39">39 hours</option>
+      				<option value="40">40 hours</option>
+      				<option value="41">41 hours</option>
+      				<option value="42">42 hours</option>
+      				<option value="43">43 hours</option>
+      				<option value="44">44 hours</option>
+      				<option value="45">45 hours</option>
+      				<option value="46">46 hours</option>
+      				<option value="47">47 hours</option>
+      				<option value="48">48 hours</option>
+            </select>
+          </label>
+
+          <!-- <label class="item item-input">
+            <input type="number" placeholder="Offered amount" ng-model="productOffers.amount" min="0" max="" name="name" >
+          </label> -->
+
+          <label class="item item-input">
+            <input type="number" placeholder="Starting price" ng-model="auctionsOffers.price" min="0.0" max="" name="name" >
+          </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="auctionsOffers.closeOfferModal()">
+          Back
+        </button>
+      </div>
+      <div class="col col-67">
+        <button class="button icon-left icon-uniF476 button-full button-balanced" ng-click="auctionsOffers.createNew()">
+          Post new offer
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
+
+<back-button></back-button>

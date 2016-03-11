@@ -263,6 +263,16 @@
             }
           }
         })
+        .state('main.auctionsOffers', {
+          url: '/auctionsOffers',
+          templateUrl: 'app/markets/auctions/auctionsOffers/auctions-offers.tpl.html',
+          controller: 'AuctionsOffersController as auctionsOffers',
+          resolve: {
+            myAuctionsOffers: function auctionsOffersResolver(AuctionsOffersData) {
+              return AuctionsOffersData.fetchMyAuctions(1, 'IN_PROGRESS');
+            }
+          }
+        })
         .state('main.markets.jobMarket', {
           url: '/jobMarket',
           templateUrl: 'app/markets/jobMarket/job-market.tpl.html',

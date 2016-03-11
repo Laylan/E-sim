@@ -84,7 +84,7 @@
         template: 'Loading...'
       });
       $http.get('http://e-sim.org/servers.json')
-        .success(function SuccessCallback(result, status, headers, config) {
+        .success(function Success(result, status, headers, config) {
           if (result.error) {
             console.log('error w succes');
             deferred.reject(result.error);
@@ -94,7 +94,7 @@
             deferred.resolve(result);
           }
         })
-        .error(function ErrorCallback(msg, status, headers, config) {
+        .error(function Error(msg, status, headers, config) {
           //TODO Wywalic (?)
           console.log('error error');
           console.log(msg);

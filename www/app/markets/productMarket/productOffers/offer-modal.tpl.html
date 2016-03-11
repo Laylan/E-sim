@@ -10,7 +10,7 @@
             Product
           </div>
           <select ng-model="productOffers.product"
-            ng-options="resource as product.myName group by product.resource for (resource, product) in productOffers.storage">
+            ng-options="product.myName group by product.resource for product in productOffers.storage">
           </select>
         </label>
 
