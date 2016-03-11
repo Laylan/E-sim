@@ -44,7 +44,7 @@
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.get($rootScope.server.address + '/contracts/'+id)
+      $http.get($rootScope.server.address + '/contract/'+id)
         .success(function Success(results) {
           deferred.resolve(results);
         })

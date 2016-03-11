@@ -3,7 +3,7 @@
      Your contracts
   </div>
   <div ng-if="contracts.contractsList.length > 0" ng-repeat="contract in contracts.contractsList">
-    <a class="item" ng-click="contracts.openTransactionModal(contract)">
+    <a class="item" ng-click="contracts.openTransactionModal(contract.id)">
     {{contract.name}} offered by {{contract.offerer.username}}
     </a>
   </div>

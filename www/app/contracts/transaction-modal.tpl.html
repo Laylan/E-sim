@@ -1,37 +1,39 @@
 <ion-modal-view>
   <ion-content>
+    <div class="bar bar-header bar-light">
+      <h1 class="title"> Contract {{contracts.currentContract.name}}</h1>
+    </div>
     <div class="card">
       <div class="item item-divider text-center">
-        <h2>
           <i class="icon icon-sc"></i>
-        </h2>
-        Contract {{contracts.currentContract.name}}
+        Offerer
       </div>
-      <a class="item item-thumbnail-left" ng-click="contracts.currentContract.showProfile(contracts.currentContract.offerer.id)" href="#">
-        <img class="full-image" ng-src="{{contracts.currentContract.offerer.avatar.SMALL}}">
-        <div>
-          <i class="icon icon-user"></i>{{contracts.currentContract.offerer.username}}
-        </div>
-        <!-- <div>
-          <i class="icon icon-cart"></i>Max amount
-          <span class="item-note">
-            <b>  {{products.currentProduct.quantity}}  </b>
-          </span>
-        </div>
-        <div>
-          <i class="icon icon-price"></i>Price
-          <span class="item-note">
-            <b>  {{products.currentProduct.price}} {{products.currentProduct.currencyName}} </b>
-          </span>
-        </div>
-        <div>
-          <i class="icon icon-star3"></i>Quality
-          <span class="item-note">
-            <b> {{products.currentProduct.quality}} </b>
-          </span>
-        </div> -->
+      <a class="item item-avatar" ng-click="contracts.currentContract.showProfile(contracts.currentContract.offerer.id)" href="#">
+        <img ng-src="{{contracts.currentContract.offerer.avatar.SMALL}}">
+        <h4 class="ellipsis">
+          <i ng-if="contracts.currentAuction.offerer.premium" class="icon icon-star2 yellow"></i>
+          {{contracts.currentAuction.offerer.username}} <img src="assets/img/flags/small/{{contracts.currentAuction.offerer.countryName | flags}}.png">
+        </h4>
       </a>
+      <div ng-repeat="item in contracts.currentContract.itemList">
+        <div ng-if="item.offererSide" >
+          <a ng-if="item.equipment" class="item">
+            <!-- <equipment-item icon="{{item.equipment.slot | lowercase}}" quality="{{item.equipment.quality}}" slot="{{item.equipment.slot | lowercase | underscoreToSpace}}" parameters="item.equipment.parameters"></equipment-item> -->
+          </a>
+          <a ng-if="item.productParameters" class="item">
+            <product-icon resource='{{item.productParameters.resource}}' quality='{{item.productParameters.quality}}'></product-icon>
+          </a>
+          <a ng-if="item.debtParameters" class="item">
+          </a>
+          <a ng-if="item.moneyParameters" class="item">
+            <img src="assets/img/flags/medium/{{item.moneyParameters.countryName | flags}}.png">
+            <div class="badge badge-light">{{item.moneyParameters.sum | number : 2}} {{item.moneyParameters.currencyName}}</div>
+          </div>
+          </a>
+        </div>
+      </div>
     </div>
+
     <div class="row">
       <div class="col">
         <button class="button icon-left icon-uniF472 button-full button-positive" ng-click="contracts.closeTransactionModal()">
@@ -39,7 +41,7 @@
         </button>
       </div>
       <div class="col col-67">
-        <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="constract.accept()">
+        <button class="button icon-left icon-uniF479 button-full button-balanced" ng-click="constract.acceptContract()">
           Accept
         </button>
       </div>

@@ -20,10 +20,11 @@
     vm.contractsList = contractsList;
     vm.contractId = '';
 
-
     // definitions
     vm.initModal = initModal;
     vm.showProfile = showProfile;
+    vm.getContract = getContract;
+    vm.acceptContract = acceptContract;
 
     // inits
     $ionicScrollDelegate.scrollTop();
@@ -44,12 +45,24 @@
       console.log(vm.contractId);
       ContractsData.fetchContract(vm.contractId)
         .then(function FetchContractSuccess(data) {
+          console.log('succes');
+          console.log(data);
           vm.currentContract = data;
-        }, function FetchAuctionError(error) {
+        }, function FetchContractError(error) {
+          console.log(errrooorrrsss);
           Toast(error);
         });
     }
 
+    function acceptContract() {
+      ContractsData.accept(vm.currentContract.id)
+        .then(function Success() {
+          $state.go('main.contracts');
+          vm.closeTransactionModal();
+        }, function Error(msg) {
+          Toast(msg);
+        });
+    }
     // function getMore() {
     //   ProductMarketData.fetchProducts(++_currntPage, vm.countryId, vm.quality, vm.resource)
     //     .then(function FetchJobOffersSuccess(data) {
@@ -76,10 +89,11 @@
       ).then(function (modal) {
         vm.modal = modal;
       });
-      vm.openTransactionModal = function (contract) {
-        vm.getContract();
+      vm.openTransactionModal = function (id) {
+        vm.contractId = id;
+         vm.getContract();
         // vm.currentContract = contract;
-        console.log(vm.currentContract);
+        console.log('currentContract '+vm.currentContract);
         vm.modal.show();
       };
       vm.closeTransactionModal = function () {
