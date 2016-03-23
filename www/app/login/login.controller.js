@@ -23,7 +23,7 @@
 //   "name": "Primera",
 //   "address": "http://primera.e-sim.org/mobile"
 // }];
-    vm.selectedServer = '';
+    vm.selectedServer = vm.servers[0];
     $rootScope.loggedPlayer = null;
 
     // definitions
@@ -42,48 +42,48 @@
     ////////////////
 
     function successfulLoginCallback(loggedPlayerData) {
-      // var ionicUser = {
-      //   user_id: loggedPlayerData.loggedCitizen.id + '@' + loggedPlayerData.server.name,
-      //   name: loggedPlayerData.loggedCitizen.username,
-      //   image: loggedPlayerData.loggedCitizen.avatar.NORMAL,
-      //   citizenshipId: loggedPlayerData.loggedCitizen.citizenshipId,
-      //   countryName: loggedPlayerData.loggedCitizen.countryName,
-      //   level: loggedPlayerData.loggedCitizen.level,
-      //   premium: loggedPlayerData.loggedCitizen.premium,
-      //   strength: loggedPlayerData.loggedCitizen.strength,
-      //   economySkill: loggedPlayerData.loggedCitizen.economySkill,
-      //   server: loggedPlayerData.server.name
-      // };
-      // $ionicUser.identify(ionicUser)
-      //   .then(
-      //     function() {
-      //       var config = null;
-      //       config = {
-      //         "badge": "true",
-      //         "sound": "true",
-      //         "alert": "true"
-      //       };
-      //       $ionicPush.register(config, $ionicUser.get())
-      //         .then(
-      //           function(result) {
-      //
-      //             console.log("Register success " + result);
-      //
-      //             $scope.registerDisabled = true;
-      //             // ** NOTE: Android regid result comes back in the pushNotificationReceived, only iOS returned here
-      //             // if (ionic.Platform.isIOS()) {
-      //               // $scope.regId = result;
-      //               // alert(storeDeviceToken("ios"));
-      //             // }
-      //           },
-      //           function(err) {
-      //             console.log("Register error " + err);
-      //           }
-      //         );
-      //     },
-      //     function(err) {
-      //       console.log("User Error " + err);
-      //     });
+      var ionicUser = {
+        user_id: loggedPlayerData.loggedCitizen.id + '@' + loggedPlayerData.server.name,
+        name: loggedPlayerData.loggedCitizen.username,
+        image: loggedPlayerData.loggedCitizen.avatar.NORMAL,
+        citizenshipId: loggedPlayerData.loggedCitizen.citizenshipId,
+        countryName: loggedPlayerData.loggedCitizen.countryName,
+        level: loggedPlayerData.loggedCitizen.level,
+        premium: loggedPlayerData.loggedCitizen.premium,
+        strength: loggedPlayerData.loggedCitizen.strength,
+        economySkill: loggedPlayerData.loggedCitizen.economySkill,
+        server: loggedPlayerData.server.name
+      };
+      $ionicUser.identify(ionicUser)
+        .then(
+          function() {
+            var config = null;
+            config = {
+              "badge": "true",
+              "sound": "true",
+              "alert": "true"
+            };
+            $ionicPush.register(config, $ionicUser.get())
+              .then(
+                function(result) {
+
+                  console.log("Register success " + result);
+
+                  $scope.registerDisabled = true;
+                  // ** NOTE: Android regid result comes back in the pushNotificationReceived, only iOS returned here
+                  // if (ionic.Platform.isIOS()) {
+                    // $scope.regId = result;
+                    // alert(storeDeviceToken("ios"));
+                  // }
+                },
+                function(err) {
+                  console.log("Register error " + err);
+                }
+              );
+          },
+          function(err) {
+            console.log("User Error " + err);
+          });
 
       $rootScope.loggedPlayer = loggedPlayerData.loggedCitizen;
       $rootScope.token = loggedPlayerData.token;

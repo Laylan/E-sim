@@ -66,7 +66,7 @@
     function buy() {
       ProductMarketData.deal(vm.amount, vm.currentProduct.offerId)
         .then(function Success() {
-          $state.go('main.productMarket');
+          $state.go('main.markets.productMarket');
           vm.closeTransactionModal();
         }, function Error(msg) {
           Toast(msg);

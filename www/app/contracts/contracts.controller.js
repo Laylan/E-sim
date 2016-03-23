@@ -19,20 +19,26 @@
     var _contractsPerPage = 5;
     vm.contractsList = contractsList;
     vm.contractId = '';
+    vm.ownerOfContract = false;
 
     // definitions
+    vm.checkOwner = checkOwner;
     vm.initModal = initModal;
     vm.showProfile = showProfile;
     vm.getContract = getContract;
     vm.acceptContract = acceptContract;
+    vm.cancelContract = cancelContract;
 
     // inits
     $ionicScrollDelegate.scrollTop();
     vm.initModal();
-    console.log('Welcome to contracts!!!!');
-    console.log(vm.contractsList);
 
     ////////////////
+    function checkOwner(){
+      if(vm.currentContract.offerer.username === $rootScope.loggedPlayer.username){
+        vm.ownerOfContract = true;
+      }
+    }
 
     function showProfile(id){
       $state.go('main.profile', {
@@ -48,6 +54,7 @@
           console.log('succes');
           console.log(data);
           vm.currentContract = data;
+          vm.checkOwner();
         }, function FetchContractError(error) {
           console.log(errrooorrrsss);
           Toast(error);
@@ -55,6 +62,7 @@
     }
 
     function acceptContract() {
+      console.log('akceptacja kontraktu');
       ContractsData.accept(vm.currentContract.id)
         .then(function Success() {
           $state.go('main.contracts');
@@ -63,23 +71,19 @@
           Toast(msg);
         });
     }
-    // function getMore() {
-    //   ProductMarketData.fetchProducts(++_currntPage, vm.countryId, vm.quality, vm.resource)
-    //     .then(function FetchJobOffersSuccess(data) {
-    //       vm.products = vm.products.concat(data);
-    //       _currentProductCount = data.length;
-    //     }, function FetchJobOffersError(error) {
-    //       Toast(error);
-    //       _blockFetchingNextPages = true;
-    //     })
-    //     .then(function BroadcastFinish() {
-    //       $scope.$broadcast('scroll.infiniteScrollComplete');
-    //     });
-    // }
-    //
-    // function canGetMoreOffer() {
-    //   return _currentProductCount === _productsPerPage && !_blockFetchingNextPages;
-    // }
+
+    function cancelContract() {
+      // koniecznie okienko do upeniania sie!!!!!
+      console.log('anulowanie kontraktu');
+      ContractsData.cancel(vm.currentContract.id)
+        .then(function Success() {
+          $state.go('main.contracts');
+          vm.closeTransactionModal();
+        }, function Error(msg) {
+          Toast(msg);
+        });
+    }
+
 
     function initModal() {
       $ionicModal.fromTemplateUrl(
@@ -93,7 +97,7 @@
         vm.contractId = id;
          vm.getContract();
         // vm.currentContract = contract;
-        console.log('currentContract '+vm.currentContract);
+      //  console.log('currentContract '+vm.currentContract);
         vm.modal.show();
       };
       vm.closeTransactionModal = function () {

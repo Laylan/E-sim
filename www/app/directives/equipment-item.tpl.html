@@ -1,8 +1,7 @@
-
-  <a class="item item-icon-left" href="#">
+  <a class="item item-icon-left without-padding" href="#">
     <i class="icon icon-{{icon}}{{quality}}"></i>
     {{slot}} {{quality}}
-    <div class="list margin-zero ellipsis" ng-repeat="param in parameters">
-      <p>{{param.name}} {{param.value}}<p ng-if="param.percentValue">%</p></p>
-    </div>
+    <p class="list margin-zero" ng-repeat="param in parameters">
+      {{param.name}} {{param.value}}<span ng-if="param.percentValue">%</span>
+    </p>
   </a>

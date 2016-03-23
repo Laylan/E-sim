@@ -15,7 +15,7 @@
       fetchContracts: fetchContracts,
       fetchContract: fetchContract,
       accept: accept,
-      cancel: cancel
+      cancel: cancel,
     };
 
     return exports;
@@ -46,6 +46,8 @@
       });
       $http.get($rootScope.server.address + '/contract/'+id)
         .success(function Success(results) {
+          console.log('konkretny kontrakt');
+          console.log(results);
           deferred.resolve(results);
         })
         .error(function Error(msg) {
@@ -99,6 +101,7 @@
           deferred.resolve("OK");
         })
         .error(function (msg) {
+          console.log('error');
           $log.error(msg);
           deferred.reject(msg);
         })

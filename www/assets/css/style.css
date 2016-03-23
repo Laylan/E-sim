@@ -8,6 +8,9 @@
 .center {
   text-align: center;
 }
+.color-black{
+  color: rgb(0,0,0);
+}
 .checkboxx {
   width: 50px !important;
 }
