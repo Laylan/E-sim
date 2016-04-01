@@ -48,7 +48,13 @@
         <div ng-hide="!item.offererSide" ng-repeat="item in contracts.currentContract.offererItemList.debts">
           <a class="clear">
             <img src="assets/img/flags/medium/{{item.debtParameters.countryName | flags}}.png">
-            <div class="badge badge-light">{{item.debtParameters.debtSum | number : 2}} {{item.debtParameters.debtCurrency}} <p>must be paid by {{item.debtParameters.paybackDay}} game day</div>
+            <div class="badge badge-light">
+              {{item.debtParameters.debtSum | number : 2}} {{item.debtParameters.debtCurrency}}
+            </div>
+              <span class="color-black center">must be paid by {{item.debtParameters.paybackDay}} game day
+                <br>({{item.debtParameters.paybackGameDay}} days since signing the contract)
+              </span>
+
           </a>
         </div>
       </div>
@@ -114,8 +120,11 @@
 
     <div class="row">
       <div class="col col-50">
-        <button class="button icon-left icon-uniF470 button-full button-assertive margin-zero" ng-click="contracts.cancelContract()">
+        <button class="button icon-left icon-uniF470 button-full button-assertive margin-zero" ng-click="contracts.cancelContract()" ng-if="contracts.ownerOfContract">
           Cancel
+        </button>
+        <button class="button icon-left icon-uniF470 button-full button-assertive margin-zero" ng-click="contracts.declineContract()" ng-if="!contracts.ownerOfContract">
+          Decline
         </button>
       </div>
       <div class="col">

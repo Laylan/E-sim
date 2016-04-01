@@ -1,10 +1,32 @@
 <div class="card">
   <div class="item item-divider text-center">
-     Your contracts
+    <div class="button-bar">
+      <a class="button button-padding button-positive" ng-click="contracts.showYourTemplates()">
+        <span class="button-big-font">
+          <i class="icon ion-bag icon-left "></i>
+            Your templates
+        </span>
+      </a>
+    </div>
   </div>
-  <ul class="list line margin-zero" ng-if="contracts.contractsList.length > 0" ng-repeat="contract in contracts.contractsList">
-    <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
-      <b>{{contract.name}}</b> offered by <b>{{contract.offerer.username}}</b>
-    </li>
-  </ul>
+  <div ng-if="contracts.pendingContractsList.length > 0">
+    <div class="item item-divider text-center">
+       Pending contracts
+    </div>
+    <ul class="list line margin-zero" ng-repeat="contract in contracts.pendingContractsList">
+      <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
+        <b>{{contract.name}}</b> offered by <b>{{contract.offerer.username}}</b>
+      </li>
+    </ul>
+  </div>
+  <div ng-if="contracts.offeredContractsList.length > 0">
+    <div class="item item-divider text-center">
+       Offered contracts
+    </div>
+    <ul class="list line margin-zero" ng-repeat="contract in contracts.offeredContractsList">
+      <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
+        <b>{{contract.name}}</b> offered to <b>{{contract.acceptor.username}}</b>
+      </li>
+    </ul>
+  </div>
 </div>

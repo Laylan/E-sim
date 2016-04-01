@@ -2,11 +2,10 @@
   'use strict';
 
   angular
-    .module('contracts.module', [
+    .module('contracts-templates.module', [
     'ionic',
     'data.module',
-    'globals.module',
-    'contracts-templates.module'
+    'globals.module'
     ]);
 
 })();

@@ -1,0 +1,12 @@
+<div class="card">
+  <div ng-if="contractsTpl.templates.length > 0">
+    <div class="item item-divider text-center">
+       Templates
+    </div>
+    <ul class="list line margin-zero" ng-repeat="template in contractsTpl.templates">
+      <li class="item" ng-click="contractsTpl.openTemplateModal(template.id)">
+        <b>{{template.name}}</b>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -2,34 +2,34 @@
   'use strict';
 
   angular
-    .module('contracts.module')
-    .factory('ContractsData', ContractsData);
+    .module('contracts-templates.module')
+    .factory('ContractsTemplatesData', ContractsTemplatesData);
 
-  ContractsData.$inject = ['$http', '$q', '$log', '$ionicLoading', '$rootScope', 'Toast'];
+  ContractsTemplatesData.$inject = ['$http', '$q', '$log', '$ionicLoading', '$rootScope', 'Toast'];
 
   /* @ngInject */
-  function ContractsData($http, $q, $log, $ionicLoading, $rootScope, Toast) {
+  function ContractsTemplatesData($http, $q, $log, $ionicLoading, $rootScope, Toast) {
 
     // ereturn functions
     var exports = {
-      fetchPendingContracts: fetchPendingContracts,
-      fetchOfferedContracts: fetchOfferedContracts,
-      fetchContract: fetchContract,
-      accept: accept,
-      decline: decline,
-      cancel: cancel
+      fetchTemplates: fetchTemplates,
+      fetchTemplate: fetchTemplate,
+      fetchFriends: fetchFriends,
+      deleteTemplate: deleteTemplate,
+      propose: propose,
     };
 
     return exports;
 
     ////////////////
 
-    function fetchPendingContracts() {
+    function fetchTemplates() {
+      console.log('fetch Templates');
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.get($rootScope.server.address + '/contracts/pending')
+      $http.get($rootScope.server.address + '/contracts/templates')
         .success(function Success(results) {
           deferred.resolve(results);
         })
@@ -41,24 +41,7 @@
       return deferred.promise;
     }
 
-    function fetchOfferedContracts() {
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.get($rootScope.server.address + '/contracts/offered')
-        .success(function Success(results) {
-          deferred.resolve(results);
-        })
-        .error(function Error(msg) {
-          $log.error(msg);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
-    }
-
-    function fetchContract(id) {
+    function fetchTemplate(id) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
@@ -77,12 +60,35 @@
       return deferred.promise;
     }
 
-    function accept(contractId) {
+    function fetchFriends(prefix) {
+      console.log('fetch Freinds by prefix: ' + prefix);
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.post($rootScope.server.address + '/contract/accept/'+ contractId)
+      $http.get($rootScope.server.address + '/friendsByName/'+prefix)
+        .success(function Success(results) {
+          console.log('friends');
+          console.log(results);
+          deferred.resolve(results);
+        })
+        .error(function Error(msg) {
+          $log.error(msg);
+          deferred.reject(msg);
+        })
+        .finally($ionicLoading.hide);
+      return deferred.promise;
+    }
+
+    function propose(contractId, login) {
+      var deferred = $q.defer();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      $http.post($rootScope.server.address + '/contract/propose/',{
+        contractId: contractId,
+        login: login
+      })
         .success(function (data) {
           if (data) {
             deferred.resolve(data);
@@ -100,36 +106,12 @@
       return deferred.promise;
     }
 
-    function decline(contractId) {
+    function deleteTemplate(id) {
       var deferred = $q.defer();
       $ionicLoading.show({
         template: 'Loading...'
       });
-      $http.post($rootScope.server.address + '/contract/decline/'+contractId)
-        .success(function (data) {
-          if (data) {
-            deferred.resolve(data);
-            Toast(data);
-            console.log('succes');
-            return;
-          }
-          deferred.resolve("OK");
-        })
-        .error(function (msg) {
-          console.log('error');
-          $log.error(msg);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
-    }
-
-    function cancel(contractId) {
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.post($rootScope.server.address + '/contract/cancel/'+contractId)
+      $http.post($rootScope.server.address + '/contract/deleteTemplate/'+id)
         .success(function (data) {
           if (data) {
             deferred.resolve(data);

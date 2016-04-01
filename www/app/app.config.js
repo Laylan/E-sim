@@ -52,8 +52,21 @@
           templateUrl: 'app/contracts/contracts.tpl.html',
           controller: 'ContractsController as contracts',
           resolve: {
-            contractsList: function contractsResolver(ContractsData) {
-              return ContractsData.fetchContracts();
+            pendingContractsList: function contractsResolver(ContractsData) {
+              return ContractsData.fetchPendingContracts();
+            },
+            offeredContractsList: function contractsResolver(ContractsData) {
+              return ContractsData.fetchOfferedContracts();
+            }
+          }
+        })
+        .state('main.contractsTpl', {
+          url: '/contractsTpl',
+          templateUrl: 'app/contracts/templates/contracts-templates.tpl.html',
+          controller: 'ContractsTplController as contractsTpl',
+          resolve: {
+            templates: function contractsTplResolver(ContractsTemplatesData) {
+              return ContractsTemplatesData.fetchTemplates();
             }
           }
         })

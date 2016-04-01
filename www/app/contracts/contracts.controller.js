@@ -5,19 +5,20 @@
     .module('contracts.module')
     .controller('ContractsController', ContractsController);
 
-  ContractsController.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$ionicModal', 'Toast', 'ContractsData', 'contractsList'];
+  ContractsController.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$ionicModal', '$ionicActionSheet','Toast', 'ContractsData', 'pendingContractsList', 'offeredContractsList'];
 
   /* @ngInject */
-  function ContractsController($scope, $state, $rootScope, $ionicScrollDelegate, $ionicModal, Toast, ContractsData, contractsList) {
+  function ContractsController($scope, $state, $rootScope, $ionicScrollDelegate, $ionicModal, $ionicActionSheet, Toast, ContractsData, pendingContractsList, offeredContractsList) {
 
     // vars
     var vm = this;
     vm.property = 'ContractsController';
     var _currntPage = 0;
     var _blockFetchingNextPages = false;
-    var _currentContractsCount = contractsList.length;
+    var _currentContractsCount = pendingContractsList.length;
     var _contractsPerPage = 5;
-    vm.contractsList = contractsList;
+    vm.pendingContractsList = pendingContractsList;
+    vm.offeredContractsList = offeredContractsList;
     vm.contractId = '';
     vm.ownerOfContract = false;
 
@@ -25,9 +26,13 @@
     vm.checkOwner = checkOwner;
     vm.initModal = initModal;
     vm.showProfile = showProfile;
+    vm.showYourTemplates = showYourTemplates;
     vm.getContract = getContract;
     vm.acceptContract = acceptContract;
+    vm.declineContract = declineContract;
     vm.cancelContract = cancelContract;
+    vm.refreshPendingContracts = refreshPendingContracts;
+    vm.refreshOfferedContracts = refreshOfferedContracts;
 
     // inits
     $ionicScrollDelegate.scrollTop();
@@ -38,12 +43,17 @@
       if(vm.currentContract.offerer.username === $rootScope.loggedPlayer.username){
         vm.ownerOfContract = true;
       }
+      console.log('$$$$$$Contract owner: '+vm.ownerOfContract);
     }
 
     function showProfile(id){
       $state.go('main.profile', {
         profileId: id
       });
+    }
+    function showYourTemplates() {
+      console.log('idz do tempatek');
+      $state.go('main.contractsTpl');
     }
 
     function getContract() {
@@ -56,7 +66,7 @@
           vm.currentContract = data;
           vm.checkOwner();
         }, function FetchContractError(error) {
-          console.log(errrooorrrsss);
+          console.log('errrooorrrsss');
           Toast(error);
         });
     }
@@ -65,25 +75,75 @@
       console.log('akceptacja kontraktu');
       ContractsData.accept(vm.currentContract.id)
         .then(function Success() {
+          vm.refreshPendingContracts();
           $state.go('main.contracts');
           vm.closeTransactionModal();
         }, function Error(msg) {
           Toast(msg);
         });
+
     }
 
-    function cancelContract() {
-      // koniecznie okienko do upeniania sie!!!!!
+    function declineContract() {
       console.log('anulowanie kontraktu');
-      ContractsData.cancel(vm.currentContract.id)
-        .then(function Success() {
-          $state.go('main.contracts');
-          vm.closeTransactionModal();
-        }, function Error(msg) {
-          Toast(msg);
+      var hideSheet = $ionicActionSheet.show({
+        destructiveText: 'Delete',
+        titleText: 'Decline offer?',
+        cancelText: 'Cancel',
+        destructiveButtonClicked: function(index) {
+          ContractsData.decline(vm.currentContract.id)
+            .then(function Success() {
+              vm.refreshPendingContracts();
+              $state.go('main.contracts');
+              vm.closeTransactionModal();
+            }, function Error(msg) {
+              Toast(msg);
+            });
+            return true;
+          }
         });
     }
-
+    function cancelContract() {
+      console.log('anulowanie kontraktu');
+      var hideSheet = $ionicActionSheet.show({
+        destructiveText: 'Delete',
+        titleText: 'Cancel offer?',
+        cancelText: 'Cancel',
+        destructiveButtonClicked: function(index) {
+          ContractsData.cancel(vm.currentContract.id)
+            .then(function Success() {
+              vm.refreshOfferedContracts();
+              $state.go('main.contracts');
+              vm.closeTransactionModal();
+            }, function Error(msg) {
+              Toast(msg);
+            });
+            return true;
+          }
+        });
+    }
+    function refreshPendingContracts() {
+      ContractsData.fetchPendingContracts()
+        .then(function FetchJobOffersSuccess(data) {
+          vm.pendingContractsList = data;
+        }, function FetchJobOffersError(error) {
+          Toast(error);
+        })
+        .then(function BroadcastFinish() {
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        });
+    }
+    function refreshOfferedContracts() {
+      ContractsData.fetchOfferedContracts()
+        .then(function FetchJobOffersSuccess(data) {
+          vm.offeredContractsList = data;
+        }, function FetchJobOffersError(error) {
+          Toast(error);
+        })
+        .then(function BroadcastFinish() {
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        });
+    }
 
     function initModal() {
       $ionicModal.fromTemplateUrl(
@@ -95,9 +155,7 @@
       });
       vm.openTransactionModal = function (id) {
         vm.contractId = id;
-         vm.getContract();
-        // vm.currentContract = contract;
-      //  console.log('currentContract '+vm.currentContract);
+        vm.getContract();
         vm.modal.show();
       };
       vm.closeTransactionModal = function () {

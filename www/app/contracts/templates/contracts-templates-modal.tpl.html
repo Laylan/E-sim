@@ -1,0 +1,152 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider text-center">
+        <i class="icon icon-sc"></i>
+         Template: {{contractsTpl.currentTemplate.name}}
+      </div>
+      <div class="item item-divider text-center">
+        Offerer: You </span>
+      </div>
+      <a class="item item-avatar" ng-click="contractsTpl.currentTemplate.showProfile(contractsTpl.currentTemplate.offerer.id)" href="#">
+        <img ng-src="{{contractsTpl.currentTemplate.offerer.avatar.SMALL}}">
+        <h2 class="ellipsis">
+          <i ng-if="contractsTpl.currentTemplate.offerer.premium" class="icon icon-star2 yellow"></i>
+          {{contractsTpl.currentTemplate.offerer.username}} <img src="assets/img/flags/small/{{contractsTpl.currentTemplate.offerer.countryName | flags}}.png">
+        </h2>
+      </a>
+      <!-- equipment -->
+      <div ng-show="contractsTpl.currentTemplate.offererItemList.equipment.length>0">
+        <p class="margin-zero"><b>{{contractsTpl.currentTemplate.offerer.username}}</b> will instantly donate the following products:</p>
+        <a ng-show="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.offererItemList.equipment">
+          <equipment-item icon="{{item.equipment.slot | lowercase}}" quality="{{item.equipment.quality}}" slot="{{item.equipment.slot | lowercase | underscoreToSpace}}" parameters="item.equipment.parameters"></equipment-item>
+        </a>
+      </div>
+      <!-- Products -->
+      <div class="line"> </div>
+      <div class="clear" ng-show="contractsTpl.currentTemplate.offererItemList.products.length>0">
+        <p class="margin-zero color-black"><b>{{contractsTpl.currentTemplate.offerer.username}}</b> will instantly donate the following products:</p>
+        <div ng-show="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.offererItemList.products">
+          <a class="storage_item center">
+            <stash-product-icon resource='{{item.productParameters.resource}}' quality='{{item.productParameters.quality}}' quantity='{{item.productParameters.quantity}}'></product-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Money -->
+      <div class="clear line" ng-show="contractsTpl.currentTemplate.offererItemList.money.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.offerer.username}}</b> will instantly donate the following sum of money:</p>
+        <div ng-show="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.offererItemList.money">
+          <a class="curriencies">
+            <img src="assets/img/flags/medium/{{item.moneyParameters.countryName | flags}}.png">
+            <div class="badge badge-light">{{item.moneyParameters.sum | number : 2}} {{item.moneyParameters.currencyName}}</div>
+          </a>
+        </div>
+      </div>
+      <!-- Debt -->
+      <div class="clear line" ng-show="contractsTpl.currentTemplate.offererItemList.debts.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.offerer.username}}</b> will be charged with following debt:</p>
+        <div ng-hide="!item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.offererItemList.debts">
+          <a class="clear">
+            <img src="assets/img/flags/medium/{{item.debtParameters.countryName | flags}}.png">
+            <div class="badge badge-light">
+              {{item.debtParameters.debtSum | number : 2}} {{item.debtParameters.debtCurrency}}
+            </div>
+              <span class="color-black center">must be paid by {{item.debtParameters.paybackDay}} game day
+                <br>({{item.debtParameters.paybackGameDay}} days since signing the contract)
+              </span>
+
+          </a>
+        </div>
+      </div>
+
+      <!-- Acceptor -->
+      <div class="item item-divider text-center clear">
+          <i class="icon icon-sc"></i>
+        Acceptor:
+      </div>
+      <!-- <a class="item item-avatar" ng-click="contractsTpl.currentTemplate.showProfile(contractsTpl.currentTemplate.offerer.id)" href="#">
+        <img ng-src="{{contractsTpl.currentTemplate.acceptor.avatar.SMALL}}">
+        <h2 class="ellipsis">
+          <i ng-if="contractsTpl.currentTemplate.acceptor.premium" class="icon icon-star2 yellow"></i>
+          {{contractsTpl.currentTemplate.acceptor.username}} <img src="assets/img/flags/small/{{contractsTpl.currentTemplate.acceptor.countryName | flags}}.png">
+        </h2>
+      </a>  -->
+
+      <!-- Equipment -->
+      <div class="clear line" ng-show="contractsTpl.currentTemplate.acceptorItemList.equipment.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.acceptor.username}}</b> will instantly donate the following products: </p>
+        <div ng-hide="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.acceptorItemList.equipment">
+          <a class="item">
+            <equipment-item icon="{{item.equipment.slot | lowercase}}" quality="{{item.equipment.quality}}" slot="{{item.equipment.slot | lowercase | underscoreToSpace}}" parameters="item.equipment.parameters"></equipment-item>
+          </a>
+        </div>
+      </div>
+      <div class="line"> </div>
+      <!-- products -->
+      <div class="clear" ng-show="contractsTpl.currentTemplate.acceptorItemList.products.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.acceptor.username}}</b> will instantly donate the following products: </p>
+        <div ng-hide="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.acceptorItemList.products">
+          <a class="storage_item center">
+            <stash-product-icon resource='{{item.productParameters.resource}}' quality='{{item.productParameters.quality}}' quantity='{{item.productParameters.quantity}}'></product-icon>
+          </a>
+        </div>
+      </div>
+      <!-- Money -->
+      <div class="clear line" ng-show="contractsTpl.currentTemplate.acceptorItemList.money.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.acceptor.username}}</b> will instantly donate the following sum of money: </p>
+        <div ng-hide="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.acceptorItemList.money">
+          <a ng-if="item.moneyParameters" class="curriencies">
+            <img src="assets/img/flags/medium/{{item.moneyParameters.countryName | flags}}.png">
+            <div class="badge badge-light">{{item.moneyParameters.sum | number : 2}} {{item.moneyParameters.currencyName}}</div>
+          </a>
+        </div>
+      </div>
+      <!-- Debt -->
+      <div class="clear line" ng-show="contractsTpl.currentTemplate.acceptorItemList.debts.length>0">
+        <p class="color-black"><b>{{contractsTpl.currentTemplate.acceptor.username}}</b> will be charged with following debt: </p>
+        <div ng-hide="item.offererSide" ng-repeat="item in contractsTpl.currentTemplate.acceptorItemList.debts">
+          <a ng-if="item.debtParameters" class="clear">
+            <img src="assets/img/flags/medium/{{item.debtParameters.countryName | flags}}.png">
+            <div class="badge badge-light">
+              {{item.debtParameters.debtSum | number : 2}} {{item.debtParameters.debtCurrency}}
+            </div>
+            <span class="color-black">
+              must be paid by {{item.debtParameters.paybackDay}} game day
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="contractsTpl.acceptorLogin">
+      </label>
+      <button class="button button-small" ng-click="contractsTpl.checkFriend()">
+        Check
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="col col-50">
+        <button class="button icon-left icon-uniF470 button-full button-assertive margin-zero" ng-click="contractsTpl.deleteContract()">
+          Delete
+        </button>
+      </div>
+      <div class="col">
+        <button class="button icon-left icon-uniF479 button-full button-balanced margin-zero" ng-click="contractsTpl.proposeContract()">
+          Propose
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-33">
+        <button class="button icon-left icon-uniF472 button-full button-positive margin-zero" ng-click="contractsTpl.closeTemplateModal()">
+          Back
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+</ion-content>
+</ion-modal-view>

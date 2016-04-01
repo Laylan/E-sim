@@ -15,6 +15,7 @@
       'achievements.module',
       'auctions.module',
       'contracts.module',
+      'contracts-templates.module',
       'equipment.module',
       'fight-list.module',
       'fight.module',
