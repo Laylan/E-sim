@@ -13,13 +13,10 @@
     // vars
     var vm = this;
      vm.property = 'ContractsTemplatesController';
-    // var _currntPage = 0;
-    // var _blockFetchingNextPages = false;
-    // var _currentContractsCount = pendingContractsList.length;
-    // var _contractsPerPage = 5;
     vm.templates = templates;
     vm.friendsList = '';
     vm.acceptorLogin = '';
+    vm.selectedLogin = '';
     vm.ownerOfContract = false;
     vm.login = '';
 
@@ -27,6 +24,7 @@
     vm.initModal = initModal;
     vm.getTemplate = getTemplate;
     vm.checkFriend = checkFriend;
+    vm.selectLogin = selectLogin;
     vm.proposeContract = proposeContract;
     vm.deleteContract = deleteContract;
     vm.refreshTemplates = refreshTemplates;
@@ -37,11 +35,6 @@
 
     ////////////////
     //
-    // function showProfile(id){
-    //   $state.go('main.profile', {
-    //     profileId: id
-    //   });
-    // }
 
     function getTemplate() {
       console.log('getContract');
@@ -57,23 +50,30 @@
         });
     }
     function checkFriend() {
+      vm.selectedLogin = '';
       console.log('check Friends');
       ContractsTemplatesData.fetchFriends(vm.acceptorLogin)
         .then(function FetchFriendsSucces(data) {
-          if(results.length===0){
+          if(data.length===0){
             Toast("No friends")
           }
           console.log('fetched');
           console.log(data);
+          vm.friendsList = data;
         }, function Error(msg) {
           Toast(msg);
         });
 
     }
 
+    function selectLogin(login){
+      vm.acceptorLogin = login;
+      vm.selectedLogin = login;
+    }
+
     function proposeContract() {
       console.log('propose Contract');
-      ContractsTemplatesData.propose(vm.currentTemplate.id, vm.acceptorLogin)
+      ContractsTemplatesData.propose(vm.currentTemplate.id, vm.selectedLogin)
         .then(function Success() {
           vm.refreshTemplates();
           $state.go('main.contracts');
@@ -81,7 +81,6 @@
         }, function Error(msg) {
           Toast(msg);
         });
-
     }
 
     function deleteContract() {

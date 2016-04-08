@@ -16,7 +16,7 @@
     vm.loginParameters = {};
     vm.servers = {};
 // vm.servers = [
-//   {
+//{
 //   "name": "Testura",
 //   "address": "http://testura.e-sim.org:8091/mobile"
 // },{

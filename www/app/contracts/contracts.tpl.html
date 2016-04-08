@@ -1,32 +1,35 @@
 <div class="card">
   <div class="item item-divider text-center">
-    <div class="button-bar">
-      <a class="button button-padding button-positive" ng-click="contracts.showYourTemplates()">
-        <span class="button-big-font">
-          <i class="icon ion-bag icon-left "></i>
-            Your templates
-        </span>
-      </a>
-    </div>
+     Contracts
+    <a class="button button-padding button-positive button-block" ng-click="contracts.showYourTemplates()">
+      <span class="button-big-font">
+        <i class="icon ion-sc icon-left "></i>
+          Your templates
+      </span>
+    </a>
   </div>
-  <div ng-if="contracts.pendingContractsList.length > 0">
-    <div class="item item-divider text-center">
-       Pending contracts
+  <div class="line list">
+    <div ng-if="contracts.pendingContractsList.length > 0">
+      <div class="item item-divider text-center">
+         Pending contracts
+      </div>
+      <ul class="list line margin-zero" ng-repeat="contract in contracts.pendingContractsList">
+        <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
+          <b>{{contract.name}}</b> offered by <b>{{contract.offerer.username}}</b>
+        </li>
+      </ul>
     </div>
-    <ul class="list line margin-zero" ng-repeat="contract in contracts.pendingContractsList">
-      <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
-        <b>{{contract.name}}</b> offered by <b>{{contract.offerer.username}}</b>
-      </li>
-    </ul>
-  </div>
-  <div ng-if="contracts.offeredContractsList.length > 0">
-    <div class="item item-divider text-center">
-       Offered contracts
+    <!-- <a class="item text-center" ng-show="contracts.pendingContractsList.length === 0">No pending contracts</a> -->
+    <div ng-if="contracts.offeredContractsList.length > 0">
+      <div class="item item-divider text-center">
+         Offered contracts
+      </div>
+      <ul class="list line margin-zero" ng-repeat="contract in contracts.offeredContractsList">
+        <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
+          <b>{{contract.name}}</b> offered to <b>{{contract.acceptor.username}}</b>
+        </li>
+      </ul>
     </div>
-    <ul class="list line margin-zero" ng-repeat="contract in contracts.offeredContractsList">
-      <li class="item" ng-click="contracts.openTransactionModal(contract.id)">
-        <b>{{contract.name}}</b> offered to <b>{{contract.acceptor.username}}</b>
-      </li>
-    </ul>
+    <!-- <a class="item text-center" ng-show="contracts.offeredContractsList.length === 0">No offered contracts</a> -->
   </div>
 </div>

@@ -61,23 +61,25 @@
     }
 
     function fetchFriends(prefix) {
-      console.log('fetch Freinds by prefix: ' + prefix);
-      var deferred = $q.defer();
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.get($rootScope.server.address + '/friendsByName/'+prefix)
-        .success(function Success(results) {
-          console.log('friends');
-          console.log(results);
-          deferred.resolve(results);
-        })
-        .error(function Error(msg) {
-          $log.error(msg);
-          deferred.reject(msg);
-        })
-        .finally($ionicLoading.hide);
-      return deferred.promise;
+      if(prefix.length>2) {
+        console.log('fetch Freinds by prefix: ' + prefix);
+        var deferred = $q.defer();
+        $ionicLoading.show({
+          template: 'Loading...'
+        });
+        $http.get($rootScope.server.address + '/friendsByName/'+prefix)
+          .success(function Success(results) {
+            console.log('friends');
+            console.log(results);
+            deferred.resolve(results);
+          })
+          .error(function Error(msg) {
+            $log.error(msg);
+            deferred.reject(msg);
+          })
+          .finally($ionicLoading.hide);
+        return deferred.promise;
+      }
     }
 
     function propose(contractId, login) {

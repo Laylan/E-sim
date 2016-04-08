@@ -52,7 +52,7 @@
               {{item.debtParameters.debtSum | number : 2}} {{item.debtParameters.debtCurrency}}
             </div>
               <span class="color-black center">must be paid by {{item.debtParameters.paybackDay}} game day
-                <br>({{item.debtParameters.paybackGameDay}} days since signing the contract)
+                ({{item.debtParameters.paybackGameDay}} days since signing the contract)
               </span>
 
           </a>
@@ -112,21 +112,27 @@
             </div>
             <span class="color-black">
               must be paid by {{item.debtParameters.paybackDay}} game day
+              ({{item.debtParameters.paybackGameDay}} days since signing the contract)
             </span>
           </a>
         </div>
       </div>
     </div>
-    <div>
-      <label class="item item-input">
-        <span class="input-label">Username</span>
-        <input type="text" ng-model="contractsTpl.acceptorLogin">
+    <p class="item">Enter at least 3 characters</p>
+    <div class="item item-input-inset show-input">
+      <label class="item item-input-wrapper without-padding">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Username" ng-change="contractsTpl.checkFriend()" ng-model="contractsTpl.acceptorLogin">
       </label>
-      <button class="button button-small" ng-click="contractsTpl.checkFriend()">
-        Check
-      </button>
     </div>
-
+    <div class="list">
+      <li class="item"
+      ng-if="contractsTpl.acceptorLogin.length>2 && contractsTpl.selectedLogin.length===0"
+      ng-repeat="login in contractsTpl.friendsList"
+      ng-click="contractsTpl.selectLogin(login)">
+        {{login}}
+      </li>
+    </div>
     <div class="row">
       <div class="col col-50">
         <button class="button icon-left icon-uniF470 button-full button-assertive margin-zero" ng-click="contractsTpl.deleteContract()">
